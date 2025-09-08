@@ -59,3 +59,46 @@ ul{
 .packagecontainer{
     width: 100% !important;
 }
+
+
+/* index.css */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Make text and spacing tighter on phones */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+  .card {
+    padding: 1rem;
+  }
+  select, label {
+    font-size: 0.9em;
+  }
+    .container {
+    flex-direction: column;   /* stack cards vertically */
+    gap: 15px;                /* reduce gap for phones */
+  }
+
+  .card {
+    flex: 1 1 100%;           /* take full width */
+    min-width: auto;          /* remove min-width restriction */
+  }
+
+  .checkbox-item {
+    flex-direction: column;   /* stack label + select */
+    align-items: flex-start;
+  }
+
+  .checkbox-item select {
+    margin-left: 0;
+    margin-top: 5px;
+    width: 100%;              /* dropdown spans full width */
+  }
+}
