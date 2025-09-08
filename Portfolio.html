@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Build Your Website</title>
+</head>
+<body>  
+
+  <!--navbar-->
+  <div class="container-fluid bg-dark text-white p-3 mb-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- removed mb-5 -->
+      <h1 class="h3 mb-0">44 Studios</h1> 
+      <nav>
+        <a href="home.html" class="text-white me-3">Home</a>
+        <a href="Services.html" class="text-white me-3">Services</a>
+        <a href="Portfolio.html" class="text-white me-3">Portfolio</a>
+        <a href="contact.html" class="text-white">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div class="bg-dark text-white p-3">
+    <h2 class="text-center mb-5" style="font-size: 3em;">Our Portfolio</h2>
+    <div class="text-center mb-4" style="font-size: 1.5em;">
+      Explore some of our recent projects and see the quality and creativity we bring to every website we build.
+    </div>
+    <div class="container">
+      <div class="row">
+      
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="agents.jpg" class="card-img-top portfolio-img" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Real Estate Website</h5>
+            <p class="card-text">A sleek and user-friendly Real Estate platform for growing companies.</p>
+            <div>
+              <span class="badge bg-primary">HTML</span>
+              <span class="badge bg-info text-dark">Bootstrap</span>
+              <span class="badge bg-warning text-dark">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="IMG_2345.JPG" class="card-img-top portfolio-img" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">E-Commerce Store</h5>
+            <p class="card-text">A modern online store with seamless shopping experience.</p>
+            <div>
+              <span class="badge bg-primary">HTML</span>
+              <span class="badge bg-info text-dark">Bootstrap</span>
+              <span class="badge bg-warning text-dark">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="rawImage.jpg" class="card-img-top portfolio-img" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Landing Page</h5>
+            <p class="card-text">A stylish portfolio site to showcase creative work in a single-page professional format.</p>
+            <div>
+              <span class="badge bg-primary">HTML</span>
+              <span class="badge bg-info text-dark">Bootstrap</span>
+              <span class="badge bg-warning text-dark">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!--about our building process-->
+        <div class="col-15 mt-4">
+          <h3 class="text-center mb-3 process">Our Building Process</h3>
+          <p class="text-center" style="font-size: 1.5em;">
+            At 44 Studios, we follow a structured process to ensure your website meets your needs and exceeds your expectations:
+          </p>
+          <ul style="font-size: 1.1em; max-width: 1000px; margin: 0 auto;">
+            <li><strong>Consultation:</strong> We start with a detailed discussion to understand your goals, target audience, and design preferences.</li>
+            <li><strong>Planning:</strong> We create a project plan outlining the site structure, features, and timeline.</li>
+            <li><strong>Design:</strong> Our designers craft a visually appealing layout that aligns with your brand identity.</li>
+            <li><strong>Development:</strong> Our developers bring the design to life using the latest technologies and best practices.</li>
+            <li><strong>Testing:</strong> We rigorously test the website for functionality, performance, and responsiveness across devices.</li>
+            <li><strong>Launch:</strong> Once approved, we launch your website and ensure everything runs smoothly.</li>
+            <li><strong>Support:</strong> We offer ongoing support and maintenance to keep your site updated and secure.</li>
+          </ul>
+        </div>
+    <!-- Contact Button -->
+  <div class="text-center">
+    <button class="btn bg-white contact" onclick="sendEstimate()">Contact Us</button>
+  </div>
+
+  <!--footer-->
+  <div class="container-fluid bg-dark text-white p-3">
+    <div class="text-center">
+      &copy; 2024 44 Studios. All rights reserved.
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
