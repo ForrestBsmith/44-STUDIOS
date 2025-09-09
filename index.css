@@ -72,6 +72,18 @@ ul{
 
 /* Make text and spacing tighter on phones */
 @media (max-width: 576px) {
+
+     .header { font-size: 3rem !important;}
+  .nav-link { font-size: 2rem !important; text-decoration: none !important; text-align: center; }
+  h1 { font-size: 3.5em !important; }
+
+  ul.navbar-nav {
+    margin-top: 50px !important;
+  }
+ul li {
+    font-size: 1.5em;
+    margin-bottom: 1px;
+  }
   h2 {
     font-size: 2em;
   }
