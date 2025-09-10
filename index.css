@@ -63,6 +63,12 @@ ul{
     width: 100% !important;
 }
 
+.started:hover{
+  background-color: #f0eeee !important;
+  color: black !important;
+  cursor: pointer;
+}
+
 
 /* index.css */
 .card {

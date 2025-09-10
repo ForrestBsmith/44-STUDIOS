@@ -8,100 +8,124 @@
   <title>Build Your Website</title>
 </head>
 
+<body>
   <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
-  <div class="container-fluid">
-    <!-- Brand -->
-    <a class="navbar-brand h3 mb-0 header" href="home.html">44 Studios</a>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand h3 mb-0 header" href="home.html">44 Studios</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Toggler (Hamburger) -->
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="bg-dark text-white p-3">
+    <h2 class="text-center mb-5" style="font-size: 3em;">Build Your Custom Website</h2>
+    <div class="text-center mb-4" style="font-size: 1.5em;">
+      Choose your preferred options below to receive an estimated price for your own custom website. 
+      When you're finished, click "Send Estimate" to submit your selections for review. 
+      (The review will include a follow-up meeting or discussion to confirm your choices.)
+    </div>
 
-    <!-- Links -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="Services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="Portfolio.html">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="contact.html">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <div class="container">
+      <!-- Tier 1 -->
+      <div class="card"><h3>Tier 1: Quick Launch</h3><label>Select Package:</label><select id="tier1"></select></div>
 
-<body>    
-    <script src="calc.js"></script>
-    <div class="bg-dark text-white p-3">
-  <h2 class="text-center mb-5" style="font-size: 3em;">Build Your Custom Website</h2>
-  <!--Instructions-->
-  <div class="text-center mb-4" style="font-size: 1.5em;">Choose your preferred options below to receive an estimated price for your own custom website. 
-  When you're finished, click "Send Estimate" to submit your selections for review. 
-  (The review will include a follow-up meeting or discussion to confirm your choices.)</div>
+      <!-- Tier 2 -->
+      <div class="card"><h3>Tier 2: Premium Custom</h3><label>Select Service:</label><select id="tier2"></select></div>
 
-  <div class="container">
-    
-    <!-- Tier 1 -->
-    <div class="card">
-      <h3>Tier 1: Quick Launch</h3>
-      <label>Select Package:</label>
-      <select id="tier1"></select>
-    </div>
-    
-    <!-- Tier 2 -->
-    <div class="card">
-      <h3>Tier 2: Premium Custom</h3>
-      <label>Select Service:</label>
-      <select id="tier2"></select>
-    </div>
-    
-    <!-- Add-Ons -->
-    <div class="card addOns">
-      <h3>Add-Ons</h3>
-      <div class="checkbox-group" id="addOns"></div>
-    </div>
-    
-    <!-- API Integrations -->
-    <div class="card apiIntegrations">
-      <h3>API Integrations</h3>
-      <div class="checkbox-group" id="apiIntegrations"></div>
-    </div>
-    
-    <!-- Recurring Services -->
-<div class="card recurringServices">
-  <h3>Monthly Recurring Services</h3>
-  <div class="checkbox-group" id="recurringServicesContainer"></div>
-</div>
+      <!-- Add-Ons -->
+      <div class="card addOns"><h3>Add-Ons</h3><div class="checkbox-group" id="addOns"></div></div>
 
-    <!-- Total -->
-    <div class="card total-card">
-      <h3>Estimated Total</h3>
-      <div id="totalPrice">$0</div>
-      <div class="itemized" id="itemizedList"></div>
+      <!-- API Integrations -->
+      <div class="card apiIntegrations"><h3>API Integrations</h3><div class="checkbox-group" id="apiIntegrations"></div></div>
+
+      <!-- Recurring Services -->
+      <div class="card recurringServices"><h3>Monthly Recurring Services</h3><div class="checkbox-group" id="recurringServicesContainer"></div></div>
+
+      <!-- Total -->
+      <div class="card total-card">
+        <h3>Estimated Total</h3>
+        <div id="totalPrice">$0</div>
+        <div class="itemized" id="itemizedList"></div>
+      </div>
     </div>
-  </div>
+
+    <!-- Customer Email Input -->
+    <div class="text-center mb-3">
+      <input type="email" id="customerEmail" class="form-control w-50 mx-auto" placeholder="Enter your email">
+    </div>
 
     <!-- Send Estimate -->
     <div class="text-center mb-5">
       <button class="btn bg-white" onclick="sendEstimate()">Send Estimate</button>
     </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("jEkKlN8wE8xMPUIS4"); // 🔑 replace with your EmailJS public key
+    })();
+
+   function sendEstimate() {
+  const total = document.getElementById("totalPrice").textContent;
+
+  // Convert itemized divs into <li> HTML
+  const itemizedDivs = document.querySelectorAll("#itemizedList div");
+ const itemizedHTML = Array.from(itemizedDivs)
+  .map((div, index) => {
+    const [item, price] = div.textContent.split(" - $");
+    return `
+      <tr style="background-color: ${index % 2 === 0 ? '#fff' : '#f7f7f7'};">
+        <td style="padding: 10px;">${item}</td>
+        <td style="padding: 10px; text-align: right;">$${price}</td>
+      </tr>
+    `;
+  })
+  .join("");
+
+
+if (!userEmail) {
+  alert("Please enter your email.");
+  return;
+}
+
+  const userEmail = document.getElementById("customerEmail").value;
+
+  if (!userEmail) {
+    alert("Please enter your email.");
+    return;
+  }
+
+  const templateParams = {
+    total_price: total,
+    itemized_list: itemizedHTML,
+    user_email: userEmail
+  };
+  
+
+  emailjs.send("service_tpqh7vw", "template_lckjawf", templateParams)
+    .then(() => alert("✅ Estimate sent!"))
+    .catch(err => alert("❌ Error sending estimate: " + JSON.stringify(err)));
+}
+
+  </script>
+
+  <!-- Your Calculator JS -->
+  <script src="calc.js"></script>
 </body>
 </html>

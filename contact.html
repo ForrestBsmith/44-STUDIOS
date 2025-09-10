@@ -47,36 +47,70 @@
   </div>
 </nav>
 
-<!-- Main Content -->
-  <div class="my-5">
-    <div class="text-center mb-4">
-      <h2>Contact Us</h2>
-      <p>We'd love to hear from you! Please fill out the form below to get in touch.</p>
-    </div>
-  </div>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Your Name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="">Your Email
-          </div>  
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
-          </div>
-          <div class="text-center">
-          <button type="submit" class="btn bg-white mt-5">Submit</button>
-          </div> 
-        </form>
-      </div>  
-    </div>
+<form id="contactForm" class="p-4 rounded-4 shadow-lg" style="background-color: #5b5f6d5d; max-width: 600px; margin: auto;">
+  
+  <h2 class="text-center mb-4" style="color: #ffffff;">Contact Us</h2>
+  <p class="text-center text-white mb-4">We’d love to hear from you! Fill out the form below.</p>
+
+  <div class="mb-3">
+    <label for="name" class="form-label text-white fw-bold">Name</label>
+    <input type="text" class="form-control form-control-lg bg-dark text-white border-secondary" id="name" placeholder="Your Name" required>
   </div>
 
+  <div class="mb-3">
+    <label for="email" class="form-label text-white fw-bold">Email</label>
+    <input type="email" class="form-control form-control-lg bg-dark text-white border-secondary" id="email" placeholder="Your Email" required>
+  </div>  
+
+  <div class="mb-3">
+    <label for="message" class="form-label text-white fw-bold">Message</label>
+    <textarea class="form-control form-control-lg bg-dark text-white border-secondary" id="message" rows="5" placeholder="Your Message" required></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-lg text-dark fw-bold" style="background-color: #ffffff; border-radius: 50px; padding: 10px 40px; transition: 0.3s;">
+      Submit
+    </button>
+  </div>
+</form>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your EmailJS public key
+  })();
+
+  // Handle form submission
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const userEmail = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    if (!name || !userEmail || !message) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const templateParams = {
+      user_name: name,
+      user_email: userEmail,
+      user_message: message
+    };
+
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+      .then(() => {
+        alert("✅ Message sent! You and 44 Studios will receive it.");
+        document.getElementById("contactForm").reset();
+      })
+      .catch(err => {
+        alert("❌ Error sending message: " + JSON.stringify(err));
+      });
+  });
+</script>
 
   <!--footer-->
   <div class="container-fluid bg-dark text-white p-3">
