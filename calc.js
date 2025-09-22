@@ -1,4 +1,6 @@
-// Pricing data
+// =========================
+// Pricing Data
+// =========================
 const pricingData = {
   tier1: {
     "None": [0],
@@ -44,7 +46,9 @@ const recurringServices = {
   "Email Marketing Campaigns": [75, 150, 225, 300]
 };
 
-// Populate Tier dropdowns
+// =========================
+// Populate Select Dropdown
+// =========================
 function populateSelect(select, options) {
   select.innerHTML = "";
   for (let key in options) {
@@ -56,8 +60,10 @@ function populateSelect(select, options) {
   }
 }
 
-// Populate checkbox groups
-function populateCheckboxGroup(container, options) {
+// =========================
+// Populate Checkbox Groups
+// =========================
+function populateCheckboxGroup(container, options, monthly = false) {
   container.innerHTML = "";
   for (let key in options) {
     const div = document.createElement("div");
@@ -67,53 +73,35 @@ function populateCheckboxGroup(container, options) {
         <input type="checkbox" data-key="${key}"> ${key}
       </label>
       <select disabled>
-        ${options[key].map((p,i)=>`<option value="${i}">Lvl ${i+1} ($${p})</option>`).join('')}
+        ${options[key]
+          .map((p, i) =>
+            `<option value="${i}">Lvl ${i+1} ($${p}${monthly ? "/mo" : ""})</option>`
+          ).join("")}
       </select>
     `;
     container.appendChild(div);
   }
-}
 
-// Populate recurring services
-function populateRecurringServices() {
-  const container = document.getElementById("recurringServicesContainer");
-  container.innerHTML = "";
-  for (let key in recurringServices) {
-    const div = document.createElement("div");
-    div.className = "checkbox-item";
-    div.innerHTML = `
-      <label>
-        <input type="checkbox" data-key="${key}"> ${key}
-      </label>
-      <select disabled>
-        ${recurringServices[key].map((p,i)=>`<option value="${i}">Lvl ${i+1} ($${p}/mo)</option>`).join('')}
-      </select>
-    `;
-    container.appendChild(div);
-  }
-}
-
-// Enable/disable selects and add change listeners
-function setupCheckboxListeners() {
-  ["#addOns", "#apiIntegrations", "#recurringServicesContainer"].forEach(id=>{
-    const container = document.querySelector(id);
-    container.querySelectorAll("input[type=checkbox]").forEach(cb=>{
-      cb.addEventListener("change", ()=>{
-        const select = cb.closest(".checkbox-item").querySelector("select");
-        select.disabled = !cb.checked;
-        calculateTotal();
-      });
+  // ✅ Bind events right after creating elements
+  container.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    cb.addEventListener("change", () => {
+      const select = cb.closest(".checkbox-item").querySelector("select");
+      select.disabled = !cb.checked;
+      calculateTotal();
     });
-    container.querySelectorAll("select").forEach(sel=>{
-      sel.addEventListener("change", ()=>{
-        updatePricePreview(sel);
-        calculateTotal();
-      });
+  });
+
+  container.querySelectorAll("select").forEach(sel => {
+    sel.addEventListener("change", () => {
+      updatePricePreview(sel);
+      calculateTotal();
     });
   });
 }
 
-// Show price preview next to select
+// =========================
+// Price Preview Next to Label
+// =========================
 function updatePricePreview(sel) {
   const label = sel.previousElementSibling;
   label.querySelector(".price-preview")?.remove();
@@ -127,7 +115,9 @@ function updatePricePreview(sel) {
   label.appendChild(span);
 }
 
-// Calculate total and update itemized list
+// =========================
+// Calculate Total
+// =========================
 function calculateTotal() {
   let total = 0;
   let itemized = [];
@@ -148,28 +138,30 @@ function calculateTotal() {
 
   [["#addOns", pricingData.addOns, "Add-On"], 
    ["#apiIntegrations", pricingData.apiIntegrations, "API"], 
-   ["#recurringServicesContainer", recurringServices, "Monthly"]].forEach(([id, data, labelText])=>{
-    document.querySelectorAll(`${id} input[type=checkbox]:checked`).forEach(cb=>{
+   ["#recurringServicesContainer", recurringServices, "Monthly"]]
+   .forEach(([id, data, labelText]) => {
+    document.querySelectorAll(`${id} input[type=checkbox]:checked`).forEach(cb => {
       const key = cb.dataset.key;
       const select = cb.closest(".checkbox-item").querySelector("select");
       const price = data[key][select.value];
       total += price;
-      itemized.push(`${key} (${labelText}) - $${price}${labelText==="Monthly"?"/mo":""}`);
+      itemized.push(`${key} (${labelText}) - $${price}${labelText==="Monthly" ? "/mo" : ""}`);
     });
   });
 
   document.getElementById("totalPrice").textContent = `$${total}`;
-  document.getElementById("itemizedList").innerHTML = itemized.map(i=>`<div>${i}</div>`).join('');
+  document.getElementById("itemizedList").innerHTML = itemized.map(i => `<div>${i}</div>`).join('');
 }
 
-// Initialize everything
+// =========================
+// Initialize Calculator
+// =========================
 function initCalculator() {
   populateSelect(document.getElementById("tier1"), pricingData.tier1);
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
   populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
   populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
-  populateRecurringServices();
-  setupCheckboxListeners();
+  populateCheckboxGroup(document.getElementById("recurringServicesContainer"), recurringServices, true);
 
   document.getElementById("tier1").addEventListener("change", calculateTotal);
   document.getElementById("tier2").addEventListener("change", calculateTotal);
@@ -177,5 +169,7 @@ function initCalculator() {
   calculateTotal();
 }
 
+// =========================
 // Run after DOM is ready
+// =========================
 document.addEventListener("DOMContentLoaded", initCalculator);

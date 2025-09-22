@@ -341,61 +341,52 @@
   });
 </script>
 
-  <!-- Bootstrap -->
+   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- EmailJS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   <script>
     (function () {
-      emailjs.init("jEkKlN8wE8xMPUIS4"); // 🔑 replace with your EmailJS public key
+      emailjs.init("jEkKlN8wE8xMPUIS4"); // replace with your public key
     })();
 
-   function sendEstimate() {
-  const total = document.getElementById("totalPrice").textContent;
+    function sendEstimate() {
+      const total = document.getElementById("totalPrice").textContent;
 
-  // Convert itemized divs into <li> HTML
-  const itemizedDivs = document.querySelectorAll("#itemizedList div");
- const itemizedHTML = Array.from(itemizedDivs)
-  .map((div, index) => {
-    const [item, price] = div.textContent.split(" - $");
-    return `
-      <tr style="background-color: ${index % 2 === 0 ? '#fff' : '#f7f7f7'};">
-        <td style="padding: 10px;">${item}</td>
-        <td style="padding: 10px; text-align: right;">$${price}</td>
-      </tr>
-    `;
-  })
-  .join("");
+      const itemizedDivs = document.querySelectorAll("#itemizedList div");
+      const itemizedHTML = Array.from(itemizedDivs)
+        .map((div, index) => {
+          const [item, price] = div.textContent.split(" - $");
+          return `
+            <tr style="background-color: ${index % 2 === 0 ? '#fff' : '#f7f7f7'};">
+              <td style="padding: 10px;">${item}</td>
+              <td style="padding: 10px; text-align: right;">$${price}</td>
+            </tr>
+          `;
+        })
+        .join("");
 
+      const userEmail = document.getElementById("customerEmail").value;
+      if (!userEmail) {
+        alert("Please enter your email.");
+        return;
+      }
 
-if (!userEmail) {
-  alert("Please enter your email.");
-  return;
-}
+      const templateParams = {
+        total_price: total,
+        itemized_list: itemizedHTML,
+        user_email: userEmail
+      };
 
-  const userEmail = document.getElementById("customerEmail").value;
-
-  if (!userEmail) {
-    alert("Please enter your email.");
-    return;
-  }
-
-  const templateParams = {
-    total_price: total,
-    itemized_list: itemizedHTML,
-    user_email: userEmail
-  };
-  
-
-  emailjs.send("service_tpqh7vw", "template_lckjawf", templateParams)
-    .then(() => alert("✅ Estimate sent!"))
-    .catch(err => alert("❌ Error sending estimate: " + JSON.stringify(err)));
-}
-
+      emailjs.send("service_tpqh7vw", "template_lckjawf", templateParams)
+        .then(() => alert("✅ Estimate sent!"))
+        .catch(err => alert("❌ Error sending estimate: " + JSON.stringify(err)));
+    }
   </script>
 
-  <!-- Your Calculator JS -->
-  <script src="calc.js"></script>
+  <!-- Calculator logic -->
+  <script src="calc.js?v=20250922"></script>
 </body>
 </html>
