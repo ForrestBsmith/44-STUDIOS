@@ -1,4 +1,4 @@
-// Pricing data with None defaults
+// Pricing data
 const pricingData = {
   tier1: {
     "None": [0],
@@ -44,8 +44,7 @@ const recurringServices = {
   "Email Marketing Campaigns": [75, 150, 225, 300]
 };
 
-
-// Populate Tier dropdowns with default None
+// Populate Tier dropdowns
 function populateSelect(select, options) {
   select.innerHTML = "";
   for (let key in options) {
@@ -57,7 +56,7 @@ function populateSelect(select, options) {
   }
 }
 
-// Populate Add-On / API checkbox groups
+// Populate checkbox groups
 function populateCheckboxGroup(container, options) {
   container.innerHTML = "";
   for (let key in options) {
@@ -75,7 +74,7 @@ function populateCheckboxGroup(container, options) {
   }
 }
 
-
+// Populate recurring services
 function populateRecurringServices() {
   const container = document.getElementById("recurringServicesContainer");
   container.innerHTML = "";
@@ -92,24 +91,43 @@ function populateRecurringServices() {
     `;
     container.appendChild(div);
   }
+}
 
-  // Enable/disable dropdowns
-  container.querySelectorAll("input[type=checkbox]").forEach(cb=>{
-    cb.addEventListener("change", ()=>{
-      const select = cb.closest(".checkbox-item").querySelector("select");
-      select.disabled = !cb.checked;
-      calculateTotal(); // recalc on change
+// Enable/disable selects and add change listeners
+function setupCheckboxListeners() {
+  ["#addOns", "#apiIntegrations", "#recurringServicesContainer"].forEach(id=>{
+    const container = document.querySelector(id);
+    container.querySelectorAll("input[type=checkbox]").forEach(cb=>{
+      cb.addEventListener("change", ()=>{
+        const select = cb.closest(".checkbox-item").querySelector("select");
+        select.disabled = !cb.checked;
+        calculateTotal();
+      });
     });
-  });
-
-  // Update total when level changes
-  container.querySelectorAll("select").forEach(sel=>{
-    sel.addEventListener("change", calculateTotal);
+    container.querySelectorAll("select").forEach(sel=>{
+      sel.addEventListener("change", ()=>{
+        updatePricePreview(sel);
+        calculateTotal();
+      });
+    });
   });
 }
 
+// Show price preview next to select
+function updatePricePreview(sel) {
+  const label = sel.previousElementSibling;
+  label.querySelector(".price-preview")?.remove();
+  const price = sel.options[sel.value].textContent.match(/\$(\d+)/)[1];
+  const span = document.createElement("span");
+  span.className = "price-preview";
+  span.style.marginLeft = "10px";
+  span.style.fontWeight = "600";
+  span.style.color = "#1e5fa8";
+  span.textContent = `($${price})`;
+  label.appendChild(span);
+}
 
-// Calculate total and itemized
+// Calculate total and update itemized list
 function calculateTotal() {
   let total = 0;
   let itemized = [];
@@ -117,67 +135,31 @@ function calculateTotal() {
   const tier1Select = document.getElementById("tier1");
   const tier2Select = document.getElementById("tier2");
 
-  // Tier 1
   if (tier1Select.value !== "None") {
     const price = pricingData.tier1[tier1Select.value][0];
     total += price;
     itemized.push(`${tier1Select.value} (Tier1) - $${price}`);
   }
-
-  // Tier 2
   if (tier2Select.value !== "None") {
     const price = pricingData.tier2[tier2Select.value][0];
     total += price;
     itemized.push(`${tier2Select.value} (Tier2) - $${price}`);
   }
 
-  // Add-Ons
-  document.querySelectorAll(".addOns input[type=checkbox]:checked").forEach(cb=>{
-    const key = cb.dataset.key;
-    const select = cb.closest(".checkbox-item").querySelector("select");
-    const price = pricingData.addOns[key][select.value];
-    total += price;
-    itemized.push(`${key} (Add-On) - $${price}`);
-  });
-
-  // API Integrations
-  document.querySelectorAll(".apiIntegrations input[type=checkbox]:checked").forEach(cb=>{
-    const key = cb.dataset.key;
-    const select = cb.closest(".checkbox-item").querySelector("select");
-    const price = pricingData.apiIntegrations[key][select.value];
-    total += price;
-    itemized.push(`${key} (API) - $${price}`);
-  });
-
-  // Recurring Services
-  // inside calculateTotal()
-document.querySelectorAll(".recurringServices input[type=checkbox]:checked").forEach(cb=>{
-  const key = cb.dataset.key;
-  const select = cb.closest(".checkbox-item").querySelector("select");
-  const price = recurringServices[key][select.value];
-  total += price; // add to total
-  itemized.push(`${key} (Monthly) - $${price}/mo`);
-});
-
-
-  document.getElementById("totalPrice").textContent = `$${total}`;
-  document.getElementById("itemizedList").innerHTML = itemized.map(i=>`<div>${i}</div>`).join('');
-}
-
-// Enable/disable level selects for Add-Ons / API checkboxes
-function setupCheckboxListeners() {
-  document.querySelectorAll(".checkbox-group input[type=checkbox]").forEach(cb=>{
-    cb.addEventListener("change", ()=>{
+  [["#addOns", pricingData.addOns, "Add-On"], 
+   ["#apiIntegrations", pricingData.apiIntegrations, "API"], 
+   ["#recurringServicesContainer", recurringServices, "Monthly"]].forEach(([id, data, labelText])=>{
+    document.querySelectorAll(`${id} input[type=checkbox]:checked`).forEach(cb=>{
+      const key = cb.dataset.key;
       const select = cb.closest(".checkbox-item").querySelector("select");
-      select.disabled = !cb.checked;
-      calculateTotal();
+      const price = data[key][select.value];
+      total += price;
+      itemized.push(`${key} (${labelText}) - $${price}${labelText==="Monthly"?"/mo":""}`);
     });
   });
 
-  // Update total when level is changed
-  document.querySelectorAll(".checkbox-group select").forEach(sel=>{
-    sel.addEventListener("change", calculateTotal);
-  });
+  document.getElementById("totalPrice").textContent = `$${total}`;
+  document.getElementById("itemizedList").innerHTML = itemized.map(i=>`<div>${i}</div>`).join('');
 }
 
 // Initialize everything
@@ -186,13 +168,13 @@ function initCalculator() {
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
   populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
   populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
-  populateRecurringServices(); // new line
+  populateRecurringServices();
   setupCheckboxListeners();
 
   document.getElementById("tier1").addEventListener("change", calculateTotal);
   document.getElementById("tier2").addEventListener("change", calculateTotal);
 
-  calculateTotal(); // initial total
+  calculateTotal();
 }
 
 // Run after DOM is ready

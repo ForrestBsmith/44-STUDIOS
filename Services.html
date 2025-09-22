@@ -83,46 +83,253 @@
   </nav>
  
   <div class="bg-dark text-white p-3">
-      <h1 class="text-center mb-5 mt-5" style="font-weight: 300;">Professional Web Design & SEO Services</h1>
+      <h1 class="text-center mb-5 mt-5" style="font-weight: 300;">Professional Web Design & Digital Solutions</h1>
     <p class="text-center mb-4" style="font-size: 1.5em;">
         At 44 Studios, we offer custom web design, SEO, and digital solutions tailored to help your business grow online. 
         Select a package or combination of services below to receive an estimated price. Our team will review your selections and provide a detailed consultation.
     </p>
 
-    <div class="container">
-      <!-- Tier 1 -->
-      <div class="card"><h3>Tier 1: Quick Launch</h3><label>Select Package:</label><select id="tier1"></select></div>
+  <!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      <!-- Tier 2 -->
-      <div class="card"><h3>Tier 2: Premium Custom</h3><label>Select Service:</label><select id="tier2"></select></div>
+<style>
+  /* Container for main content + sidebar */
+  .estimate-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
-      <!-- Add-Ons -->
-      <div class="card addOns"><h3>Add-Ons</h3><div class="checkbox-group" id="addOns"></div></div>
+  /* Left column: Services */
+  .services {
+    flex: 1 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
 
-      <!-- API Integrations -->
-      <div class="card apiIntegrations"><h3>API Integrations</h3><div class="checkbox-group" id="apiIntegrations"></div></div>
+  /* Tier row side by side */
+  .tier-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
 
-      <!-- Recurring Services -->
-      <div class="card recurringServices"><h3>Monthly Recurring Services</h3><div class="checkbox-group" id="recurringServicesContainer"></div></div>
+  .tier-row .card {
+    flex: 1 1 280px;
+  }
 
-      <!-- Total -->
-      <div class="card total-card">
-        <h3>Estimated Total</h3>
-        <div id="totalPrice">$0</div>
-        <div class="itemized" id="itemizedList"></div>
+  /* Card styling */
+  .card {
+    background: #ffffff00;
+    color: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  /* Collapsible sections */
+  .collapsible {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: color 0.2s;
+  }
+
+  .collapsible:hover {
+    color: #1e5fa8;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding-top: 0;
+  }
+
+  .content.open {
+    padding-top: 15px;
+  }
+
+  /* Highlight selection for dropdowns */
+  select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  select:focus {
+    border-color: #1e5fa8;
+    box-shadow: 0 0 5px rgba(30,95,168,0.3);
+    outline: none;
+  }
+
+  /* Checkbox group styling */
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    accent-color: #1e5fa8;
+  }
+
+  .checkbox-group label:hover {
+    background: #6c6c6d;
+  }
+
+  /* Sidebar: Sticky estimate */
+  .estimate-sidebar {
+    flex: 0 0 320px;
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+  }
+
+  .estimate-sidebar .total-card {
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .total-card #totalPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #ffffff;
+  }
+
+  .itemized {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #c9b9b9;
+  }
+
+  /* Buttons */
+  .btn {
+    background: #acacb4;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn:hover {
+    background:#6c6c6d;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .estimate-container {
+      flex-direction: column;
+    }
+    .estimate-sidebar {
+      position: relative;
+      top: auto;
+      width: 100%;
+    }
+    .tier-row {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="estimate-container">
+  <!-- Left: Services -->
+  <div class="services">
+
+    <!-- Tier 1 & Tier 2 -->
+    <div class="tier-row">
+      <div class="card">
+        <h3><i class="fa-solid fa-rocket"></i> Quick Launch Packages</h3>
+        <label>Select Package:</label>
+        <select id="tier1"></select>
+      </div>
+
+      <div class="card">
+        <h3><i class="fa-solid fa-cogs"></i> Premium Custom</h3>
+        <label>Select Service:</label>
+        <select id="tier2"></select>
       </div>
     </div>
 
-    <!-- Customer Email Input -->
-    <div class="text-center mb-3">
-      <input type="email" id="customerEmail" class="form-control w-50 mx-auto" placeholder="Enter your email">
+    <!-- Add-Ons -->
+    <div class="card">
+      <div class="collapsible"><span><i class="fa-solid fa-plus"></i> Add-Ons</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="content checkbox-group" id="addOns"></div>
     </div>
 
-    <!-- Send Estimate -->
-    <div class="text-center mb-5">
-      <button class="btn bg-white" onclick="sendEstimate()">Send Estimate</button>
+    <!-- API Integrations -->
+    <div class="card">
+      <div class="collapsible"><span><i class="fa-solid fa-plug"></i> API Integrations</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="content checkbox-group" id="apiIntegrations"></div>
+    </div>
+
+    <!-- Recurring Services -->
+    <div class="card">
+      <div class="collapsible"><span><i class="fa-solid fa-calendar-alt"></i> Monthly Recurring Services</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="content checkbox-group" id="recurringServicesContainer"></div>
+    </div>
+
+  </div>
+
+  <!-- Right: Sticky Estimate -->
+  <div class="estimate-sidebar">
+    <div class="card total-card">
+      <h3><i class="fa-solid fa-calculator"></i> Estimated Total</h3>
+      <div id="totalPrice">$0</div>
+      <div class="itemized" id="itemizedList"></div>
+    </div>
+
+    <!-- Customer Email Input -->
+    <div class="card mt-4">
+      <input type="email" id="customerEmail" class="form-control w-100" placeholder="Enter your email">
+      <button class="btn w-100 mt-2" onclick="sendEstimate()">Send Estimate</button>
     </div>
   </div>
+</div>
+
+<script>
+  // Collapsible sections with smooth animation
+  document.querySelectorAll('.collapsible').forEach(el => {
+    el.addEventListener('click', () => {
+      const content = el.nextElementSibling;
+      content.classList.toggle('open');
+      if (content.classList.contains('open')) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        el.querySelector('.fa-chevron-down').classList.replace('fa-chevron-down','fa-chevron-up');
+      } else {
+        content.style.maxHeight = null;
+        el.querySelector('.fa-chevron-up').classList.replace('fa-chevron-up','fa-chevron-down');
+      }
+    });
+  });
+</script>
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
