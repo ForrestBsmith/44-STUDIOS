@@ -55,6 +55,16 @@ ul{
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: 500 !important;
+   color: black !important;           /* default text color */
+  background-color: white !important; /* default background */
+  transition: all 0.3s ease;         /* smooth hover */ 
+}
+
+.contact:hover {
+  background-color: #a8aaad !important; /* brand color */
+  color: white !important;              /* text turns white on hover */
+  text-decoration: none !important;     /* remove underline if any */
+  transform: translateY(-2px);          /* subtle lift effect */
 }
 
 .packages{
@@ -69,6 +79,21 @@ ul{
   background-color: #f0eeee !important;
   color: black !important;
   cursor: pointer;
+}
+
+#contactForm button[type="submit"] {
+  background-color: #ffffff;      /* default background */
+  color: #000;                    /* default text color */
+  border-radius: 50px;            /* keep the rounded style */
+  padding: 10px 40px;             /* match your inline style */
+  font-weight: bold;
+  transition: all 0.3s ease;      /* smooth hover transition */
+}
+
+#contactForm button[type="submit"]:hover {
+  background-color: #a8aaad;      /* brand hover color */
+  color: #ffffff !important;                 /* white text on hover */
+  transform: translateY(-2px);    /* subtle lift effect */
 }
 
 
