@@ -104,64 +104,77 @@ ul{
 }
 
 /* Make text and spacing tighter on phones */
+/* ===== Phones (≤576px) ===== */
 @media (max-width: 576px) {
+  /* Typography */
+  .header { font-size: 2.5rem !important; }
+  .nav-link { font-size: 1.5rem !important; text-align: center; }
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.1rem !important; }
 
-     .header { font-size: 3rem !important;}
-  .nav-link { font-size: 2rem !important; text-decoration: none !important; text-align: center; }
-  h1 { font-size: 3.5em !important; }
+  ul.navbar-nav { margin-top: 30px !important; }
+  ul li { font-size: 1.2em; margin-bottom: 5px; }
 
-  ul.navbar-nav {
-    margin-top: 50px !important;
+  /* Layout → STACK everything */
+  .estimate-container,
+  .tier-row {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 15px;
+    padding: 0 10px;
   }
-ul li {
-    font-size: 1.5em;
-    margin-bottom: 1px;
-  }
-  h2 {
-    font-size: 2em;
-  }
-  h3 {
-    font-size: 1.25em;
-  }
+
+  /* Cards full-width */
   .card {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
     padding: 1rem;
+    box-sizing: border-box;
   }
+
+  /* Form adjustments */
   select, label {
     font-size: 0.9em;
-  }
-    .container {
-    flex-direction: column;   /* stack cards vertically */
-    gap: 15px;                /* reduce gap for phones */
-  }
-
-  .card {
-    flex: 1 1 100%;           /* take full width */
-    min-width: auto;          /* remove min-width restriction */
+    width: 100%;
   }
 
   .checkbox-item {
-    flex-direction: column;   /* stack label + select */
+    flex-direction: column;
     align-items: flex-start;
   }
 
   .checkbox-item select {
-    margin-left: 0;
-    margin-top: 5px;
-    width: 100%;              /* dropdown spans full width */
-  }
-    .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .card {
-    flex: 1 1 100%;
-    min-width: auto;   /* remove min-width restriction */
-    width: 100%;       /* ensure full width */
+    margin: 5px 0 0;
+    width: 100%;
   }
 }
-@media (max-width: 576px) {
-  .header { font-size: 2.5rem !important; }
-  h1 { font-size: 2.5em !important; }
-  h2 { font-size: 1.8em !important; }
-  h3 { font-size: 1.2em !important; }
+
+/* ===== Tablets (≤900px) ===== */
+@media (max-width: 900px) {
+  .header { font-size: 3rem !important; }
+  .nav-link { font-size: 1.75rem !important; text-align: center; }
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.2rem !important; }
+
+  ul.navbar-nav { margin-top: 20px !important; }
+  ul li { font-size: 1.3em; margin-bottom: 10px; }
+
+  /* Cards can be 2 per row if space allows */
+  .estimate-container,
+  .tier-row {
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 250px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
