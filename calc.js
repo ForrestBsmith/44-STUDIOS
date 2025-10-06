@@ -4,47 +4,46 @@
 const pricingData = {
   tier1: {
     "None": [0],
-    "Starter Website": [500, 733, 967, 1200],
-    "Landing Page": [400, 500, 600, 700],
-    "Basic WordPress / Shopify Setup": [600, 800, 1000, 1200],
-    "Small E-commerce Setup": [800, 1033, 1267, 1500]
+    "Landing Page": [750, 733, 967, 1200],
+    "Starter Website": [900, 1000, 1100, 1300],
+    "Basic WordPress / Shopify Setup": [1500, 1300, 1300, 1500],
+    "Small E-commerce Setup": [2500, 1500, 1800, 2100]
   },
   tier2: {
     "None": [0],
-    "Custom-coded website": [3000, 4500, 6000, 7500],
-    "E-commerce store": [5000, 7333, 9667, 12000],
-    "Web app / SaaS dashboards": [6000, 9000, 12000, 15000],
-    "Branding & UI/UX": [500, 1000, 1500, 2000]
+    "Custom-coded Website": [3500, 5000, 6500, 8000],
+    "E-commerce Store": [6000, 8500, 11000, 13500],
+    "Web Application": [7000, 10000, 13000, 16000],
+    "Branding & UI/UX": [800, 1200, 1600, 2000]
   },
   addOns: {
-    "Custom Animation": [150, 233, 317, 400],
-    "SEO Optimization": [100, 167, 233, 300],
-    "E-Commerce Integration": [250, 367, 483, 600],
-    "Blog / CMS Setup": [200, 300, 400, 500],
-    "Advanced Forms": [75, 117, 158, 200],
-    "Responsive Testing & Fixes": [50, 83, 117, 150],
-    "Performance Optimization": [100, 167, 233, 300],
-    "Custom API Integration": [200, 300, 400, 500]
+    "Custom Animation": [200, 300, 400, 500],
+    "SEO Optimization": [150, 250, 350, 450],
+    "Blog / CMS Setup": [250, 350, 450, 550],
+    "Advanced Forms": [100, 150, 200, 250],
+    "Responsive Testing & Fixes": [75, 125, 175, 225],
+    "Performance Optimization": [150, 250, 350, 450],
+    "Custom API Integration": [300, 400, 500, 600]
   },
   apiIntegrations: {
-    "Payment & E-Commerce": [200, 300, 400, 500],
-    "Booking & Appointments": [150, 233, 317, 400],
-    "Social Media Integration": [100, 167, 233, 300],
-    "Maps & Location": [100, 150, 200, 250],
-    "Email Marketing": [150, 217, 283, 350],
-    "Chat & Customer Support": [200, 267, 333, 400],
-    "Analytics & Tracking": [100, 150, 200, 250],
-    "AI & Content Tools": [150, 233, 317, 400],
-    "Review & Reputation": [100, 150, 200, 250],
-    "Security & Authentication": [150, 217, 283, 350]
+    "Booking & Appointments": [200, 300, 400, 500],
+    "Social Media Integration": [150, 225, 300, 375],
+    "Maps & Location": [125, 175, 225, 275],
+    "Email Marketing": [200, 275, 350, 425],
+    "Chat & Customer Support": [250, 325, 400, 475],
+    "Analytics & Tracking": [150, 200, 250, 300],
+    "AI & Content Tools": [200, 300, 400, 500],
+    "Review & Reputation": [150, 200, 250, 300],
+    "Security & Authentication": [200, 275, 350, 425]
   }
 };
 
 const recurringServices = {
-  "SEO & Analytics Monitoring": [100, 200, 300, 400],
-  "Maintenance & Support": [150, 250, 350, 500],
-  "Email Marketing Campaigns": [75, 150, 225, 300]
+  "SEO & Analytics Monitoring": [150, 250, 350, 450],
+  "Maintenance & Support": [200, 300, 400, 550],
+  "Email Marketing Campaigns": [100, 175, 250, 325],
 };
+
 
 // =========================
 // Populate Select Dropdown
