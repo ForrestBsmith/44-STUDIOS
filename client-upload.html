@@ -7,7 +7,6 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f4f6f9;
       font-family: "Segoe UI", Arial, sans-serif;
     }
     .container {
@@ -19,7 +18,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
     h2, h4 {
-      color: #2e7d32;
+      color: #ffffff;
       font-weight: 600;
     }
     .form-section {
@@ -28,20 +27,20 @@
       padding-bottom: 1.5rem;
     }
     .btn-primary {
-      background-color: #2e7d32;
-      border-color: #2e7d32;
+      background-color: #3a3c44;
+      border-color: #ffffff;
     }
     .btn-primary:hover {
-      background-color: #256828;
-      border-color: #256828;
+      background-color: #515663;
+      border-color: #ffffff;
     }
     label {
       font-weight: 500;
     }
   </style>
 </head>
-<body>
-  <div class="container">
+<body class="bg-dark text-white">
+  <div class="container bg-dark">
     <h2 class="text-center mb-4">Client Website Intake & Upload Form</h2>
     <form action="/upload" method="POST" enctype="multipart/form-data">
 
@@ -90,6 +89,23 @@
         <div class="form-check"><input type="checkbox" class="form-check-input" name="goals[]" value="Book Appointments"><label class="form-check-label">Book Appointments</label></div>
       </div>
 
+      <!--  Hex Codes & Theme -->
+      <div class="form-section">
+        <h4>Brand Colors & Theme</h4>
+        <div class="form-group">
+          <label>Primary Brand Color (Hex Code)</label>
+          <input type="text" class="form-control" name="primary_color" placeholder="#FFFFFF">
+        </div>
+        <div class="form-group">
+          <label>Secondary Brand Color (Hex Code)</label>
+          <input type="text" class="form-control" name="secondary_color" placeholder="#000000">
+        </div>
+        <div class="form-group">
+          <label>Additional Colors (Hex Codes)</label>
+          <input type="text" class="form-control" name="additional_colors" placeholder="#FF5733, #33FF57">
+        </div>
+      </div>
+
       <!-- 3. Design Preferences -->
       <div class="form-section">
         <h4>Branding & Design</h4>
@@ -132,7 +148,8 @@
       <!-- 6. Upload Section -->
       <div class="form-section">
         <h4>Upload Your Content</h4>
-        <p>Please upload your logo, brand guide, text content, or images you'd like on the site.</p>
+<p>Upload your content here — like images, text, videos, and brand materials. To keep things organized, place each type of file in its own folder (for example: “Images,” “Text,” “Videos”). Please include text file containing any extra instructions and guidelines.</p>
+        <span class="text-muted">Accepted formats: .jpg, .png, .pdf, .docx (Max size: 10MB each)</span>
         <input type="file" class="form-control-file" name="files" id="fileInput" multiple>
       </div>
 
