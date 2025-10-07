@@ -316,8 +316,9 @@
     </div>
 
     <!-- Customer Email Input -->
-    <div class="card mt-4">
-      <input type="email" id="customerEmail" class="form-control w-100" placeholder="Enter your email">
+    <div class="card mt-4">      
+      <input type="email" id="customerName" class="form-control w-100" placeholder="Enter your name">
+      <input type="email" id="customerEmail" class="form-control w-100 mt-2" placeholder="Enter your email">
       <button class="btn w-100 mt-2" onclick="sendEstimate()">Send Estimate</button>
     </div>
   </div>
@@ -335,68 +336,191 @@
   <footer class="bg-dark text-white text-center py-4">
     <p class="mb-0">&copy; 2024 44 Studios. All rights reserved.</p>
   </footer>
+
 <script>
-  // Collapsible sections with smooth animation
-  document.querySelectorAll('.collapsible').forEach(el => {
-    el.addEventListener('click', () => {
-      const content = el.nextElementSibling;
-      content.classList.toggle('open');
-      if (content.classList.contains('open')) {
-        content.style.maxHeight = content.scrollHeight + "px";
-        el.querySelector('.fa-chevron-down').classList.replace('fa-chevron-down','fa-chevron-up');
-      } else {
-        content.style.maxHeight = null;
-        el.querySelector('.fa-chevron-up').classList.replace('fa-chevron-up','fa-chevron-down');
+// =========================
+// Pricing Data
+// =========================
+const pricingData = {
+  tier1: {
+    "None": [0], "Landing Page": [750], "Starter Website": [900], 
+    "Basic WordPress / Shopify Setup": [1500], "Small E-commerce Setup": [2500]
+  },
+  tier2: {
+    "None": [0], "Custom-coded Website": [3500], "E-commerce Store": [6000],
+    "Web Application": [7000]
+  },
+  addOns: {
+    "Custom Animation": [200], "SEO Optimization": [150], "Blog / CMS Setup": [250],
+    "Advanced Forms": [100], "Responsive Testing & Fixes": [75], "Performance Optimization": [150],
+    "Custom API Integration": [300]
+  },
+  apiIntegrations: {
+    "Booking & Appointments": [200], "Social Media Integration": [150], "Maps & Location": [125],
+    "Email Marketing": [200], "Chat & Customer Support": [250], "Analytics & Tracking": [150],
+    "AI & Content Tools": [200], "Review & Reputation": [150], "Security & Authentication": [200]
+  }
+};
+const recurringServices = {
+  "SEO & Analytics Monitoring": [150], "Maintenance & Support": [200], "Email Marketing Campaigns": [100]
+};
+
+// =========================
+// Helper Functions
+// =========================
+function populateSelect(select, options) {
+  select.innerHTML = "";
+  Object.keys(options).forEach(key => {
+    const price = options[key][0];
+    const opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = `${key} ($${price})`;
+    select.appendChild(opt);
+  });
+}
+
+function populateCheckboxGroup(container, options) {
+  container.innerHTML = "";
+  Object.keys(options).forEach(key => {
+    const div = document.createElement("div");
+    div.className = "checkbox-item";
+    div.innerHTML = `
+      <label><input type="checkbox" data-key="${key}"> ${key}</label>
+      <select disabled>
+        ${options[key].map((p,i)=>`<option value="${i}">Lvl ${i+1} ($${p})</option>`).join("")}
+      </select>
+    `;
+    container.appendChild(div);
+  });
+
+  container.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    cb.addEventListener("change", () => {
+      const sel = cb.closest(".checkbox-item").querySelector("select");
+      if (sel) sel.disabled = !cb.checked;
+      calculateTotal();
+    });
+  });
+
+  container.querySelectorAll("select").forEach(sel => {
+    sel.addEventListener("change", calculateTotal);
+  });
+}
+
+// =========================
+// Calculate Total
+// =========================
+function calculateTotal() {
+  let total = 0;
+  let itemized = [];
+
+  const tier1 = document.getElementById("tier1").value;
+  const tier2 = document.getElementById("tier2").value;
+
+  if (tier1 !== "None") { total += pricingData.tier1[tier1][0]; itemized.push(`${tier1} (Tier1) - $${pricingData.tier1[tier1][0]}`); }
+  if (tier2 !== "None") { total += pricingData.tier2[tier2][0]; itemized.push(`${tier2} (Tier2) - $${pricingData.tier2[tier2][0]}`); }
+
+  [["addOns", pricingData.addOns], ["apiIntegrations", pricingData.apiIntegrations], ["recurringServicesContainer", recurringServices]]
+    .forEach(([id,data])=>{
+      document.querySelectorAll(`#${id} input[type=checkbox]:checked`).forEach(cb=>{
+        const key = cb.dataset.key;
+        const sel = cb.closest(".checkbox-item").querySelector("select");
+        const price = sel ? data[key][sel.value] : data[key][0];
+        total += price;
+        itemized.push(`${key} - $${price}`);
+      });
+    });
+
+  document.getElementById("totalPrice").textContent = `$${total}`;
+  document.getElementById("itemizedList").innerHTML = itemized.map(i=>`<div>${i}</div>`).join("");
+}
+
+// =========================
+// Prefill from Survey
+// =========================
+function prefillFromSurvey() {
+  const data = JSON.parse(localStorage.getItem('surveyData'));
+  if (!data) return;
+  const { name, email, siteType, features=[] } = data;
+
+  const tier1Map = { landing: "Landing Page", business: "Basic WordPress / Shopify Setup", ecommerce: "Small E-commerce Setup", custom: "Custom-coded Website" };
+  const tier2Map = { landing: "None", ecommerce: "E-commerce Store", custom: "Custom-coded Website" };
+  const featureMap = { blog:"Blog / CMS Setup", contact:"Advanced Forms", booking:"Booking & Appointments", seo:"SEO Optimization", cms:"Blog / CMS Setup", ecommerce:"E-commerce Store", custom:"Custom API Integration", "e-mail":"Email Marketing", support:"Maintenance & Support", maps:"Maps & Location" };
+  const alwaysChecked = ["SEO Optimization", "Responsive Testing & Fixes", "Performance Optimization"];
+
+  if (tier1Map[siteType]) document.getElementById("tier1").value = tier1Map[siteType];
+  if (tier2Map[siteType]) document.getElementById("tier2").value = tier2Map[siteType];
+
+  ["addOns","apiIntegrations","recurringServicesContainer"].forEach(id=>{
+    document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(cb=>{
+      const key = cb.dataset.key;
+      if(alwaysChecked.includes(key) || features.some(f=>featureMap[f]===key)){
+        cb.checked=true;
+        const sel = cb.closest(".checkbox-item").querySelector("select");
+        if(sel) sel.disabled=false;
       }
     });
   });
+
+  if(name) document.getElementById("customerName").value = name;
+  if(email) document.getElementById("customerEmail").value = email;
+
+  calculateTotal();
+}
+
+// =========================
+// Initialize
+// =========================
+function initCalculator() {
+  populateSelect(document.getElementById("tier1"), pricingData.tier1);
+  populateSelect(document.getElementById("tier2"), pricingData.tier2);
+  populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
+  populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
+  populateCheckboxGroup(document.getElementById("recurringServicesContainer"), recurringServices);
+
+  document.getElementById("tier1").addEventListener("change", calculateTotal);
+  document.getElementById("tier2").addEventListener("change", calculateTotal);
+
+  prefillFromSurvey();
+  calculateTotal();
+}
+
+document.addEventListener("DOMContentLoaded", initCalculator);
+
+// Collapsible sections
+document.addEventListener("click", e=>{
+  if(!e.target.closest(".collapsible")) return;
+  const el = e.target.closest(".collapsible");
+  const content = el.nextElementSibling;
+  content.classList.toggle("open");
+  content.style.maxHeight = content.classList.contains("open") ? content.scrollHeight+"px" : "0";
+  const icon = el.querySelector(".fa-chevron-down, .fa-chevron-up");
+  icon.classList.toggle("fa-chevron-down");
+  icon.classList.toggle("fa-chevron-up");
+});
+
+// =========================
+// Send Estimate via EmailJS
+// =========================
+function sendEstimate(){
+  const total = document.getElementById("totalPrice").textContent;
+  const itemizedHTML = Array.from(document.querySelectorAll("#itemizedList div"))
+    .map(div=>`<tr><td>${div.textContent.split(" - $")[0]}</td><td>$${div.textContent.split(" - $")[1]}</td></tr>`).join("");
+  const userEmail = document.getElementById("customerEmail").value;
+  const userName = document.getElementById("customerName").value;
+  if(!userEmail || !userName){ alert("Please enter your name and email."); return; }
+
+  const templateParams={total_price:total,itemized_list:itemizedHTML,user_email:userEmail,user_name:userName};
+  emailjs.send("service_tpqh7vw","template_lckjawf",templateParams)
+    .then(()=>alert("✅ Estimate sent!"))
+    .catch(err=>alert("❌ Error sending estimate: "+JSON.stringify(err)));
+}
 </script>
 
-   <!-- Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-  <script>
-    (function () {
-      emailjs.init("jEkKlN8wE8xMPUIS4"); // replace with your public key
-    })();
-
-    function sendEstimate() {
-      const total = document.getElementById("totalPrice").textContent;
-
-      const itemizedDivs = document.querySelectorAll("#itemizedList div");
-      const itemizedHTML = Array.from(itemizedDivs)
-        .map((div, index) => {
-          const [item, price] = div.textContent.split(" - $");
-          return `
-            <tr style="background-color: ${index % 2 === 0 ? '#fff' : '#f7f7f7'};">
-              <td style="padding: 10px;">${item}</td>
-              <td style="padding: 10px; text-align: right;">$${price}</td>
-            </tr>
-          `;
-        })
-        .join("");
-
-      const userEmail = document.getElementById("customerEmail").value;
-      if (!userEmail) {
-        alert("Please enter your email.");
-        return;
-      }
-
-      const templateParams = {
-        total_price: total,
-        itemized_list: itemizedHTML,
-        user_email: userEmail
-      };
-
-      emailjs.send("service_tpqh7vw", "template_lckjawf", templateParams)
-        .then(() => alert("✅ Estimate sent!"))
-        .catch(err => alert("❌ Error sending estimate: " + JSON.stringify(err)));
-    }
-  </script>
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("jEkKlN8wE8xMPUIS4");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Calculator logic -->
   <script src="calc.js?v=20250922"></script>
 </body>

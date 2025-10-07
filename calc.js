@@ -167,6 +167,90 @@ function initCalculator() {
 
   calculateTotal();
 }
+function prefillFromSurvey() {
+  const data = JSON.parse(localStorage.getItem('surveyData'));
+  if (!data) return;
+
+  const { name, email, siteType, features } = data;
+
+  // ----- Map survey siteType to tiers -----
+  const tier1Map = {
+    'landing': 'Landing Page',
+    'business': 'Starter Website',
+    'ecommerce': 'Small E-commerce Setup',
+    'custom': 'Basic WordPress / Shopify Setup'
+  };
+  const tier2Map = {
+    'landing': 'None',
+    'business': 'Branding & UI/UX',
+    'ecommerce': 'E-commerce Store',
+    'custom': 'Custom-coded Website'
+  };
+
+  const tier1Select = document.getElementById('tier1');
+  const tier2Select = document.getElementById('tier2');
+
+  if (tier1Map[siteType]) tier1Select.value = tier1Map[siteType];
+  if (tier2Map[siteType]) tier2Select.value = tier2Map[siteType];
+
+  // ----- Feature mapping from survey to calculator options -----
+  const featureMap = {
+    'blog': 'Blog / CMS Setup',
+    'contact': 'Advanced Forms',
+    'booking': 'Booking & Appointments',
+    'seo': 'SEO Optimization',
+    'cms': 'Blog / CMS Setup',
+    'ecommerce': 'E-commerce Store',
+    'custom': 'Custom API Integration',
+    'e-mail': 'Email Marketing',
+    'support': 'Maintenance & Support',
+    'maps': 'Maps & Location'
+  };
+
+  const alwaysChecked = ['SEO Optimization', 'Responsive Testing & Fixes'];
+
+  // ----- Prefill Add-Ons -----
+  document.querySelectorAll('#addOns input[type=checkbox]').forEach(cb => {
+    const key = cb.dataset.key;
+    if (alwaysChecked.includes(key) || features.some(f => featureMap[f] === key)) {
+      cb.checked = true;
+      cb.dispatchEvent(new Event('change')); // enable select & update price
+    }
+  });
+
+  // ----- Prefill API Integrations -----
+  document.querySelectorAll('#apiIntegrations input[type=checkbox]').forEach(cb => {
+    const key = cb.dataset.key;
+    if (features.some(f => featureMap[f] === key)) {
+      cb.checked = true;
+      cb.dispatchEvent(new Event('change'));
+    }
+  });
+
+  // ----- Prefill Recurring Services -----
+  document.querySelectorAll('#recurringServicesContainer input[type=checkbox]').forEach(cb => {
+    const key = cb.dataset.key;
+    if (features.some(f => featureMap[f] === key)) {
+      cb.checked = true;
+      cb.dispatchEvent(new Event('change'));
+    }
+  });
+
+  // ----- Prefill customer info -----
+  if (name) document.getElementById('customerName')?.value = name;
+  if (email) document.getElementById('customerEmail')?.value = email;
+
+  // ----- Recalculate total -----
+  calculateTotal();
+}
+
+// ----- Run on page load -----
+document.addEventListener("DOMContentLoaded", () => {
+  initCalculator();       // initialize selects and checkboxes
+  prefillFromSurvey();    // prefill based on survey
+});
+
+
 
 // =========================
 // Run after DOM is ready
