@@ -365,6 +365,13 @@ const recurringServices = {
   "SEO & Analytics Monitoring": [150], "Maintenance & Support": [200], "Email Marketing Campaigns": [100]
 };
 
+window.addEventListener("load", () => {
+  // Use data once, then clear so next refresh is clean
+  if (localStorage.getItem('surveyData')) {
+    setTimeout(() => localStorage.removeItem('surveyData'), 2000);
+  }
+});
+
 // =========================
 // Helper Functions
 // =========================
@@ -440,32 +447,62 @@ function calculateTotal() {
 function prefillFromSurvey() {
   const data = JSON.parse(localStorage.getItem('surveyData'));
   if (!data) return;
-  const { name, email, siteType, features=[] } = data;
 
-  const tier1Map = { landing: "Landing Page", business: "Basic WordPress / Shopify Setup", ecommerce: "Small E-commerce Setup", custom: "Custom-coded Website" };
-  const tier2Map = { landing: "None", ecommerce: "E-commerce Store", custom: "Custom-coded Website" };
-  const featureMap = { blog:"Blog / CMS Setup", contact:"Advanced Forms", booking:"Booking & Appointments", seo:"SEO Optimization", cms:"Blog / CMS Setup", ecommerce:"E-commerce Store", custom:"Custom API Integration", "e-mail":"Email Marketing", support:"Maintenance & Support", maps:"Maps & Location" };
+  const { name, email, siteType, features = [], budget = 0 } = data;
+
+  const tier1Select = document.getElementById("tier1");
+  const tier2Select = document.getElementById("tier2");
+
+  // Maps for standard site types
+  const tier1Map = { landing: "Landing Page", business: "Basic WordPress / Shopify Setup", custom: "Custom-coded Website" };
+  const tier2Map = { landing: "None", business: "Branding & UI/UX", custom: "Custom-coded Website" };
+
+  const featureMap = { 
+    blog: "Blog / CMS Setup", contact: "Advanced Forms", booking: "Booking & Appointments", 
+    seo: "SEO Optimization", cms: "Blog / CMS Setup", ecommerce: "Small E-commerce Setup", 
+    custom: "Custom API Integration", "e-mail": "Email Marketing", support: "Maintenance & Support", 
+    maps: "Maps & Location"
+  };
+
   const alwaysChecked = ["SEO Optimization", "Responsive Testing & Fixes", "Performance Optimization"];
 
-  if (tier1Map[siteType]) document.getElementById("tier1").value = tier1Map[siteType];
-  if (tier2Map[siteType]) document.getElementById("tier2").value = tier2Map[siteType];
+  // ---- Handle e-commerce siteType ----
+  if (siteType === 'ecommerce') {
+    if (budget < 3000) {
+      // Budget too low → pick only Tier 1 (cheaper)
+      tier1Select.value = "Small E-commerce Setup";
+      tier2Select.value = "None";
+    } else {
+      // Budget higher → pick Tier 2, Tier 1 optional
+      tier2Select.value = "E-commerce Store";
+      tier1Select.value = "None";
+    }
+  } else {
+    if (tier1Map[siteType]) tier1Select.value = tier1Map[siteType];
+    if (tier2Map[siteType]) tier2Select.value = tier2Map[siteType];
+  }
 
-  ["addOns","apiIntegrations","recurringServicesContainer"].forEach(id=>{
-    document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(cb=>{
+  // ---- Prefill Add-Ons, API Integrations, Recurring ----
+  ["addOns", "apiIntegrations", "recurringServicesContainer"].forEach(id => {
+    document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(cb => {
       const key = cb.dataset.key;
-      if(alwaysChecked.includes(key) || features.some(f=>featureMap[f]===key)){
-        cb.checked=true;
+      if (alwaysChecked.includes(key) || features.some(f => featureMap[f] === key)) {
+        cb.checked = true;
         const sel = cb.closest(".checkbox-item").querySelector("select");
-        if(sel) sel.disabled=false;
+        if (sel) sel.disabled = false;
       }
     });
   });
 
-  if(name) document.getElementById("customerName").value = name;
-  if(email) document.getElementById("customerEmail").value = email;
+  // ---- Prefill customer info ----
+  if (name) document.getElementById("customerName").value = name;
+  if (email) document.getElementById("customerEmail").value = email;
 
+  // ---- Recalculate total ----
   calculateTotal();
 }
+
+
 
 // =========================
 // Initialize

@@ -155,6 +155,7 @@ function calculateTotal() {
 // =========================
 // Initialize Calculator
 // =========================
+
 function initCalculator() {
   populateSelect(document.getElementById("tier1"), pricingData.tier1);
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
@@ -165,21 +166,24 @@ function initCalculator() {
   document.getElementById("tier1").addEventListener("change", calculateTotal);
   document.getElementById("tier2").addEventListener("change", calculateTotal);
 
+
+
   calculateTotal();
 }
 function prefillFromSurvey() {
   const data = JSON.parse(localStorage.getItem('surveyData'));
   if (!data) return;
 
-  const { name, email, siteType, features } = data;
+  const { name, email, siteType, features, budgetAmount } = data;
 
-  // ----- Map survey siteType to tiers -----
+  // ----- Map site type to tiers -----
   const tier1Map = {
     'landing': 'Landing Page',
     'business': 'Starter Website',
     'ecommerce': 'Small E-commerce Setup',
     'custom': 'Basic WordPress / Shopify Setup'
   };
+
   const tier2Map = {
     'landing': 'None',
     'business': 'Branding & UI/UX',
@@ -187,20 +191,36 @@ function prefillFromSurvey() {
     'custom': 'Custom-coded Website'
   };
 
+  const budget = parseInt(budgetAmount || 0);
+
+  // ✅ Budget-aware adjustment logic
+  if (siteType === 'ecommerce') {
+    if (budget <= 2000) {
+      // Prefer small e-commerce only (Tier 1)
+      tier1Map['ecommerce'] = 'Small E-commerce Setup';
+      tier2Map['ecommerce'] = 'None';
+    } else {
+      // Higher budget → full E-commerce Store
+      tier1Map['ecommerce'] = 'None';
+      tier2Map['ecommerce'] = 'E-commerce Store';
+    }
+  }
+
   const tier1Select = document.getElementById('tier1');
   const tier2Select = document.getElementById('tier2');
 
+  // Apply mapping
   if (tier1Map[siteType]) tier1Select.value = tier1Map[siteType];
   if (tier2Map[siteType]) tier2Select.value = tier2Map[siteType];
 
-  // ----- Feature mapping from survey to calculator options -----
+  // ----- Feature mapping -----
   const featureMap = {
     'blog': 'Blog / CMS Setup',
     'contact': 'Advanced Forms',
     'booking': 'Booking & Appointments',
     'seo': 'SEO Optimization',
     'cms': 'Blog / CMS Setup',
-    'ecommerce': 'E-commerce Store',
+    'ecommerce': 'Small E-commerce Setup',
     'custom': 'Custom API Integration',
     'e-mail': 'Email Marketing',
     'support': 'Maintenance & Support',
@@ -214,7 +234,7 @@ function prefillFromSurvey() {
     const key = cb.dataset.key;
     if (alwaysChecked.includes(key) || features.some(f => featureMap[f] === key)) {
       cb.checked = true;
-      cb.dispatchEvent(new Event('change')); // enable select & update price
+      cb.dispatchEvent(new Event('change'));
     }
   });
 
@@ -236,13 +256,12 @@ function prefillFromSurvey() {
     }
   });
 
-  // ----- Prefill customer info -----
   if (name) document.getElementById('customerName')?.value = name;
   if (email) document.getElementById('customerEmail')?.value = email;
 
-  // ----- Recalculate total -----
   calculateTotal();
 }
+
 
 // ----- Run on page load -----
 document.addEventListener("DOMContentLoaded", () => {

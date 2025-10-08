@@ -138,6 +138,7 @@
   </div>
 
   <script>
+    
    function calculateRecommendation() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -162,6 +163,7 @@
     features
   }));
 
+  
   document.getElementById('recommendation').innerHTML = `
     Your survey has been saved. Click below to continue:
     <button class="btn btn-primary mt-3" onclick="goToCalculator()">Go to Calculator</button>
