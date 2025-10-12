@@ -4,8 +4,8 @@
 const pricingData = {
   tier1: {
     "None": [0],
-    "Landing Page": [750, 733, 967, 1200],
-    "Starter Website": [900, 1000, 1100, 1300],
+    "Landing Page": [650, 733, 967, 1200],
+    "Starter Website": [800, 1000, 1100, 1300],
     "Basic WordPress / Shopify Setup": [1500, 1300, 1300, 1500],
     "Small E-commerce Setup": [2500, 1500, 1800, 2100]
   },

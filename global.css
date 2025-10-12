@@ -1,0 +1,59 @@
+/* ===== Global Shared Styles ===== */
+.read-btn:hover{
+background-color: #ffffff !important;
+color: rgb(33, 33, 33) !important;
+
+}
+.btn:hover{
+background-color: #ffffff !important;
+color: rgb(33, 33, 33) !important;
+}
+.header {
+  font-size: 70px !important;
+  font-weight: 500px !important;
+}
+.header:hover{
+  text-decoration: none !important;
+}
+
+.nav-link {
+  text-decoration: none !important;
+  font-size: 1.5rem !important;
+}
+
+.nav-link:hover {
+  text-decoration: none !important;
+    text-decoration: underline !important;
+
+}
+
+/* General typography */
+h1 { font-size: 70px !important; }
+
+a {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+a:hover {
+  color: #a8aaad;
+      text-decoration: underline !important;
+
+}
+
+/* Shared responsive behavior */
+@media (max-width: 576px) {
+  .header { font-size: 2.5rem !important; }
+  .nav-link { font-size: 1.5rem !important; text-align: center; }
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.1rem !important; }
+}
+
+@media (max-width: 900px) {
+  .header { font-size: 3rem !important; }
+  .nav-link { font-size: 1.75rem !important; text-align: center; }
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.2rem !important; }
+}

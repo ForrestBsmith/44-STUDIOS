@@ -24,7 +24,7 @@ fetch("post.json")
               <div class="blog-card-body">
                 <h5 class="blog-card-title">${post.title}</h5>
                 <p class="blog-card-text">${post.excerpt}</p>
-                <a href="single.html?id=${post.id}" class="read-btn border rounded">Read More</a>
+                <a href="single.html?id=${post.id}" class="read-btn border rounded" style="text-decoration:none;">Read More</a>
               </div>
             </div>
           </div>

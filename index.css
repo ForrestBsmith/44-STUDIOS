@@ -1,120 +1,112 @@
-   body { font-family: Arial, sans-serif; }
-   .header { font-size: 70px !important;}
-   .nav-link {text-decoration: underline !important; font-size: 1.5rem !important;}
-   .nav-link:hover {text-decoration: none !important;}
-    .container { display: flex; flex-wrap: wrap; gap: 20px; }
-    .card {
-      flex: 1 1 45%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      min-width: 300px;
-    }
-    h3 { margin-bottom: 10px; font-size: 25px; }
-    h1 {font-size: 70px !important;}
-    select, label { font-size: 20px; margin: 8px 0; }
-    .checkbox-group { display: flex; flex-direction: column; gap: 5px; }
-    .checkbox-item { display: flex; align-items: center; justify-content: space-between; }
-    .checkbox-item select { margin-left: 10px; }
-    .total-card {
-      flex: 1 1 100%;
-      border: 2px solid #333;
-      padding: 20px;
-      border-radius: 10px;
-      background: #f9f9f9;
-      margin-bottom: 20px;
-    }
-    .itemized { margin-top: 10px; font-size: 20px; }
-    .itemized div { margin-bottom: 10px; }
+.container { display: flex; flex-wrap: wrap; gap: 20px; }
 
- .portfolio-img {
-  height: 250px;          /* pick a height that works best */
-  object-fit: fill;      /* crop edges but keep aspect ratio */
-  width: 100%;            /* make sure it spans the card */
+.card {
+  flex: 1 1 45%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 300px;
 }
 
+/* Force Recent Blog Posts section to stack vertically */
+#recent-blog-posts-section .container {
+  display: block !important; /* overrides any flex applied globally */
+}
+
+#recent-blog-posts-section h2,
+#recent-blog-posts-section p {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* calculator + portfolio styles */
+h3 { margin-bottom: 10px; font-size: 25px; }
+select, label { font-size: 20px; margin: 8px 0; }
+
+.checkbox-group { display: flex; flex-direction: column; gap: 5px; }
+.checkbox-item { display: flex; align-items: center; justify-content: space-between; }
+.checkbox-item select { margin-left: 10px; }
+
+.total-card {
+  flex: 1 1 100%;
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.itemized { margin-top: 10px; font-size: 20px; }
+.itemized div { margin-bottom: 10px; }
+
+.portfolio-img {
+  height: 250px;
+  object-fit: fill;
+  width: 100%;
+}
+
+/* lists & sections */
 ul li {
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-ul{
-    margin-top: 80px !important;
-}
+ul { margin-top: 80px !important; }
 
-.process{
+.process {
   font-size: 50px;
   margin-top: 150px;
-  margin-bottom: 20px;}
+  margin-bottom: 20px;
+}
 
-  .contact{
-    font-size: 25px !important;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: 500 !important;
-   color: black !important;           /* default text color */
-  background-color: white !important; /* default background */
-  transition: all 0.3s ease;         /* smooth hover */ 
+.contact {
+  font-size: 25px !important;
+  margin-top: 20px;
+  color: white !important;
+  margin-bottom: 20px;
+  font-weight: 500 !important;
+  transition: all 0.3s ease;
 }
 
 .contact:hover {
-  background-color: #a8aaad !important; /* brand color */
-  color: white !important;              /* text turns white on hover */
-  text-decoration: none !important;     /* remove underline if any */
-  transform: translateY(-2px);          /* subtle lift effect */
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
 }
 
-.packages{
-    font-size: 20px !important;
-}
+.packages { font-size: 20px !important; }
+.packagecontainer { width: 100% !important; }
 
-.packagecontainer{
-    width: 100% !important;
-}
-
-.started:hover{
+.started:hover {
   background-color: #f0eeee !important;
   color: black !important;
   cursor: pointer;
 }
 
+/* form button */
 #contactForm button[type="submit"] {
-  background-color: #ffffff;      /* default background */
-  color: #000;                    /* default text color */
-  border-radius: 50px;            /* keep the rounded style */
-  padding: 10px 40px;             /* match your inline style */
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 50px;
+  padding: 10px 40px;
   font-weight: bold;
-  transition: all 0.3s ease;      /* smooth hover transition */
+  transition: all 0.3s ease;
 }
 
 #contactForm button[type="submit"]:hover {
-  background-color: #a8aaad;      /* brand hover color */
-  color: #ffffff !important;                 /* white text on hover */
-  transform: translateY(-2px);    /* subtle lift effect */
+  background-color: #a8aaad;
+  color: #ffffff !important;
+  transform: translateY(-2px);
 }
 
-
-/* index.css */
-.card {
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-/* Make text and spacing tighter on phones */
-/* ===== Phones (≤576px) ===== */
+/* mobile layout rules for homepage cards, forms, etc. */
 @media (max-width: 576px) {
-  /* Typography */
-  .header { font-size: 2.5rem !important; }
-  .nav-link { font-size: 1.5rem !important; text-align: center; }
-  h1 { font-size: 2rem !important; }
-  h2 { font-size: 1.5rem !important; }
-  h3 { font-size: 1.1rem !important; }
-
   ul.navbar-nav { margin-top: 30px !important; }
   ul li { font-size: 1.2em; margin-bottom: 5px; }
 
-  /* Layout → STACK everything */
   .estimate-container,
   .tier-row {
     flex-direction: column !important;
@@ -123,7 +115,6 @@ ul{
     padding: 0 10px;
   }
 
-  /* Cards full-width */
   .card {
     width: 100% !important;
     min-width: 0 !important;
@@ -132,7 +123,6 @@ ul{
     box-sizing: border-box;
   }
 
-  /* Form adjustments */
   select, label {
     font-size: 0.9em;
     width: 100%;
@@ -149,18 +139,10 @@ ul{
   }
 }
 
-/* ===== Tablets (≤900px) ===== */
 @media (max-width: 900px) {
-  .header { font-size: 3rem !important; }
-  .nav-link { font-size: 1.75rem !important; text-align: center; }
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 1.75rem !important; }
-  h3 { font-size: 1.2rem !important; }
-
   ul.navbar-nav { margin-top: 20px !important; }
   ul li { font-size: 1.3em; margin-bottom: 10px; }
 
-  /* Cards can be 2 per row if space allows */
   .estimate-container,
   .tier-row {
     flex-wrap: wrap !important;

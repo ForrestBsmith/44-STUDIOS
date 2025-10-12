@@ -27,6 +27,7 @@
   <meta name="twitter:image" content="https://example.com/services-preview.jpg">
 
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -113,7 +114,7 @@
 
    <!-- Survey Questionnaire Link -->
 <div class="text-center mb-5">
-  <a href="/survey.html" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+  <a href="/survey.html" class="btn border rounded btn-lg" target="_blank" rel="noopener noreferrer">
     Unsure What You Need? Take Our Quick Survey
   </a>
 </div>
@@ -273,7 +274,6 @@
 
   /* Buttons */
   .btn {
-    background: #7e7e88;
     color: #fff;
     border: none;
     padding: 12px;
@@ -284,7 +284,6 @@
   }
 
   .btn:hover {
-    background:#6c6c6d;
     transform: translateY(-2px);
   }
 
@@ -341,14 +340,14 @@
     <div class="card mt-4">      
       <input type="email" id="customerName" class="form-control w-100" placeholder="Enter your name">
       <input type="email" id="customerEmail" class="form-control w-100 mt-2" placeholder="Enter your email">
-      <button class="btn w-100 mt-2" onclick="sendEstimate()">Send Estimate</button>
+      <button class="btn w-100 mt-2 border rounded" onclick="sendEstimate()">Send Estimate</button>
     </div>
   </div>
 </div>
   <!--Additional Services & Link-->
   <div class="text-center">
     <p class="mb-4" style="font-size: 1.5em;font-weight: 400;">Looking for more than just web design? We offer a full suite of IT business services to help your company thrive in the digital age.</p>
-    <a href="https://harristechsolutions.com/" class="btn btn-secondary btn-lg text-center" target="_blank" rel="noopener noreferrer">
+    <a href="https://harristechsolutions.com/" class="btn border rounded btn-lg text-center" target="_blank" rel="noopener noreferrer">
       Need Additional IT Business Services?
     </a>
   </div>
@@ -365,27 +364,47 @@
 // =========================
 const pricingData = {
   tier1: {
-    "None": [0], "Landing Page": [750], "Starter Website": [900], 
-    "Basic WordPress / Shopify Setup": [1500], "Small E-commerce Setup": [2500]
+    "None": [0],
+    "Landing Page": [650, 733, 967, 1200],
+    "Starter Website": [800, 1000, 1100, 1300],
+    "Basic WordPress / Shopify Setup": [1500, 1300, 1300, 1500],
+    "Small E-commerce Setup": [2500, 1500, 1800, 2100]
   },
   tier2: {
-    "None": [0], "Custom-coded Website": [3500], "E-commerce Store": [6000],
-    "Web Application": [7000]
+    "None": [0],
+    "Custom-coded Website": [3500, 5000, 6500, 8000],
+    "E-commerce Store": [6000, 8500, 11000, 13500],
+    "Web Application": [7000, 10000, 13000, 16000],
+    "Branding & UI/UX": [800, 1200, 1600, 2000]
   },
   addOns: {
-    "Custom Animation": [200], "SEO Optimization": [150], "Blog / CMS Setup": [250],
-    "Advanced Forms": [100], "Responsive Testing & Fixes": [75], "Performance Optimization": [150],
-    "Custom API Integration": [300]
+    "Custom Animation": [200, 300, 400, 500],
+    "SEO Optimization": [150, 250, 350, 450],
+    "Blog / CMS Setup": [250, 350, 450, 550],
+    "Advanced Forms": [100, 150, 200, 250],
+    "Responsive Testing & Fixes": [75, 125, 175, 225],
+    "Performance Optimization": [150, 250, 350, 450],
+    "Custom API Integration": [300, 400, 500, 600]
   },
   apiIntegrations: {
-    "Booking & Appointments": [200], "Social Media Integration": [150], "Maps & Location": [125],
-    "Email Marketing": [200], "Chat & Customer Support": [250], "Analytics & Tracking": [150],
-    "AI & Content Tools": [200], "Review & Reputation": [150], "Security & Authentication": [200]
+    "Booking & Appointments": [200, 300, 400, 500],
+    "Social Media Integration": [150, 225, 300, 375],
+    "Maps & Location": [125, 175, 225, 275],
+    "Email Marketing": [200, 275, 350, 425],
+    "Chat & Customer Support": [250, 325, 400, 475],
+    "Analytics & Tracking": [150, 200, 250, 300],
+    "AI & Content Tools": [200, 300, 400, 500],
+    "Review & Reputation": [150, 200, 250, 300],
+    "Security & Authentication": [200, 275, 350, 425]
   }
 };
+
 const recurringServices = {
-  "SEO & Analytics Monitoring": [150], "Maintenance & Support": [200], "Email Marketing Campaigns": [100]
+  "SEO & Analytics Monitoring": [150, 250, 350, 450],
+  "Maintenance & Support": [200, 300, 400, 550],
+  "Email Marketing Campaigns": [100, 175, 250, 325],
 };
+
 
 // =========================
 // Helper Functions
