@@ -63,24 +63,46 @@
 
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand h3 mb-0 header" href="index.html">44 Studios</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="Portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand h3 mb-0 header" href="index.html">44 Studios</a>
+
+    <!-- Toggler (Hamburger) -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contact.html">Contact</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
  
   <div class="bg-dark text-white">
       <h1 class="text-center mb-5 pt-5" style="font-weight: 300;">Professional Web Design & Digital Solutions</h1>
@@ -365,13 +387,6 @@ const recurringServices = {
   "SEO & Analytics Monitoring": [150], "Maintenance & Support": [200], "Email Marketing Campaigns": [100]
 };
 
-window.addEventListener("load", () => {
-  // Use data once, then clear so next refresh is clean
-  if (localStorage.getItem('surveyData')) {
-    setTimeout(() => localStorage.removeItem('surveyData'), 2000);
-  }
-});
-
 // =========================
 // Helper Functions
 // =========================
@@ -447,79 +462,70 @@ function calculateTotal() {
 function prefillFromSurvey() {
   const data = JSON.parse(localStorage.getItem('surveyData'));
   if (!data) return;
+  const { name, email, siteType, features=[] } = data;
 
-  const { name, email, siteType, features = [], budget = 0 } = data;
-
-  const tier1Select = document.getElementById("tier1");
-  const tier2Select = document.getElementById("tier2");
-
-  // Maps for standard site types
-  const tier1Map = { landing: "Landing Page", business: "Basic WordPress / Shopify Setup", custom: "Custom-coded Website" };
-  const tier2Map = { landing: "None", business: "Branding & UI/UX", custom: "Custom-coded Website" };
-
-  const featureMap = { 
-    blog: "Blog / CMS Setup", contact: "Advanced Forms", booking: "Booking & Appointments", 
-    seo: "SEO Optimization", cms: "Blog / CMS Setup", ecommerce: "Small E-commerce Setup", 
-    custom: "Custom API Integration", "e-mail": "Email Marketing", support: "Maintenance & Support", 
-    maps: "Maps & Location"
-  };
-
+  const tier1Map = { landing: "Landing Page", business: "Basic WordPress / Shopify Setup", ecommerce: "Small E-commerce Setup", custom: "Custom-coded Website" };
+  const tier2Map = { landing: "None", ecommerce: "E-commerce Store", custom: "Custom-coded Website" };
+  const featureMap = { blog:"Blog / CMS Setup", contact:"Advanced Forms", booking:"Booking & Appointments", seo:"SEO Optimization", cms:"Blog / CMS Setup", ecommerce:"E-commerce Store", custom:"Custom API Integration", "e-mail":"Email Marketing", support:"Maintenance & Support", maps:"Maps & Location" };
   const alwaysChecked = ["SEO Optimization", "Responsive Testing & Fixes", "Performance Optimization"];
 
-  // ---- Handle e-commerce siteType ----
-  if (siteType === 'ecommerce') {
-    if (budget < 3000) {
-      // Budget too low → pick only Tier 1 (cheaper)
-      tier1Select.value = "Small E-commerce Setup";
-      tier2Select.value = "None";
-    } else {
-      // Budget higher → pick Tier 2, Tier 1 optional
-      tier2Select.value = "E-commerce Store";
-      tier1Select.value = "None";
-    }
-  } else {
-    if (tier1Map[siteType]) tier1Select.value = tier1Map[siteType];
-    if (tier2Map[siteType]) tier2Select.value = tier2Map[siteType];
-  }
+  if (tier1Map[siteType]) document.getElementById("tier1").value = tier1Map[siteType];
+  if (tier2Map[siteType]) document.getElementById("tier2").value = tier2Map[siteType];
 
-  // ---- Prefill Add-Ons, API Integrations, Recurring ----
-  ["addOns", "apiIntegrations", "recurringServicesContainer"].forEach(id => {
-    document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(cb => {
+  ["addOns","apiIntegrations","recurringServicesContainer"].forEach(id=>{
+    document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(cb=>{
       const key = cb.dataset.key;
-      if (alwaysChecked.includes(key) || features.some(f => featureMap[f] === key)) {
-        cb.checked = true;
+      if(alwaysChecked.includes(key) || features.some(f=>featureMap[f]===key)){
+        cb.checked=true;
         const sel = cb.closest(".checkbox-item").querySelector("select");
-        if (sel) sel.disabled = false;
+        if(sel) sel.disabled=false;
       }
     });
   });
 
-  // ---- Prefill customer info ----
-  if (name) document.getElementById("customerName").value = name;
-  if (email) document.getElementById("customerEmail").value = email;
+  if(name) document.getElementById("customerName").value = name;
+  if(email) document.getElementById("customerEmail").value = email;
 
-  // ---- Recalculate total ----
   calculateTotal();
 }
-
-
 
 // =========================
 // Initialize
 // =========================
 function initCalculator() {
+  // Populate all dropdowns and checkbox groups
   populateSelect(document.getElementById("tier1"), pricingData.tier1);
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
   populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
   populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
   populateCheckboxGroup(document.getElementById("recurringServicesContainer"), recurringServices);
 
+  // Event listeners for tiers
   document.getElementById("tier1").addEventListener("change", calculateTotal);
   document.getElementById("tier2").addEventListener("change", calculateTotal);
 
-  prefillFromSurvey();
+  // Check if there's survey data saved
+  const surveyData = localStorage.getItem("surveyData");
+
+  if (surveyData) {
+    // ✅ Prefill from survey one time
+    prefillFromSurvey();
+
+    // 🧹 Clear it so the next refresh starts clean
+    localStorage.removeItem("surveyData");
+  } else {
+    // 🔄 No data — clean reset
+    document.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+    document.querySelectorAll("select").forEach(sel => sel.selectedIndex = 0);
+    document.getElementById("customerName").value = "";
+    document.getElementById("customerEmail").value = "";
+    document.getElementById("totalPrice").textContent = "$0";
+    document.getElementById("itemizedList").innerHTML = "";
+  }
+
   calculateTotal();
 }
+
 
 document.addEventListener("DOMContentLoaded", initCalculator);
 

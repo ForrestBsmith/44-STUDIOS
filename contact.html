@@ -89,6 +89,9 @@
           <a class="nav-link text-white" href="index.html">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-white" href="index.html">Blog</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-white" href="Services.html">Services</a>
         </li>
         <li class="nav-item">
@@ -140,7 +143,7 @@
 <script>
   // Initialize EmailJS
   (function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your EmailJS public key
+    emailjs.init("jEkKlN8wE8xMPUIS4"); // replace with your EmailJS public key
   })();
 
   // Handle form submission
@@ -162,7 +165,7 @@
       user_message: message
     };
 
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+    emailjs.send("service_tpqh7vw", "template_07txymh", templateParams)
       .then(() => {
         alert("✅ Message sent! You and 44 Studios will receive it.");
         document.getElementById("contactForm").reset();

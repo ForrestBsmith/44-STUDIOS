@@ -1,4 +1,4 @@
-   body { font-family: Arial, sans-serif; margin: 20px; }
+   body { font-family: Arial, sans-serif; }
    .header { font-size: 70px !important;}
    .nav-link {text-decoration: underline !important; font-size: 1.5rem !important;}
    .nav-link:hover {text-decoration: none !important;}
