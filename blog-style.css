@@ -69,7 +69,6 @@
   background-color: #1e1e1e;
   border: 1px solid #333;
   margin: 0 3px;
-  border-radius: 50px;
   padding: 8px 15px;
   transition: all 0.3s ease;
 }
@@ -78,10 +77,11 @@
   border: none;
 }
 .pagination .page-item .page-link:hover {
-  background-color: #a8aaad;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
 }
+
 
 /* ===== Responsive ===== */
 @media (max-width: 576px) {

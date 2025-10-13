@@ -102,6 +102,64 @@ ul { margin-top: 80px !important; }
   transform: translateY(-2px);
 }
 
+
+/* Flex container for horizontal cards */
+.package-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Make each card take equal width on desktop, full width on mobile */
+.package-card {
+  flex: 1 1 30%; /* grow, shrink, basis */
+  min-width: 900px; /* prevent too small */
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  background-color: #1a1a1a42;
+}
+
+/* Text sizing */
+.package-description {
+  font-size: 18px;
+}
+
+.package-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.package-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.packages-header {
+  font-size: 36px;
+}
+
+/* Buttons */
+.package-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .package-card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .package-card {
+    flex: 1 1 100%;
+  }
+}
+
+
 /* mobile layout rules for homepage cards, forms, etc. */
 @media (max-width: 576px) {
   ul.navbar-nav { margin-top: 30px !important; }

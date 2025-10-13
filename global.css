@@ -44,6 +44,42 @@ a:hover {
       text-decoration: underline !important;
 }
 
+.blog-card-content p,
+.blog-card-content ul,
+.blog-card-content li {
+  font-size: 1.25rem; /* or smaller, e.g. 0.95rem */
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Optional: add slight spacing for clean bullet alignment */
+.blog-card-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-card-content li strong {
+  display: block;
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.post-meta span {
+  margin-right: 1rem;
+}
+
+
+
 /* Shared responsive behavior */
 @media (max-width: 576px) {
   .header { font-size: 2.5rem !important; }
