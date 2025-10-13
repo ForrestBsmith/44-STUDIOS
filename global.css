@@ -2,8 +2,9 @@
 .read-btn:hover{
 background-color: #ffffff !important;
 color: rgb(33, 33, 33) !important;
-
 }
+
+
 .btn:hover{
 background-color: #ffffff !important;
 color: rgb(33, 33, 33) !important;
@@ -34,11 +35,13 @@ a {
   text-decoration: none;
   color: #f0f0f0;
 }
+.sidebartext{
+  text-decoration: none !important;
+}
 
 a:hover {
   color: #a8aaad;
       text-decoration: underline !important;
-
 }
 
 /* Shared responsive behavior */
