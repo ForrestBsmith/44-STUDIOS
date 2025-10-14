@@ -1,8 +1,6 @@
-.container { display: flex; flex-wrap: wrap; gap: 20px; }
 
 .card {
   flex: 1 1 45%;
-  border: 1px solid #ccc;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -112,13 +110,13 @@ ul { margin-top: 80px !important; }
 
 /* Make each card take equal width on desktop, full width on mobile */
 .package-card {
-  flex: 1 1 30%; /* grow, shrink, basis */
-  min-width: 900px; /* prevent too small */
-  max-width: 400px;
+  flex: 1 1 350px;
+  max-width: 700px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.25);
   background-color: #1a1a1a42;
 }
+
 
 /* Text sizing */
 .package-description {
@@ -150,15 +148,30 @@ ul { margin-top: 80px !important; }
 @media (max-width: 992px) {
   .package-card {
     flex: 1 1 45%;
+    max-width: 100%;
+
+      .process-flow {
+    flex-wrap: wrap;
   }
+  .process-track {
+    animation: none;
+    justify-content: center;
+  }
+  .process-step {
+    flex: 0 0 90%;
+    margin-bottom: 30px;
+  }
+  .process-flow-wrapper::before {
+    display: none;
+  }
+  .row{
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
 }
 
-@media (max-width: 576px) {
-  .package-card {
-    flex: 1 1 100%;
   }
 }
-
 
 /* mobile layout rules for homepage cards, forms, etc. */
 @media (max-width: 576px) {
@@ -194,6 +207,10 @@ ul { margin-top: 80px !important; }
   .checkbox-item select {
     margin: 5px 0 0;
     width: 100%;
+  }
+    .package-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
