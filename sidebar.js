@@ -15,7 +15,7 @@ fetch("post.json")
 
     socialContainer.innerHTML = `
       <a href="${socials.instagram}" target="_blank">Facebook</a>
-      <a href="${socials.linkedin}" target="_blank">LinkedIn</a>
+      <a href="${socials.linkedin}" target="_blank">LinkedIn (Forrest @ Fortyfour Studios)</a>
       <a href="${socials.twitter}" target="_blank">X (Twitter)</a>
     `;
 
