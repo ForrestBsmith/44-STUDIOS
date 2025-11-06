@@ -23,8 +23,16 @@ fetch(jsonFile)
         <i class="bi bi-box-arrow-up-right me-1"></i>${projectData.liveSiteText}
       </a>`;
 
-    document.getElementById("overview-text").innerHTML = projectData.overview.map(p => `<p>${p}</p>`).join("");
-    document.getElementById("overview-highlights").innerHTML = projectData.overviewHighlights.map(item => `<li><i class="bi bi-check-circle text-primary me-2"></i>${item}</li>`).join("");
+// Client info section
+document.getElementById("client-info").innerHTML = `
+  <li><strong>Site: </strong> ${projectData.title}</li>
+  <li><strong>Client: </strong> ${projectData.clientName}</li>
+  <li><strong>Business: </strong> ${projectData.businessField}</li>
+  <li><strong>Location: </strong> ${projectData.location}</li>
+`;
+
+// Existing overview text and highlights
+document.getElementById("overview-highlights").innerHTML = projectData.overviewHighlights.map(item => `<li><i class="bi bi-check-circle text-primary me-2"></i>${item}</li>`).join("");
 
     document.getElementById("technologies").innerHTML = projectData.technologies.map(tech => `<span class="badge bg-primary me-2">${tech}</span>`).join("");
     document.getElementById("key-highlights").innerHTML = projectData.keyHighlights.map(item => `<li class="bi bi-check-circle"> ${item}</li>`).join("");

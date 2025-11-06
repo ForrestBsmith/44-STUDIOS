@@ -224,6 +224,32 @@ h2:hover::after, h3:hover::after {
   box-shadow: 0 8px 20px rgba(13,110,253,0.2);
 }
 
+/* ==========================
+   Client Info Styling
+   ========================== */
+#client-info li {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+}
+
+#client-info li::before {
+  content: "•"; /* you can also use a check icon if you prefer */
+  color: #0d6efd;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#client-info li strong {
+  display: inline-block;
+  width: 10px; /* fixed width for titles like "Site:", "Client:" */
+  font-weight: 500;
+  color: #fff;
+}
+
+
 </style>
   <!-- Case Study Content -->
   <div class="container my-5">
@@ -234,22 +260,29 @@ h2:hover::after, h3:hover::after {
       <p class="lead text-secondary" id="project-tagline"></p>
     </div>
 
-    <!-- Project Overview -->
-    <section class="mb-5 py-4 bg-white text-black bg-opacity-20 rounded-4 shadow-sm">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="fw-bold">Project Overview</h2>
-            <div class="mb-3" id="live-site-link"></div>
-            <div id="overview-text"></div>
-            <ul id="overview-highlights" class="list-unstyled mt-3"></ul>
-          </div>
-          <div class="col-lg-5 text-center">
-            <img id="project-mockup" src="" alt="Project Mockup" class="img-fluid rounded-3 border border-secondary shadow-lg">
-          </div>
-        </div>
+   <!-- Project Overview -->
+<section class="mb-5 py-4 bg-white text-black bg-opacity-20 rounded-4 shadow-sm">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <h2 class="fw-bold">Project Overview</h2>
+
+        <!-- Client Info -->
+        <ul class="list-unstyled mb-3" id="client-info">
+          <!-- JS will populate: Site Title, Client Name, Business, Location -->
+        </ul>
+
+        <div class="mb-3" id="live-site-link"></div>
+        <ul id="overview-highlights" class="list-unstyled mt-3"></ul>
       </div>
-    </section>
+
+      <div class="col-lg-5 text-center">
+        <img id="project-mockup" src="" alt="Project Mockup" class="img-fluid rounded-3 border border-secondary shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Technologies -->
     <section class="mb-5">
