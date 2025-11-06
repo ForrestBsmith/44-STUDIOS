@@ -3,193 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="44head16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="44head32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="44head48x48.png">
-<link rel="icon" type="image/png" sizes="64x64" href="44head64x64.png">
-<link rel="icon" type="image/png" sizes="192x192" href="44head192x192.png">
-<link rel="icon" type="image/png" sizes="256x256" href="44head256x256.png">
-<link rel="icon" type="image/png" sizes="512x512" href="44head512x512.png">
-  <title>Web Design Portfolio | 44 Studios</title>
-  <meta name="description" content="View 44 Studios' portfolio of modern, professional websites and digital solutions created for businesses across various industries.">
+  <link rel="icon" type="image/png" sizes="32x32" href="44head32x32.png">
+  <title>Case Study | 44 Studios</title>
+  <meta name="description" content="Explore how 44 Studios transformed a client's online presence with modern design, performance, and strategy.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Web Design Portfolio | 44 Studios">
-  <meta property="og:description" content="Check out websites and digital projects designed by 44 Studios for businesses of all sizes.">
-  <meta property="og:image" content="https://example.com/portfolio-preview.jpg">
-  <meta property="og:url" content="https://example.com/Portfolio.html">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Web Design Portfolio | 44 Studios">
-  <meta name="twitter:description" content="Explore our portfolio showcasing web design, SEO, and digital projects for clients worldwide.">
-  <meta name="twitter:image" content="https://example.com/portfolio-preview.jpg">
-
-  <!-- Stylesheets -->  
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="index.css?v=3">
-
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://44studiosdesign.com/portfolio#page",
-  "name": "44 Studios Portfolio",
-  "url": "https://44studiosdesign.com/portfolio",
-  "description": "A showcase of web design, branding, and digital projects created by 44 Studios.",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://44studiosdesign.com/#business",
-    "name": "44 Studios"
-  },
-  "hasPart": [
-    {
-      "@type": "CreativeWork",
-      "name": "E-Commerce Website for Local Retailer",
-      "description": "Custom Shopify design with integrated SEO and product photography.",
-      "image": "https://44studiosdesign.com/images/portfolio/ecommerce-project.jpg",
-      "url": "https://44studiosdesign.com/portfolio/ecommerce-project.html"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Branding and Landing Page for Startup",
-      "description": "Full brand identity with responsive landing page and lead capture integration.",
-      "image": "https://44studiosdesign.com/images/portfolio/startup-branding.jpg",
-      "url": "https://44studiosdesign.com/portfolio/startup-branding.html"
-    }
-  ]
-}
-</script>
-
+  <link rel="stylesheet" href="index.css?v=4">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.1/dist/simple-lightbox.min.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D35Y6SQZXC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D35Y6SQZXC');
-</script>
-
-<body class="bg-dark text-white">  
+<body class="bg-dark text-white">
 
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <!-- Brand -->
-    <a class="navbar-brand h3 mb-0 header" href="index.html">44 Studios</a>
-
-    <!-- Toggler (Hamburger) -->
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Links -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="Blog.html">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="Services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="Portfolio.html">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="contact.html">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Case Study Page Template -->
-<div class="container my-5">
-
-  <!-- Project Header -->
-  <div class="text-center mb-5">
-    <h1 class="display-4" id="project-title">Project Name Here</h1>
-    <p class="lead" id="project-tagline">Short one-line tagline about this project.</p>
-  </div>
-
-  <!-- Hero Image -->
-  <div class="mb-5 text-center">
-    <img src="44Studios.png" alt="Project Hero" class="img-fluid rounded">
-  </div>
-
-  <!-- Project Overview -->
-  <section class="mb-5">
-    <h2>Project Overview</h2>
-    <p>
-      Write a full description of the project here. Include goals, scope, challenges, and any key info that explains the client’s needs and how you approached the project.
-    </p>
-  </section>
-
-  <!-- Technologies Used -->
-  <section class="mb-5">
-    <h2>Technologies Used</h2>
-    <div id="project-tech">
-      <span class="badge bg-primary me-2">HTML</span>
-      <span class="badge bg-info text-dark me-2">CSS/Bootstrap</span>
-      <span class="badge bg-warning text-dark">JavaScript</span>
-    </div>
-  </section>
-
-  <!-- Key Features / Highlights -->
-  <section class="mb-5">
-    <h2>Key Highlights</h2>
-    <ul>
-      <li>Responsive design across devices</li>
-      <li>Lead generation forms integrated</li>
-      <li>Fast loading, SEO optimized</li>
-      <li>CMS integration for easy updates</li>
-    </ul>
-  </section>
-
-  <!-- Screenshots / Gallery -->
-  <section class="mb-5">
-    <h2>Screenshots & Features</h2>
-    <div class="row g-3">
-      <div class="col-md-4">
-        <img src="44head.png" class="img-fluid rounded" alt="Screenshot 1">
-      </div>
-      <div class="col-md-4">
-        <img src="images/project-2.jpg" class="img-fluid rounded" alt="Screenshot 2">
-      </div>
-      <div class="col-md-4">
-        <img src="images/project-3.jpg" class="img-fluid rounded" alt="Screenshot 3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand h3 mb-0 header" href="index.html">44 Studios</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </nav>
+<style>
+  /* ==========================
+   Global Typography & Colors
+   ========================== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+}
 
-  <!-- Results / Metrics -->
-  <section class="mb-5">
-    <h2>Results & Metrics</h2>
-    <!--graph of growth since 2025-->
-    <div class="text-center">
-      <img src="images/growth-graph.png" alt="Growth Graph" class="img-fluid">
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0d6efd;
+}
+
+/* ==========================
+   Navbar
+   ========================== */
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
+}
+
+/* ==========================
+   Headings Animated Underline
+   ========================== */
+h2, h3 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: default;
+}
+
+h2::after, h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #0d6efd, #00bfff);
+  transition: width 0.5s ease;
+}
+
+h2:hover::after, h3:hover::after {
+  width: 100%;
+}
+
+/* ==========================
+   Cards
+   ========================== */
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  background-color: #1a1a1a;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+  border-color: rgba(13,110,253,0.4);
+}
+
+.card h5 {
+  color: #fff;
+}
+
+.card p {
+  color: rgba(255,255,255,0.75);
+}
+
+/* ==========================
+   Gallery
+   ========================== */
+.gallery img {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================
+   Lightbox Overlay
+   ========================== */
+.sl-overlay {
+  background: rgba(0,0,0,0.85) !important;
+}
+
+/* ==========================
+   Project Overview
+   ========================== */
+#live-site-link a {
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+#live-site-link a i {
+  color: #0d6efd;
+  margin-right: 0.3rem;
+}
+
+#overview-text p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+}
+
+/* ==========================
+   Badges
+   ========================== */
+#technologies .badge {
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================
+   Key Highlights & List Items
+   ========================== */
+#overview-highlights li,
+#key-highlights li {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+#overview-highlights i {
+  margin-right: 0.5rem;
+  color: #0d6efd;
+}
+
+/* ==========================
+   Process Steps
+   ========================== */
+#process-steps .card {
+  background-color: #1c1c1c;
+  border: none;
+}
+
+#process-steps .card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.2);
+}
+
+/* ==========================
+   Client Impact
+   ========================== */
+#client-impact {
+  background-color: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+#client-impact blockquote {
+  border-left: 4px solid #0d6efd;
+  padding-left: 1rem;
+  color: rgba(255,255,255,0.85);
+}
+
+#client-impact blockquote footer {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ==========================
+   Related Projects
+   ========================== */
+.related-projects .card img {
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-projects .card:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.2);
+}
+
+</style>
+  <!-- Case Study Content -->
+  <div class="container my-5">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold" id="project-title"></h1>
+      <p class="lead text-secondary" id="project-tagline"></p>
     </div>
-  </section>
 
-  <!-- Call to Action -->
-  <div class="text-center mb-5">
-    <a href="Portfolio.html" class="btn btn-primary btn-lg">Back to Portfolio</a>
+    <!-- Project Overview -->
+    <section class="mb-5 py-4 bg-white text-black bg-opacity-20 rounded-4 shadow-sm">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 mb-4 mb-lg-0">
+            <h2 class="fw-bold">Project Overview</h2>
+            <div class="mb-3" id="live-site-link"></div>
+            <div id="overview-text"></div>
+            <ul id="overview-highlights" class="list-unstyled mt-3"></ul>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img id="project-mockup" src="" alt="Project Mockup" class="img-fluid rounded-3 border border-secondary shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="mb-5">
+      <h2 class="mb-3">Technologies Used</h2>
+      <div id="technologies"></div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="mb-5">
+      <h2 class="mb-1">Key Highlights</h2>
+      <ul id="key-highlights" class="list-unstyled ms-3"></ul>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mb-5">
+      <h2 class="mb-3">Project Gallery</h2>
+      <div class="row g-3 gallery" id="gallery"></div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="mb-5 py-5 border-top border-secondary border-opacity-25">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">Our Process</h2>
+          <p class="text-light opacity-75 lead">
+            Every project at 44 Studios follows a structured creative workflow — blending strategy, design, and development 
+            to deliver results that go beyond visuals.
+          </p>
+        </div>
+        <div class="row g-4" id="process-steps"></div>
+      </div>
+    </section>
+
+    <!-- Client Impact -->
+    <section id="client-impact" class="mb-5 p-4 rounded shadow-sm"></section>
+
+    <!-- Related Projects -->
+    <section class="related-projects py-5">
+      <div class="container text-center">
+        <h3 class="mb-4 fw-bold">More Case Studies</h3>
+        <div class="row g-4 justify-content-center" id="related-projects"></div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="text-center py-5">
+      <p class="mb-4">Let’s create something that stands out — whether it’s a full redesign or a digital refresh.</p>
+      <a href="contact.html" class="btn btn-outline-light btn-lg me-3">Start Your Project</a>
+      <a href="Portfolio.html" class="btn btn-outline-light btn-lg">Back to Portfolio</a>
+    </div>
+
   </div>
 
-</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.1/dist/simple-lightbox.jquery.min.js"></script>
+  <script src="case-study.js"></script>
 </body>
-</html> 
+</html>
