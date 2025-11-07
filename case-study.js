@@ -68,7 +68,7 @@ document.getElementById("overview-highlights").innerHTML = projectData.overviewH
 
     document.getElementById("related-projects").innerHTML = projectData.relatedProjects.map(proj => `
       <div class="col-md-4">
-        <a href="${proj.url}?project=${proj.url.split('.html')[0]}" class="text-decoration-none text-white">
+<a href="${proj.url}" class="text-decoration-none text-white">
           <div class="card bg-dark border-0 text-white">
             <img src="${proj.image}" class="card-img-top rounded" alt="${proj.title}">
             <div class="card-body">

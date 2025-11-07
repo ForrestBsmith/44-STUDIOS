@@ -103,13 +103,31 @@ h2:hover::after, h3:hover::after {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
-  border-color: rgba(13,110,253,0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 12px rgba(63, 83, 114, 0.089);
 }
 
 .card h5 {
   color: #fff;
+}
+
+/* Remove underline from all case study card links */
+#related-projects a {
+  text-decoration: none !important;
+}
+
+#related-projects a:hover {
+  text-decoration: none !important;
+}
+
+#related-projects .card img {
+  transform: none !important;
+  transition: none !important;
+}
+
+#related-projects .card img {
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 .card p {
@@ -221,7 +239,7 @@ h2:hover::after, h3:hover::after {
 
 .related-projects .card:hover img {
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(13,110,253,0.2);
+  box-shadow: 0 8px 20px rgba(42, 72, 117, 0.2);
 }
 
 /* ==========================
@@ -233,6 +251,10 @@ h2:hover::after, h3:hover::after {
   color: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
+}
+
+#client-info{
+  margin-top: 20px !important;
 }
 
 #client-info li::before {

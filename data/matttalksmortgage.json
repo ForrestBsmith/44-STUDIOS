@@ -5,7 +5,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://matttalksmortgage.com/",
   "liveSiteText": "Visit Live Site",
-  "mockup": "Case Study jake.png",
+  "mockup": "matt/mattlaptop.png",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
     "Our approach emphasized clarity, conversion, and maintainability. The layout was rebuilt with responsive grids, improved visual hierarchy, and modular content sections designed for future scalability."
@@ -20,12 +20,15 @@
     "Mobile-first responsive design",
     "Integrated booking and lead capture system",
     "SEO foundation boosting local rankings",
-    "Custom graphics and branding consistency"
+    "Custom graphics and branding consistency",
+    "Optimized performance for fast load times",
+    "User-friendly CMS for easy updates",
+    "Embed video content seamlessly"
   ],
   "gallery": [
-    { "src": "Phone View.png", "alt": "Homepage Design" },
-    { "src": "mattlaptop.png", "alt": "Inner Page" },
-    { "src": "Phone View.png", "alt": "Mobile View" }
+    { "src": "matt/mattlaptop.png", "alt": "Homepage Design" },
+    { "src": "matt/mattphone.png", "alt": "Inner Page" },
+    { "src": "matt/matttablet.png", "alt": "Mobile View" }
   ],
   "process": [
     { "step": "Discovery", "icon": "bi-search", "color": "primary", "text": "We start by understanding your goals, target audience, and competition — gathering insights that shape our entire creative approach." },
@@ -38,7 +41,7 @@
     "testimonial": { "quote": "44 Studios completely transformed our website — it looks stunning and actually brings us new clients.", "author": "Client Name, Business Owner" }
   },
   "relatedProjects": [
-    { "title": "Next Project Title", "summary": "Quick one-line summary.", "image": "Jake Indermanrealty.png", "url": "next-case-study.html" },
-    { "title": "Another Project Title", "summary": "Highlight of that project.", "image": "Jake Indermanrealty.png", "url": "another-case-study.html" }
+    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "case-study.html?project=jakeindermanrealty" },
+    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "case-study.html?project=harristech" }
   ]
 }
