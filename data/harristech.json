@@ -1,11 +1,13 @@
 {
   "title": "Harris Tech Solutions",
+  "tagline": "Revitalizing a brand through clean design, improved UX, and higher engagement.",
   "clientName": "Robert Harris",
   "businessField": "IT Consulting & Services",
   "location": "Dallas, TX",
   "liveSiteURL": "https://harristechsolutions.com/",
   "liveSiteText": "Visit Live Site",
   "mockup": "robert/Laptop View.png",
+  "description": "A comprehensive website redesign for Harris Tech Solutions, focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
     "Our approach emphasized clarity, conversion, and maintainability. The layout was rebuilt with responsive grids, improved visual hierarchy, and modular content sections designed for future scalability."
