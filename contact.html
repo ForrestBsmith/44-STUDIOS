@@ -148,7 +148,7 @@
 <script>
   // Initialize EmailJS
   (function(){
-    emailjs.init("jEkKlN8wE8xMPUIS4"); // replace with your EmailJS public key
+    emailjs.init("E6WrbKeFE96_Z2X1S"); // replace with your EmailJS public key
   })();
 
   // Handle form submission
@@ -170,9 +170,9 @@
       user_message: message
     };
 
-    emailjs.send("service_tpqh7vw", "template_07txymh", templateParams)
+    emailjs.send("service_e8j2t46", "template_u64t10k", templateParams)
       .then(() => {
-        alert("✅ Message sent! You and 44 Studios will receive it.");
+        alert("✅ Message sent! We will contact you soon as possible.");
         document.getElementById("contactForm").reset();
       })
       .catch(err => {
