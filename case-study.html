@@ -137,6 +137,14 @@
 .related-card:hover .overlay i {
   transform: scale(1.2);
 }
+  .gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
   </style>
 
   <!-- Case Study Content -->
@@ -169,17 +177,16 @@
       </div>
     </section>
 
-    <!-- Key Highlights -->
-    <section class="mb-5">
-      <h2 class="mb-1">Key Highlights</h2>
-      <ul id="key-highlights" class="list-unstyled ms-3"></ul>
-    </section>
+<!-- Key Highlights -->
+<section class="mb-5">
+  <h2 class="mb-4" data-aos="fade-up">Key Highlights</h2>
+  <ul id="key-highlights" class="list-unstyled ms-3"></ul>
+</section>
 
-    <!-- Gallery -->
-    <section class="mb-5">
-      <h2 class="mb-3">Project Gallery</h2>
-      <div class="row g-3 gallery" id="gallery"></div>
-    </section>
+<!-- Gallery -->
+<section class="mb-5">
+  <div class="row g-4" id="gallery"></div>
+</section>
 
     <!-- Our Process -->
     <section class="mb-5 py-5 border-top border-secondary border-opacity-25">
