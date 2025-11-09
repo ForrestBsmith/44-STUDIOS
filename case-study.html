@@ -108,6 +108,35 @@
       transform: translateY(-4px) scale(1.02);
       box-shadow: 0 8px 20px rgba(13,110,253,0.2);
     }
+
+    .related-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+.related-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+}
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.related-card:hover .overlay {
+  opacity: 1;
+}
+.overlay i {
+  transition: transform 0.3s ease;
+}
+.related-card:hover .overlay i {
+  transform: scale(1.2);
+}
   </style>
 
   <!-- Case Study Content -->
@@ -168,14 +197,13 @@
     <!-- Client Impact -->
     <section id="client-impact" class="mb-5 p-4 rounded shadow-sm"></section>
 
-    <!-- Related Projects -->
-    <section class="related-projects py-5">
-      <div class="container text-center">
-        <h3 class="mb-4 fw-bold">More Case Studies</h3>
-        <div class="row g-4 justify-content-center" id="related-projects"></div>
-      </div>
-    </section>
-
+<!-- Related Projects -->
+<section class="related-projects py-5 bg-dark text-white">
+  <div class="container text-center">
+    <h3 class="mb-5 fw-bold display-6" data-aos="fade-up">More Case Studies</h3>
+    <div class="row g-4 justify-content-center" id="related-projects"></div>
+  </div>
+</section>
     <!-- CTA -->
     <div class="text-center py-5">
       <p class="mb-4">Let’s create something that stands out — whether it’s a full redesign or a digital refresh.</p>

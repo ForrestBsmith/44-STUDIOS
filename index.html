@@ -128,7 +128,6 @@
   </div>
 </nav>
 
-    <!--main content-->
 <!-- main content -->
 <div class="container my-5">
     <div class="text-center mb-4 mt-5">
@@ -158,115 +157,174 @@
     </div>
 </div>
 
-<!-- Why Choose Us -->
-<div class="container my-5">
-    <div class="text-align mb-4">
-        <h2>Why Choose 44 Studios?</h2>
-        <p class="lead">We deliver websites that combine performance, aesthetics, and digital marketing expertise to grow your business online.</p>
-    </div>
-    <div class="row text-center">
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>Custom Designs</h3>
-                <p>Unique designs tailored to your brand and audience.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>Responsive Layouts</h3>
-                <p>Websites that look great on desktops, tablets, and smartphones.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>SEO Optimized</h3>
-                <p>Built with search engines in mind to help your business get found online.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>Fast Performance</h3>
-                <p>Optimized for speed to improve user experience and SEO rankings.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>Ongoing Support</h3>
-                <p>Maintenance and support to keep your website running smoothly.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded">
-                <h3>Affordable Pricing</h3>
-                <p>High-quality services at competitive rates for businesses of all sizes.</p>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- AOS Animate on Scroll -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,      // Smooth cinematic speed
+    offset: 140,        // Slight delay before triggering
+    once: true,         // Trigger animation once
+    easing: 'ease-out-quart' // Gentle deceleration
+  });
+</script>
 
-<!-- Featured Packages -->
-<div class="container my-5">
-    <div class="mb-4">
-        <h2>Featured Quick Launch Packages</h2>
-        <p class="lead">Choose a package to get started or select features for a personalized quote.</p>
+<!-- FEATURED PACKAGES -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold display-6 text-white mb-2">Featured Quick Launch Packages</h2>
+      <p class="lead text-secondary">Choose a package to get started or request a custom build tailored to your business.</p>
     </div>
-    <div class="row justify-content-center packagecontainer">
-        <!-- Basic Package -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded d-flex flex-column">
-                <h3>Starter Package</h3>
-                <ul class="list-unstyled mb-4">
-                    <li>1-3 Page Website</li>
-                    <li>Responsive Design</li>
-                    <li>SEO Optimized</li>
-                    <li>Performance Optimized</li>
-                    <li>CMS/Blog Setup</li>
-                </ul>
-                <div class="mt-3">
-                    <h4>$750–$1450</h4>
-                    <a href="Services.html" class="btn border rounded text-white started">Get Started</a>
-                </div>
-            </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Starter Package -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="package-card h-100 p-4 rounded-4 border border-light text-center">
+          <div class="mb-3 text-white-50 fs-2"><i class="bi bi-lightning-charge"></i></div>
+          <h3 class="fw-semibold mb-3">Starter Package</h3>
+          <ul class="list-unstyled mb-4 text-secondary">
+            <li><i class="bi bi-window me-2"></i>1–3 Page Website</li>
+            <li><i class="bi bi-phone me-2"></i>Responsive Design</li>
+            <li><i class="bi bi-graph-up me-2"></i>SEO Optimized</li>
+            <li><i class="bi bi-speedometer me-2"></i>Performance Optimized</li>
+            <li><i class="bi bi-journal-text me-2"></i>CMS / Blog Setup</li>
+          </ul>
+          <h4 class="fw-bold mb-3 text-white">$750–$1,450</h4>
+          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
         </div>
-        <!-- Standard Package -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded d-flex flex-column">
-                <h3>Standard Business Package</h3>
-                <ul class="list-unstyled mb-4">
-                    <li>5 Page Website</li>
-                    <li>Email Setup & Integration</li>
-                    <li>SEO Optimized</li>
-                    <li>CMS/Blog Setup</li>
-                    <li>Mobile Responsive</li>
-                </ul>
-                <div class="mt-3">
-                    <h4>$1,500–$2,500</h4>
-                    <a href="Services.html" class="btn border rounded text-white started">Get Started</a>
-                </div>
-            </div>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="package-card h-100 p-4 rounded-4 border border-light text-center">
+          <div class="mb-3 text-white-50 fs-2"><i class="bi bi-briefcase"></i></div>
+          <h3 class="fw-semibold mb-3">Standard Business Package</h3>
+          <ul class="list-unstyled mb-4 text-secondary">
+            <li><i class="bi bi-window-dock me-2"></i>5 Page Website</li>
+            <li><i class="bi bi-envelope me-2"></i>Email Setup & Integration</li>
+            <li><i class="bi bi-graph-up me-2"></i>SEO Optimized</li>
+            <li><i class="bi bi-journal-text me-2"></i>CMS / Blog Setup</li>
+            <li><i class="bi bi-phone me-2"></i>Mobile Responsive</li>
+          </ul>
+          <h4 class="fw-bold mb-3 text-white">$1,500–$2,500</h4>
+          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
         </div>
-        <!-- Premium Package -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 border rounded d-flex flex-column">
-                <h3>E-Commmerce Package</h3>
-                <ul class="list-unstyled mb-4">
-                    <li>5+ Page Website</li>
-                    <li>Payment & E-commerce</li>
-                    <li>CMS/Blog Setup</li>
-                    <li>Advanced SEO</li>
-                    <li>E-commerce Functionality</li>
-                </ul>
-                <div class="mt-3">
-                    <h4>$2,500–$8,000+</h4>
-                    <a href="Services.html" class="btn border rounded text-white started">Get Started</a>
-                </div>
-            </div>
+      </div>
+
+      <!-- E-Commerce Package -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="package-card h-100 p-4 rounded-4 border border-light text-center">
+          <div class="mb-3 text-white-50 fs-2"><i class="bi bi-cart3"></i></div>
+          <h3 class="fw-semibold mb-3">E-Commerce Package</h3>
+          <ul class="list-unstyled mb-4 text-secondary">
+            <li><i class="bi bi-window-plus me-2"></i>5+ Page Website</li>
+            <li><i class="bi bi-credit-card me-2"></i>Payment Integration</li>
+            <li><i class="bi bi-journal-text me-2"></i>CMS / Blog Setup</li>
+            <li><i class="bi bi-graph-up-arrow me-2"></i>Advanced SEO</li>
+            <li><i class="bi bi-basket me-2"></i>E-Commerce Functionality</li>
+          </ul>
+          <h4 class="fw-bold mb-3 text-white">$2,500–$8,000+</h4>
+          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
         </div>
-        <div class="col-12 text-center mt-3">
-            <a href="Services.html" class="btn text-white border rounded started">View All Services</a>
-        </div>
+      </div>
     </div>
-</div>
+
+    <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="400">
+      <a href="Services.html" class="btn btn-outline-light rounded-pill px-5 py-2 fw-semibold">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold display-6 text-white mb-2">Why Choose 44 Studios?</h2>
+      <p class="lead text-secondary mx-auto" style="max-width: 720px;">
+        We craft high-performance, visually captivating websites backed by strategy and digital expertise.
+      </p>
+    </div>
+
+    <div class="row g-4 text-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-brush"></i></div>
+          <h3 class="fw-semibold mb-2">Custom Designs</h3>
+          <p class="text-secondary mb-0">Unique designs tailored to your brand and audience.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-laptop"></i></div>
+          <h3 class="fw-semibold mb-2">Responsive Layouts</h3>
+          <p class="text-secondary mb-0">Websites that look great on desktops, tablets, and smartphones.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-search"></i></div>
+          <h3 class="fw-semibold mb-2">SEO Optimized</h3>
+          <p class="text-secondary mb-0">Built with search engines in mind to help your business get found online.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-speedometer2"></i></div>
+          <h3 class="fw-semibold mb-2">Fast Performance</h3>
+          <p class="text-secondary mb-0">Optimized for speed to improve user experience and rankings.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-headset"></i></div>
+          <h3 class="fw-semibold mb-2">Ongoing Support</h3>
+          <p class="text-secondary mb-0">Maintenance and support to keep your website running smoothly.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="why-card p-4 border border-light rounded-4 h-100">
+          <div class="icon mb-3 fs-1 text-white-50"><i class="bi bi-cash-coin"></i></div>
+          <h3 class="fw-semibold mb-2">Affordable Pricing</h3>
+          <p class="text-secondary mb-0">High-quality services at competitive rates for businesses of all sizes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STYLING -->
+<style>
+.package-card, .why-card {
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+}
+.package-card:hover, .why-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+}
+.text-secondary {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+.icon i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.package-card:hover .icon i, .why-card:hover .icon i {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+[data-aos] {
+  will-change: transform, opacity;
+}
+</style>
 
 <!-- Package Explainer -->
 <div class="container my-5">

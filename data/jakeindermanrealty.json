@@ -1,11 +1,13 @@
 {
   "title": "Jake Inderman Homes",
+  "tagline": "Revitalizing a brand through clean design, improved UX, and higher engagement.",
   "clientName": "Jake Inderman",
   "businessField": "Real Estate",
   "location": "Dallas, TX",
   "liveSiteURL": "https://jakeindermanhomes.com/",
   "liveSiteText": "Visit Live Site",
   "mockup": "jake/jakelaptop.png",
+  "description": "A comprehensive website redesign for Jake Inderman Homes, focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
     "Our approach emphasized clarity, conversion, and maintainability. The layout was rebuilt with responsive grids, improved visual hierarchy, and modular content sections designed for future scalability."
@@ -37,10 +39,14 @@
     { "step": "Development", "icon": "bi-code-slash", "color": "warning", "text": "We translate designs into fast, responsive code using modern frameworks and clean practices that prioritize performance and accessibility." },
     { "step": "Launch & Support", "icon": "bi-rocket-takeoff", "color": "success", "text": "After launch, we monitor performance, optimize SEO, and provide post-launch support to ensure your site continues to evolve with your goals." }
   ],
-  "clientImpact": {
-    "text": "Within weeks of launch, the client reported stronger user engagement and easier lead tracking. The streamlined layout reduced bounce rates by over 30%, while the new booking form generated consistent inquiries from both desktop and mobile users.",
-    "testimonial": { "quote": "44 Studios completely transformed our website — it looks stunning and actually brings us new clients.", "author": "Client Name, Business Owner" }
-  },
+"clientImpact": {
+  "text": "Within just a few weeks of launching the new website, the agent experienced a clear boost in client engagement and lead quality. The refreshed layout and simplified contact flow made it easier for potential buyers and sellers to reach out, resulting in a steady stream of new inquiries directly through the site.",
+  "testimonial": {
+    "quote": "44 Studios completely elevated my brand presence — my site now feels modern, personal, and it’s actually bringing in new clients every week.",
+    "author": "Jake Inderman, Licensed Real Estate Agent"
+  }
+}
+,
   "relatedProjects": [
     { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "case-study.html?project=harristech" },
     { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "case-study.html?project=matttalksmortgage" }
