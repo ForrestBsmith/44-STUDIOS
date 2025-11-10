@@ -604,7 +604,7 @@ function sendEstimate(){
   if(!userEmail || !userName){ alert("Please enter your name and email."); return; }
 
   const templateParams={total_price:total,itemized_list:itemizedHTML,user_email:userEmail,user_name:userName};
-  emailjs.send("service_tpqh7vw","template_lckjawf",templateParams)
+  emailjs.send("service_h5mqhzn","template_lckjawf",templateParams)
     .then(()=>alert("✅ Estimate sent!"))
     .catch(err=>alert("❌ Error sending estimate: "+JSON.stringify(err)));
 }
