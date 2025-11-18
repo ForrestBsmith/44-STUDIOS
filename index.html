@@ -191,7 +191,7 @@
             <li><i class="bi bi-journal-text me-2"></i>CMS / Blog Setup</li>
           </ul>
           <h4 class="fw-bold mb-3 text-white">$750–$1,450</h4>
-          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
+          <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold package-select" data-package-preset="starter">Get Started</button>
         </div>
       </div>
 
@@ -208,7 +208,7 @@
             <li><i class="bi bi-phone me-2"></i>Mobile Responsive</li>
           </ul>
           <h4 class="fw-bold mb-3 text-white">$1,500–$2,500</h4>
-          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
+          <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold package-select" data-package-preset="standard">Get Started</button>
         </div>
       </div>
 
@@ -225,7 +225,7 @@
             <li><i class="bi bi-basket me-2"></i>E-Commerce Functionality</li>
           </ul>
           <h4 class="fw-bold mb-3 text-white">$2,500–$8,000+</h4>
-          <a href="Services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Get Started</a>
+          <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold package-select" data-package-preset="ecommerce">Get Started</button>
         </div>
       </div>
     </div>
@@ -350,6 +350,17 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Quick-launch package -> calculator prefill
+  document.querySelectorAll(".package-select").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const preset = btn.dataset.packagePreset;
+      const url = preset ? `Services.html?preset=${preset}#calculator` : "Services.html#calculator";
+      // Also stash as a fallback if the URL param is stripped
+      if (preset) localStorage.setItem("prefillPackage", preset);
+      window.location.href = url;
+    });
+  });
+
   const recentBlogContainer = document.getElementById("recent-blog-posts");
 
   fetch("post.json")

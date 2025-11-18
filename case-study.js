@@ -107,8 +107,10 @@ fetch(jsonFile)
     // --- Lightbox ---
     new SimpleLightbox(".gallery a", {
       captions: true,
-      captionDelay: 200,
-      animationSlide: true,
+      captionDelay: 0,          // remove caption delay
+      animationSlide: false,    // disable slide animation
+      animationSpeed: 0,        // no slide duration
+      fadeSpeed: 0,             // no fade between items
       close: true,
     });
 

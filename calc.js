@@ -44,6 +44,31 @@ const recurringServices = {
   "Email Marketing Campaigns": [100, 175, 250, 325],
 };
 
+// Preset packages for quick-fill from homepage
+const packagePresets = {
+  starter: {
+    tier1: "Landing Page",
+    tier2: "None",
+    addOns: ["Responsive Testing & Fixes", "Performance Optimization"],
+    api: ["Email Marketing"],
+    recurring: []
+  },
+  standard: {
+    tier1: "Basic WordPress / Shopify Setup",
+    tier2: "None",
+    addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
+    api: [],
+    recurring: []
+  },
+  ecommerce: {
+    tier1: "Small E-commerce Setup",
+    tier2: "None",
+    addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
+    api: ["Email Marketing", "Chat & Customer Support"],
+    recurring: ["Maintenance & Support", "Email Marketing Campaigns"]
+  }
+};
+
 
 // =========================
 // Populate Select Dropdown
@@ -237,21 +262,143 @@ function prefillFromSurvey() {
   });
 
   // ----- Prefill customer info -----
-  if (name) document.getElementById('customerName')?.value = name;
-  if (email) document.getElementById('customerEmail')?.value = email;
+  const nameInput = document.getElementById('customerName');
+  const emailInput = document.getElementById('customerEmail');
+  if (name && nameInput) nameInput.value = name;
+  if (email && emailInput) emailInput.value = email;
 
   // ----- Recalculate total -----
   calculateTotal();
 }
 
+// =========================
+// Package quick-fill helpers
+// =========================
+function resetSelections() {
+  const tier1 = document.getElementById("tier1");
+  const tier2 = document.getElementById("tier2");
+  if (tier1) { tier1.value = "None"; }
+  if (tier2) { tier2.value = "None"; }
+
+  document.querySelectorAll(".checkbox-item").forEach(item => {
+    const cb = item.querySelector("input[type=checkbox]");
+    const sel = item.querySelector("select");
+    if (cb) cb.checked = false;
+    if (sel) {
+      sel.disabled = true;
+      sel.selectedIndex = 0;
+    }
+  });
+}
+
+function applyPackagePreset(presetName) {
+  const preset = packagePresets[presetName];
+  if (!preset) return false;
+
+  resetSelections();
+
+  const tier1 = document.getElementById("tier1");
+  const tier2 = document.getElementById("tier2");
+  if (tier1 && preset.tier1) tier1.value = preset.tier1;
+  if (tier2 && preset.tier2) tier2.value = preset.tier2;
+
+  const applyGroup = (selector, names=[]) => {
+    names.forEach(name => {
+      const checkbox = Array.from(document.querySelectorAll(`${selector} input[type=checkbox]`))
+        .find(cb => cb.dataset.key === name);
+      if (checkbox) {
+        checkbox.checked = true;
+        const sel = checkbox.closest(".checkbox-item")?.querySelector("select");
+        if (sel) {
+          sel.disabled = false;
+          sel.selectedIndex = 0;
+        }
+      }
+    });
+  };
+
+  applyGroup("#addOns", preset.addOns);
+  applyGroup("#apiIntegrations", preset.api);
+  applyGroup("#recurringServicesContainer", preset.recurring);
+
+  calculateTotal();
+  return true;
+}
+
 // ----- Run on page load -----
-document.addEventListener("DOMContentLoaded", () => {
-  initCalculator();       // initialize selects and checkboxes
-  prefillFromSurvey();    // prefill based on survey
+let calculatorInitialized = false;
+function bootstrapCalculator() {
+  if (calculatorInitialized) return;
+  calculatorInitialized = true;
+
+  initCalculator(); // initialize selects and checkboxes
+
+  const urlPreset = new URLSearchParams(window.location.search).get("preset");
+  const storedPreset = localStorage.getItem("prefillPackage");
+  const preset = urlPreset || storedPreset;
+
+  const presetApplied = preset ? applyPackagePreset(preset) : false;
+  if (presetApplied) {
+    localStorage.removeItem("prefillPackage");
+  } else {
+    prefillFromSurvey(); // prefill based on survey if no preset
+  }
+}
+// expose for safety re-calls
+window.bootstrapCalculator = bootstrapCalculator;
+window.applyPackagePreset = applyPackagePreset;
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bootstrapCalculator);
+} else {
+  bootstrapCalculator();
+}
+
+// Fallback: retry preset after full load in case of caching/delays
+window.addEventListener("load", () => {
+  const preset = new URLSearchParams(window.location.search).get("preset") || localStorage.getItem("prefillPackage");
+  if (preset && applyPackagePreset(preset)) {
+    localStorage.removeItem("prefillPackage");
+  }
 });
 
+// Collapsible sections (Services page)
+document.addEventListener("click", e => {
+  const toggle = e.target.closest(".collapsible");
+  if (!toggle) return;
+  const content = toggle.nextElementSibling;
+  content.classList.toggle("open");
+  content.style.maxHeight = content.classList.contains("open") ? content.scrollHeight + "px" : "0";
+  const icon = toggle.querySelector(".fa-chevron-down, .fa-chevron-up");
+  if (icon) {
+    icon.classList.toggle("fa-chevron-down");
+    icon.classList.toggle("fa-chevron-up");
+  }
+});
 
-// =========================
-// Run after DOM is ready
-// =========================
-document.addEventListener("DOMContentLoaded", initCalculator);
+// Send Estimate via EmailJS (Services page)
+function sendEstimate() {
+  const total = document.getElementById("totalPrice").textContent;
+  const itemizedHTML = Array.from(document.querySelectorAll("#itemizedList div"))
+    .map(div => {
+      const [item, price] = div.textContent.split(" - $");
+      return `<tr><td>${item}</td><td>$${price}</td></tr>`;
+    }).join("");
+  const userEmail = document.getElementById("customerEmail").value;
+  const userName = document.getElementById("customerName").value;
+  if (!userEmail || !userName) {
+    alert("Please enter your name and email.");
+    return;
+  }
+
+  const templateParams = {
+    total_price: total,
+    itemized_list: itemizedHTML,
+    user_email: userEmail,
+    user_name: userName
+  };
+
+  emailjs.send("service_h5mqhzn", "template_lckjawf", templateParams)
+    .then(() => alert("✅ Estimate sent!"))
+    .catch(err => alert("❌ Error sending estimate: " + JSON.stringify(err)));
+}
