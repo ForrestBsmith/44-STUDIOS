@@ -91,8 +91,42 @@ a:hover {
 
 @media (max-width: 900px) {
   .header { font-size: 3rem !important; }
-  .nav-link { font-size: 1.75rem !important; text-align: center; }
+.nav-link { font-size: 1.75rem !important; text-align: center; }
   h1 { font-size: 2.5rem !important; }
   h2 { font-size: 1.75rem !important; }
   h3 { font-size: 1.2rem !important; }
+}
+
+.site-footer {
+  font-size: 0.95rem;
+}
+
+.site-footer .container {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.site-footer h5,
+.site-footer h6 {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.site-footer p,
+.site-footer a,
+.site-footer li {
+  font-size: 0.95rem;
+}
+
+.site-footer .list-unstyled li+li {
+  margin-top: 0.25rem;
+}
+
+.site-footer .list-unstyled li {
+  margin-bottom: 0.15rem;
+}
+
+.site-footer .sub-footer {
+  padding-top: 1rem !important;
+  margin-top: 1.5rem !important;
 }

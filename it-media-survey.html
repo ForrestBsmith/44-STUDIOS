@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT & Media Suite Survey | 44 Studios</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="44head16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="44head32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="44head48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="44head64x64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="44head192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="44head256x256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="44head512x512.png">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="index.css?v=3">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: #050505;
+    }
+
+    .survey-shell {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .section-card {
+      background: #12121200;
+      border-radius: 18px;
+      padding: 25px 28px;
+      margin-bottom: 25px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .checkbox-grid label {
+      background: #1f1f1f64;
+      padding: 12px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .checkbox-grid label:hover {
+      background: #2f2f2f;
+      transform: translateY(-1px);
+    }
+
+    .checkbox-grid input[type="checkbox"] {
+      accent-color: #0d6efd;
+    }
+
+    .results-box {
+      background: #0c111d00;
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .results-box ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .badge-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 30px;
+      padding: 6px 14px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-btn {
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 12px 32px;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand h3 mb-0 header" href="index.html">44 Studios</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+  <div class="survey-shell px-3 px-lg-0">
+    <div class="text-center mb-5">
+      <p class="mb-2 text-uppercase text-secondary fw-semibold">Discovery Questionnaire</p>
+      <h1 class="mb-2 text-white">IT & Media Suite Needs Assessment</h1>
+      <p class="lead mb-0" style="max-width: 720px; margin: 0 auto;">
+        Tell us how your business operates, where support is missing, and the type of media presence you want to build.
+        We’ll map your answers to a curated mix of managed IT, cybersecurity, automation, production, and marketing retainers.
+      </p>
+    </div>
+
+    <div class="section-card">
+      <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-building me-2"></i> Company Snapshot</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" class="form-control" placeholder="Example: Horizon Tech Group" required>
+        </div>
+        <div class="col-md-6">
+          <label for="contactName">Primary Contact</label>
+          <input type="text" id="contactName" class="form-control" placeholder="Your full name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" class="form-control" placeholder="name@company.com" required>
+        </div>
+        <div class="col-md-6">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" class="form-control" placeholder="(555) 555-5555">
+        </div>
+      </div>
+
+      <label class="mt-3">Company Size</label>
+      <div class="d-flex flex-wrap gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" id="size1" value="1-10" checked>
+          <label class="form-check-label" for="size1">1-10 team members</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" id="size2" value="11-50">
+          <label class="form-check-label" for="size2">11-50 team members</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" id="size3" value="51-150">
+          <label class="form-check-label" for="size3">51-150 team members</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" id="size4" value="150+">
+          <label class="form-check-label" for="size4">150+ team members</label>
+        </div>
+      </div>
+
+      <label for="industry" class="mt-3">Primary Industry</label>
+      <select id="industry" class="form-select">
+        <option value="">Select industry</option>
+        <option value="Professional Services">Professional Services</option>
+        <option value="Healthcare & Wellness">Healthcare & Wellness</option>
+        <option value="Real Estate & Construction">Real Estate & Construction</option>
+        <option value="Retail / E-commerce">Retail / E-commerce</option>
+        <option value="Hospitality & Events">Hospitality & Events</option>
+        <option value="Education">Education</option>
+        <option value="Non-profit / Faith Based">Non-profit / Faith Based</option>
+        <option value="Media & Entertainment">Media & Entertainment</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="currentSupport" class="mt-3">How is IT handled today?</label>
+      <select id="currentSupport" class="form-select">
+        <option value="">Select current setup</option>
+        <option value="DIY / ad-hoc">DIY / ad-hoc</option>
+        <option value="Single internal IT person">Single internal IT person</option>
+        <option value="Small internal IT team">Small internal IT team</option>
+        <option value="Fully managed provider">Fully managed provider</option>
+      </select>
+    </div>
+
+    <div class="section-card">
+      <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-network-wired me-2"></i> Managed IT & Infrastructure</h2>
+      <p class="text-secondary mb-3">Select the automation layers that would speed up your workflows.</p>
+      <div class="checkbox-grid">
+        <label><input type="checkbox" value="automation">Workflow automation & RPA orchestration</label>
+        <label><input type="checkbox" value="crm">CRM & sales play automation</label>
+        <label><input type="checkbox" value="marketing">Marketing automation journeys & drip campaigns</label>
+        <label><input type="checkbox" value="billing">Billing, invoicing & AR automation</label>
+        <label><input type="checkbox" value="ops">Support bots, chat automation & self-service</label>
+        <label><input type="checkbox" value="data">Data pipeline, ETL & dashboard automation</label>
+        <label><input type="checkbox" value="reporting">Automated executive reporting & alerts</label>
+        <label><input type="checkbox" value="doc">Document automation & e-sign routing</label>
+        <label><input type="checkbox" value="integration">System integrations & middleware APIs</label>
+        <label><input type="checkbox" value="ai">AI copilots & intelligent assistants</label>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-video me-2"></i> Media & Communications</h2>
+      <p class="text-secondary mb-3">Show us how you want to show up online — choose the media deliverables that matter.</p>
+      <div class="checkbox-grid">
+        <label><input type="checkbox" value="brand">Brand refresh & creative direction</label>
+        <label><input type="checkbox" value="video">On-site video production</label>
+        <label><input type="checkbox" value="photo">Photography / product shoots</label>
+        <label><input type="checkbox" value="content">Thought-leadership content</label>
+        <label><input type="checkbox" value="social">Social media management</label>
+        <label><input type="checkbox" value="ads">Paid media / performance ads</label>
+        <label><input type="checkbox" value="distribution">Content distribution & repurposing</label>
+        <label><input type="checkbox" value="pr">PR & earned media outreach</label>
+        <label><input type="checkbox" value="asset">Media asset management</label>
+        <label><input type="checkbox" value="analytics">Campaign analytics & reporting</label>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-bullseye me-2"></i> Priorities & Timeline</h2>
+      <label for="mainGoal">Primary objective for the next 6 months</label>
+      <select id="mainGoal" class="form-select">
+        <option value="">Select your main objective</option>
+        <option value="stabilize">Stabilize IT & reduce downtime</option>
+        <option value="scale">Scale infrastructure for growth</option>
+        <option value="secure">Harden security & compliance</option>
+        <option value="launch">Launch new media initiative</option>
+        <option value="integrate">Integrate sales/marketing systems</option>
+        <option value="optimize">Optimize costs & vendor stack</option>
+      </select>
+
+      <label for="timeline" class="mt-3">Ideal project start</label>
+      <select id="timeline" class="form-select">
+        <option value="">Select timeline</option>
+        <option value="immediate">Immediately</option>
+        <option value="30days">Within 30 days</option>
+        <option value="quarter">Within 1 quarter</option>
+        <option value="flexible">Flexible / exploratory</option>
+      </select>
+
+      <label for="notes" class="mt-3">Anything we should know?</label>
+      <textarea id="notes" rows="3" class="form-control" placeholder="Key initiatives, problems or stakeholders we should be aware of."></textarea>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-outline-light cta-btn" onclick="generateSuite()">Build My IT/Media Suite</button>
+    </div>
+
+    <div id="results" class="results-box mt-4 d-none"></div>
+  </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 border-top border-secondary">
+    <p class="mb-0">&copy; 2024 44 Studios. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwBenfiAiZkMSkEf5fV3BT5uCedITSAvKc32yH05Yuq20dBYM9BO0Bkv8tPOv3IrIko/exec";
+    const itSelector = '.section-card:nth-of-type(2) input[type="checkbox"]';
+    const mediaSelector = '.section-card:nth-of-type(3) input[type="checkbox"]';
+
+    function gatherSelections(selector) {
+      return Array.from(document.querySelectorAll(selector))
+        .filter(box => box.checked)
+        .map(box => box.value);
+    }
+
+    function generateSuite() {
+      const contactName = document.getElementById('contactName').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const industry = document.getElementById('industry').value || 'General';
+      const currentSupport = document.getElementById('currentSupport').value || 'Not specified';
+      const mainGoal = document.getElementById('mainGoal').value || 'Clarify needs';
+      const timeline = document.getElementById('timeline').value || 'Flexible';
+      const notes = document.getElementById('notes').value.trim();
+      const size = document.querySelector('input[name="companySize"]:checked').value;
+
+      if (!contactName || !company || !email) {
+        alert('Please fill out your name, company, and email so we can follow up.');
+        return;
+      }
+
+      const itNeeds = gatherSelections(itSelector);
+      const mediaNeeds = gatherSelections(mediaSelector);
+      if (itNeeds.length === 0 && mediaNeeds.length === 0) {
+        alert('Select at least one IT or media service so we can recommend a suite.');
+        return;
+      }
+
+      const focusTags = [];
+      const addTag = (label, icon) => focusTags.push(`<span class="badge-tag"><i class="${icon}"></i>${label}</span>`);
+
+      if (itNeeds.some(item => ['automation','crm','marketing','billing','ops'].includes(item))) {
+        addTag('Automation Ops', 'fa-solid fa-gears');
+      }
+      if (itNeeds.some(item => ['data','reporting'].includes(item))) {
+        addTag('Data Intelligence', 'fa-solid fa-chart-line');
+      }
+      if (itNeeds.includes('integration')) addTag('Integration Fabric', 'fa-solid fa-diagram-project');
+      if (itNeeds.includes('ai')) addTag('AI Acceleration', 'fa-solid fa-robot');
+      if (itNeeds.includes('doc')) addTag('Document Flows', 'fa-solid fa-file-signature');
+      if (mediaNeeds.includes('video') || mediaNeeds.includes('photo')) addTag('Original Media', 'fa-solid fa-clapperboard');
+      if (mediaNeeds.includes('social') || mediaNeeds.includes('ads')) addTag('Growth Marketing', 'fa-solid fa-bullhorn');
+      if (focusTags.length === 0) addTag('Custom Blend', 'fa-solid fa-puzzle-piece');
+
+      const suites = buildRecommendations(itNeeds, mediaNeeds);
+
+      const results = document.getElementById('results');
+      results.classList.remove('d-none');
+      results.innerHTML = `
+        <h3 class="mb-3">Recommended IT/Media Suite</h3>
+        <div class="mb-3">${focusTags.join(' ')}</div>
+        <p class="mb-2">For <strong>${company}</strong> (${industry}, ${size} employees) currently operating with <em>${currentSupport}</em>.</p>
+        <p class="mb-3">Primary objective: <strong>${mainGoal}</strong> · Ideal start: <strong>${timeline}</strong></p>
+        ${notes ? `<p class="mb-3 text-secondary">Note: ${notes}</p>` : ''}
+        <ul class="mb-4">
+          ${suites.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <button class="btn btn-primary" onclick="sendSurvey()">Send & Notify Me</button>
+          <button class="btn btn-outline-light" onclick="contactMe()">Contact Me</button>
+          <button class="btn btn-outline-secondary ms-auto" onclick="resetSurvey()">Reset</button>
+        </div>
+      `;
+
+      localStorage.setItem('itMediaSurvey', JSON.stringify({
+        contactName,
+        company,
+        email,
+        phone,
+        size,
+        industry,
+        currentSupport,
+        mainGoal,
+        timeline,
+        notes,
+        itNeeds,
+        mediaNeeds,
+        suites
+      }));
+    }
+
+    function buildRecommendations(itNeeds, mediaNeeds) {
+      const recs = [];
+
+      if (itNeeds.some(item => ['automation','crm','marketing','billing','ops'].includes(item))) {
+        recs.push('Automation ops pod to map processes, build RPA bots, and wire CRM/marketing/billing triggers.');
+      }
+      if (itNeeds.some(item => ['data','reporting'].includes(item))) {
+        recs.push('Data pipeline & reporting hub with fully automated ETL, dashboards, and exec alerts.');
+      }
+      if (itNeeds.includes('integration')) {
+        recs.push('Integration fabric project to connect apps via APIs, middleware, and event-driven workflows.');
+      }
+      if (itNeeds.includes('doc')) {
+        recs.push('Document automation stack for contracts, e-sign, and compliance-ready storage.');
+      }
+      if (itNeeds.includes('ai')) {
+        recs.push('AI co-pilot enablement to embed assistants inside your key business systems.');
+      }
+      if (mediaNeeds.includes('brand')) {
+        recs.push('Brand & creative direction refresh outlining visual language, tone, and media playbook.');
+      }
+      if (mediaNeeds.includes('video') || mediaNeeds.includes('photo')) {
+        recs.push('On-site production crew for cornerstone video/photo assets and evergreen b-roll library.');
+      }
+      if (mediaNeeds.includes('content') || mediaNeeds.includes('social')) {
+        recs.push('Content & social publishing desk delivering channel calendars, copywriting, and engagement.');
+      }
+      if (mediaNeeds.includes('ads')) {
+        recs.push('Performance marketing management covering paid social, PPC, and creative iteration.');
+      }
+      if (mediaNeeds.includes('distribution')) {
+        recs.push('Content distribution & repurposing squad to atomize flagship media for every channel.');
+      }
+      if (mediaNeeds.includes('asset') || mediaNeeds.includes('analytics')) {
+        recs.push('Media ops & reporting layer to manage assets, dashboards, and KPI insights.');
+      }
+
+      if (recs.length === 0) {
+        recs.push('Custom engagement designed after a deeper discovery call.');
+      }
+      return recs;
+    }
+
+    async function sendSurvey() {
+      const stored = localStorage.getItem('itMediaSurvey');
+      if (!stored) {
+        alert('Please build your suite first.');
+        return;
+      }
+
+      if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes('REPLACE_WITH_SCRIPT_ID')) {
+        alert('Please configure GOOGLE_APPS_SCRIPT_URL with your Apps Script deployment URL.');
+        return;
+      }
+
+      const payload = JSON.parse(stored);
+      payload.submittedAt = new Date().toISOString();
+      payload.source = 'IT & Media Suite Survey';
+
+      try {
+        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status}`);
+        }
+
+        alert('Survey sent! We will reach out shortly.');
+      } catch (error) {
+        console.error('Survey submission failed:', error);
+        alert('Unable to send survey right now. Please try again or use the Contact Me option.');
+      }
+    }
+
+    function contactMe() {
+      const stored = localStorage.getItem('itMediaSurvey');
+      if (!stored) {
+        alert('Please build your suite first.');
+        return;
+      }
+      window.location.href = 'contact.html';
+    }
+
+    function resetSurvey() {
+      document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').forEach(el => el.value = '');
+      document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+      document.getElementById('industry').selectedIndex = 0;
+      document.getElementById('currentSupport').selectedIndex = 0;
+      document.getElementById('mainGoal').selectedIndex = 0;
+      document.getElementById('timeline').selectedIndex = 0;
+      document.getElementById('results').classList.add('d-none');
+      localStorage.removeItem('itMediaSurvey');
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
