@@ -6,7 +6,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://forrestbsmith.github.io/BLITZ-WEB/index.html",
   "liveSiteText": "Visit Live Site",
-  "mockup": "Blitz/tablet-store.png",
+  "mockup": "Blitz/mobile-view.jpg",
   "description": "A modern lifestyle and apparel brand website designed with a premium aesthetic, seamless shopping experience, and scalable e-commerce foundations.",
   
   "overview": [
@@ -22,14 +22,12 @@
 
   "technologies": [
     "WordPress",
-    "WooCommerce",
     "Bootstrap 5",
     "JavaScript",
     "SEO Optimization"
   ],
 
   "keyHighlights": [
-    "Custom WooCommerce product layouts",
     "Mobile-first responsive design for effortless shopping",
     "SEO foundation for brand awareness and organic reach",
     "Brand-forward visual identity with premium typography and color system",
@@ -40,9 +38,9 @@
   ],
 
   "gallery": [
-    { "src": "Blitz/laptop-store.png", "alt": "Homepage Design" },
-    { "src": "Blitz/laptop-store.png", "alt": "Product Category Page" },
-    { "src": "Blitz/laptop-store.png", "alt": "Mobile Product View" }
+    { "src": "Blitz/tablet-view.jpg", "alt": "Homepage Design" },
+    { "src": "Blitz/laptop-view.jpg", "alt": "Product Category Page" },
+    { "src": "Blitz/mobile-view.jpg", "alt": "Mobile Product View" }
   ],
 
   "process": [
