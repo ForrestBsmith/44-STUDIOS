@@ -47,7 +47,7 @@
     }
   },
   "relatedProjects": [
-    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "case-study.html?project=harristech" },
-    { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "case-study.html?project=matttalksmortgage" }
+    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "/case-study?project=harristech" },
+    { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "/case-study?project=matttalksmortgage" }
   ]
 }

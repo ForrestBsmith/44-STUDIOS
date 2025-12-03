@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Allow direct access to real files/folders
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Pretty URLs mapped to HTML files
+RewriteRule ^blog/?$ /Blog.html [L]
+RewriteRule ^services/?$ /Services.html [L]
+RewriteRule ^portfolio/?$ /Portfolio.html [L]
+RewriteRule ^contact/?$ /contact.html [L]
+RewriteRule ^web-survey/?$ /web-survey.html [L]
+RewriteRule ^it-media-survey/?$ /it-media-survey.html [L]
+RewriteRule ^case-study/?$ /case-study.html [L]
+# Blog post detail
+RewriteRule ^blog/post/?$ /single.html [QSA,L]

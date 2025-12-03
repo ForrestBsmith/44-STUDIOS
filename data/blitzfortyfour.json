@@ -1,0 +1,97 @@
+{
+  "title": "BLITZFORTYFOUR",
+  "tagline": "Modern lifestyle essentials built for everyday living.",
+  "clientName": "BLITZFORTYFOUR",
+  "businessField": "Lifestyle & Apparel Brand",
+  "location": "Dallas, TX",
+  "liveSiteURL": "https://forrestbsmith.github.io/BLITZ-WEB/index.html",
+  "liveSiteText": "Visit Live Site",
+  "mockup": "Blitz/tablet-store.png",
+  "description": "A modern lifestyle and apparel brand website designed with a premium aesthetic, seamless shopping experience, and scalable e-commerce foundations.",
+  
+  "overview": [
+    "This project highlights a full lifestyle brand website built to support both product discovery and smooth e-commerce functionality.",
+    "The site brings together elevated visuals, a polished mobile experience, and a modular content structure that grows with the brand."
+  ],
+
+  "overviewHighlights": [
+    "Full e-commerce integration",
+    "Mobile-first product browsing",
+    "Brand-driven design system"
+  ],
+
+  "technologies": [
+    "WordPress",
+    "WooCommerce",
+    "Bootstrap 5",
+    "JavaScript",
+    "SEO Optimization"
+  ],
+
+  "keyHighlights": [
+    "Custom WooCommerce product layouts",
+    "Mobile-first responsive design for effortless shopping",
+    "SEO foundation for brand awareness and organic reach",
+    "Brand-forward visual identity with premium typography and color system",
+    "Streamlined checkout flow for higher conversion",
+    "Optimized performance for fast page loads",
+    "Client-managed products and content via custom CMS fields",
+    "Integrated lifestyle photography across product and lookbook sections"
+  ],
+
+  "gallery": [
+    { "src": "Blitz/laptop-store.png", "alt": "Homepage Design" },
+    { "src": "Blitz/laptop-store.png", "alt": "Product Category Page" },
+    { "src": "Blitz/laptop-store.png", "alt": "Mobile Product View" }
+  ],
+
+  "process": [
+    {
+      "step": "Discovery",
+      "icon": "bi-search",
+      "color": "primary",
+      "text": "We begin by defining the brand style, target audience, and product direction — creating the foundation for an elevated lifestyle experience."
+    },
+    {
+      "step": "Design",
+      "icon": "bi-pencil-square",
+      "color": "info",
+      "text": "We craft a cohesive visual system, ensuring the product pages, lookbook, and lifestyle elements feel polished and premium."
+    },
+    {
+      "step": "Development",
+      "icon": "bi-code-slash",
+      "color": "warning",
+      "text": "We build out a fast and intuitive WooCommerce experience with clean code, optimized structure, and a flexible content system."
+    },
+    {
+      "step": "Launch & Support",
+      "icon": "bi-rocket-takeoff",
+      "color": "success",
+      "text": "After launch, we continue refining SEO, performance, and product flows — supporting the brand as it grows and scales."
+    }
+  ],
+
+  "clientImpact": {
+    "text": "The new BLITZFORTYFOUR website elevated the brand’s online presence and provided a seamless e-commerce experience that reflects the quality and identity behind the products.",
+    "testimonial": {
+      "quote": "",
+      "author": ""
+    }
+  },
+
+  "relatedProjects": [
+    {
+      "title": "Harris Tech Solutions",
+      "summary": "IT Professional",
+      "image": "robert/Laptop View.png",
+      "url": "/case-study?project=harristech"
+    },
+    {
+      "title": "Matt Talks Mortgage",
+      "summary": "Loan Officer",
+      "image": "matt/mattlaptop.png",
+      "url": "/case-study?project=matttalksmortgage"
+    }
+  ]
+}

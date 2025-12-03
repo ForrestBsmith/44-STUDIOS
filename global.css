@@ -99,6 +99,7 @@ a:hover {
 
 .site-footer {
   font-size: 0.95rem;
+  margin-top: 2rem;
 }
 
 .site-footer .container {
@@ -122,8 +123,24 @@ a:hover {
   margin-top: 0.25rem;
 }
 
+.site-footer .list-unstyled {
+  margin-top: 0 !important;
+}
+
 .site-footer .list-unstyled li {
   margin-bottom: 0.15rem;
+}
+
+.site-footer .footer-link {
+  text-decoration: none;
+}
+
+.site-footer .footer-link:hover {
+  text-decoration: underline;
+}
+
+.site-footer .footer-heading {
+  text-decoration: underline;
 }
 
 .site-footer .sub-footer {

@@ -48,7 +48,7 @@
 }
 ,
   "relatedProjects": [
-    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "case-study.html?project=jakeindermanrealty" },
-    { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "case-study.html?project=matttalksmortgage" }
+    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "/case-study?project=jakeindermanrealty" },
+    { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "/case-study?project=matttalksmortgage" }
   ]
 }

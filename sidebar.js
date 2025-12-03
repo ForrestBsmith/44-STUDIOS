@@ -19,7 +19,7 @@ fetch("post.json")
       <a href="${socials.twitter}" target="_blank">X (Twitter)</a>
     `;
 
-    // Highlight current post if on single.html
+    // Highlight current post if on blog detail page
     const urlParams = new URLSearchParams(window.location.search);
     const currentId = parseInt(urlParams.get("id"));
     if(currentId){

@@ -47,7 +47,7 @@
 }
 ,
   "relatedProjects": [
-    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "case-study.html?project=jakeindermanrealty" },
-    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "case-study.html?project=harristech" }
+    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "/case-study?project=jakeindermanrealty" },
+    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "/case-study?project=harristech" }
   ]
 }
