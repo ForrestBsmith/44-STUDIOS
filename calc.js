@@ -25,6 +25,11 @@ const pricingData = {
     "Performance Optimization": [150, 250, 350, 450],
     "Custom API Integration": [300, 400, 500, 600]
   },
+  hostingServices: {
+    "Managed Hosting (Standard)": [45, 65, 95, 125],
+    "Managed Hosting (Premium SLA)": [85, 125, 165, 225],
+    "Enterprise Cloud Stack": [150, 225, 325, 425]
+  },
   apiIntegrations: {
     "Booking & Appointments": [200, 300, 400, 500],
     "Social Media Integration": [150, 225, 300, 375],
@@ -51,6 +56,7 @@ const packagePresets = {
     tier2: "None",
     addOns: ["Responsive Testing & Fixes", "Performance Optimization"],
     api: ["Email Marketing"],
+    hosting: [],
     recurring: []
   },
   standard: {
@@ -58,6 +64,7 @@ const packagePresets = {
     tier2: "None",
     addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
     api: [],
+    hosting: [],
     recurring: []
   },
   ecommerce: {
@@ -65,6 +72,7 @@ const packagePresets = {
     tier2: "None",
     addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
     api: ["Email Marketing", "Chat & Customer Support"],
+    hosting: ["Managed Hosting (Standard)"],
     recurring: ["Maintenance & Support", "Email Marketing Campaigns"]
   }
 };
@@ -160,16 +168,18 @@ function calculateTotal() {
     itemized.push(`${tier2Select.value} (Tier2) - $${price}`);
   }
 
-  [["#addOns", pricingData.addOns, "Add-On"], 
-   ["#apiIntegrations", pricingData.apiIntegrations, "API"], 
-   ["#recurringServicesContainer", recurringServices, "Monthly"]]
-   .forEach(([id, data, labelText]) => {
-    document.querySelectorAll(`${id} input[type=checkbox]:checked`).forEach(cb => {
+  [
+    { selector: "#addOns", data: pricingData.addOns, label: "Add-On" },
+    { selector: "#apiIntegrations", data: pricingData.apiIntegrations, label: "API" },
+    { selector: "#hostingServices", data: pricingData.hostingServices, label: "Hosting", monthly: true },
+    { selector: "#recurringServicesContainer", data: recurringServices, label: "Monthly", monthly: true }
+  ].forEach(({ selector, data, label, monthly }) => {
+    document.querySelectorAll(`${selector} input[type=checkbox]:checked`).forEach(cb => {
       const key = cb.dataset.key;
       const select = cb.closest(".checkbox-item").querySelector("select");
       const price = data[key][select.value];
       total += price;
-      itemized.push(`${key} (${labelText}) - $${price}${labelText==="Monthly" ? "/mo" : ""}`);
+      itemized.push(`${key} (${label}) - $${price}${monthly ? "/mo" : ""}`);
     });
   });
 
@@ -184,6 +194,7 @@ function initCalculator() {
   populateSelect(document.getElementById("tier1"), pricingData.tier1);
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
   populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
+  populateCheckboxGroup(document.getElementById("hostingServices"), pricingData.hostingServices, true);
   populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
   populateCheckboxGroup(document.getElementById("recurringServicesContainer"), recurringServices, true);
 
@@ -317,9 +328,10 @@ function applyPackagePreset(presetName) {
     });
   };
 
-  applyGroup("#addOns", preset.addOns);
-  applyGroup("#apiIntegrations", preset.api);
-  applyGroup("#recurringServicesContainer", preset.recurring);
+  applyGroup("#addOns", preset.addOns || []);
+  applyGroup("#apiIntegrations", preset.api || []);
+  applyGroup("#hostingServices", preset.hosting || []);
+  applyGroup("#recurringServicesContainer", preset.recurring || []);
 
   calculateTotal();
   return true;
