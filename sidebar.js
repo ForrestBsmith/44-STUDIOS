@@ -10,7 +10,7 @@ fetch("post.json")
 
     recentContainer.innerHTML = "";
     posts.forEach(p => {
-      recentContainer.innerHTML += `<a href="single.html?id=${p.id}" class="d-block mb-2 sidebartext">${p.title}</a>`;
+      recentContainer.innerHTML += `<a href="/blog/post?id=${p.id}" class="d-block mb-2 sidebartext">${p.title}</a>`;
     });
 
     socialContainer.innerHTML = `

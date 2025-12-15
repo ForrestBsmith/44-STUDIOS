@@ -24,14 +24,14 @@ fetch("post.json")
     // Previous/Next Post Links
     const currentIndex = posts.findIndex(p => p.id === post.id);
     if (currentIndex > 0) {
-      prevBtn.href = `single.html?id=${posts[currentIndex - 1].id}`;
+      prevBtn.href = `/blog/post?id=${posts[currentIndex - 1].id}`;
       prevBtn.textContent = `← ${posts[currentIndex - 1].title}`;
     } else {
       prevBtn.style.display = "none";
     }
 
     if (currentIndex < posts.length - 1) {
-      nextBtn.href = `single.html?id=${posts[currentIndex + 1].id}`;
+      nextBtn.href = `/blog/post?id=${posts[currentIndex + 1].id}`;
       nextBtn.textContent = `${posts[currentIndex + 1].title} →`;
     } else {
       nextBtn.style.display = "none";

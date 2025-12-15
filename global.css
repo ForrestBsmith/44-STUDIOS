@@ -99,7 +99,35 @@ a:hover {
 
 .site-footer {
   font-size: 0.95rem;
-  margin-top: 0rem;
+  margin-top: 1rem;
+}
+
+.site-footer .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  width: 70px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.footer-logo-text {
+  fill: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  writing-mode: tb;
+  glyph-orientation-vertical: 0;
+  letter-spacing: 0.2em;
+  animation: footer-logo-spin 8s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes footer-logo-spin {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(360deg); }
 }
 
 .site-footer .container {

@@ -100,7 +100,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <!-- Brand -->
-    <a class="navbar-brand h3 mb-0 header" href="">44 Studios</a>
+    <a class="navbar-brand h3 mb-0 header" href="/index.html">44 Studios</a>
 
     <!-- Toggler (Hamburger) -->
     <button 
@@ -118,19 +118,19 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="">Home</a>
+          <a class="nav-link text-white" href="/index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="blog">Blog</a>
+          <a class="nav-link text-white" href="/Blog.html">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="services">Services</a>
+          <a class="nav-link text-white" href="/Services.html">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="portfolio">Portfolio</a>
+          <a class="nav-link text-white" href="/Portfolio.html">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="contact">Contact</a>
+          <a class="nav-link text-white" href="/contact.html">Contact</a>
         </li>
       </ul>
     </div>
@@ -146,7 +146,7 @@
 
    <!-- Survey Questionnaire Link -->
 <div class="text-center mb-5">
-  <a href="web-survey" class="btn border rounded btn-lg" target="_blank" rel="noopener noreferrer">
+  <a href="/web-survey" class="btn border rounded btn-lg" target="_blank" rel="noopener noreferrer">
     Unsure What You Need? Take Our Quick Survey
   </a>
 </div>
@@ -319,6 +319,45 @@
     transform: translateY(-2px);
   }
 
+  /* Overview cards beneath IT CTA */
+  .quick-overview {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .quick-overview .package-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 28px;
+    height: 100%;
+  }
+
+  .quick-overview .package-card h4 {
+    font-weight: 600;
+  }
+
+  .quick-overview .package-card p {
+    color: #dfdfdf;
+  }
+
+  .quick-overview ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .quick-overview li {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .quick-overview li i {
+    color: #29a8ff;
+    margin-top: 4px;
+  }
+
 </style>
 
 <div class="estimate-container" id="calculator">
@@ -379,9 +418,38 @@
   <!--Additional Services & Link-->
   <div class="text-center">
     <p class="mb-4" style="font-size: 1.5em;font-weight: 400;">Looking for more than just web design? We offer a full suite of IT business services to help your company thrive in the digital age.</p>
-    <a href="it-media-survey" class="btn border mb-5 rounded btn-lg text-center" target="_blank" rel="noopener noreferrer">
+    <a href="/it-media-survey" class="btn border mb-5 rounded btn-lg text-center" target="_blank" rel="noopener noreferrer">
       Need Additional IT Business Services?
     </a>
+  </div>
+
+  <div class="container pb-5 quick-overview">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="package-card h-100">
+          <span class="text-uppercase text-secondary small">Quick Launch</span>
+          <h4 class="mt-2">Rapid Websites Built For Momentum</h4>
+          <p>Perfect for startups and service providers who need a polished presence in weeks, not months.</p>
+          <ul>
+            <li><i class="fa-solid fa-rocket"></i><span>3-5 page responsive site based on proven layouts branded with your colors, copy, and imagery.</span></li>
+            <li><i class="fa-solid fa-chart-line"></i><span>Essential SEO setup, analytics, and lead capture forms ready to plug into your email marketing.</span></li>
+            <li><i class="fa-solid fa-repeat"></i><span>Launch support plus light automations so you can manage updates without needing a developer.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="package-card h-100">
+          <span class="text-uppercase text-secondary small">Premium Custom</span>
+          <h4 class="mt-2">Tailored Digital Ecosystems</h4>
+          <p>Designed for growing brands that need custom experiences, integrations, and long-term scalability.</p>
+          <ul>
+            <li><i class="fa-solid fa-cubes"></i><span>Bespoke UX, copy, and animations crafted from the ground up to express your brand authority.</span></li>
+            <li><i class="fa-solid fa-sitemap"></i><span>Robust page counts, gated content, member portals, or multi-location structures built on flexible CMS options.</span></li>
+            <li><i class="fa-solid fa-gears"></i><span>Advanced API integrations, CRM/ATS workflows, automations, and on-call optimization retainers.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   </div>
 
@@ -395,19 +463,19 @@
         <div class="col-12 col-md-4">
           <h6 class="text-uppercase text-secondary footer-heading">Navigate</h6>
           <ul class="list-unstyled mb-0">
-            <li><a class="text-white footer-link" href="">Home</a></li>
-            <li><a class="text-white footer-link" href="services">Services</a></li>
-            <li><a class="text-white footer-link" href="portfolio">Portfolio</a></li>
-            <li><a class="text-white footer-link" href="blog">Blog</a></li>
-            <li><a class="text-white footer-link" href="contact">Contact</a></li>
+            <li><a class="text-white footer-link" href="/index.html">Home</a></li>
+            <li><a class="text-white footer-link" href="/Services.html">Services</a></li>
+            <li><a class="text-white footer-link" href="/portfolio">Portfolio</a></li>
+            <li><a class="text-white footer-link" href="/blog">Blog</a></li>
+            <li><a class="text-white footer-link" href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="col-12 col-md-4">
           <h6 class="text-uppercase text-secondary footer-heading">Quick Links</h6>
           <ul class="list-unstyled mb-0">
-            <li><a class="text-white footer-link" href="web-survey">Website Package Survey</a></li>
-            <li><a class="text-white footer-link" href="it-media-survey">IT & Media Needs Survey</a></li>
-            <li><a class="text-white footer-link" href="#calculator">Project Calculator</a></li>
+            <li><a class="text-white footer-link" href="/web-survey">Website Package Survey</a></li>
+            <li><a class="text-white footer-link" href="/it-media-survey">IT & Media Needs Survey</a></li>
+            <li><a class="text-white footer-link" href="/services#calculator">Project Calculator</a></li>
           </ul>
         </div>
       </div>
