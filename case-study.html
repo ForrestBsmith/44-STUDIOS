@@ -98,15 +98,135 @@
       box-shadow: 0 8px 20px rgba(116, 128, 146, 0.2);
     }
 
-    /* Process Cards */
-    #process-steps .card {
-      border: none;
-      background: linear-gradient(145deg, #11111172, #1a1a1a2f) !important;
-      transition: all 0.4s ease;
+    .mockup-wrapper {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 1.5rem;
+      background: rgba(10,11,18,0.75);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
-    #process-steps .card:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(13,110,253,0.2);
+    .mockup-tabs .nav-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      color: rgba(255,255,255,0.65);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+    }
+    .mockup-tabs .nav-link.active {
+      background: #fff;
+      color: #0b0b0f;
+      border-color: #fff;
+    }
+    .mockup-pane img {
+      border-radius: 18px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .mockup-detail {
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1rem;
+    }
+    .mockup-detail p {
+      margin-bottom: 0.75rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .mockup-detail ul {
+      padding-left: 1.25rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+    #mockup-tech .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.7rem;
+      letter-spacing: 0.08rem;
+    }
+
+    .case-detail .case-meta-panel {
+      background: rgba(15,15,25,0.7);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    }
+    .meta-row + .meta-row {
+      margin-top: 1.1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 1.1rem;
+    }
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.2rem;
+    }
+    .meta-value {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .case-meta-tags .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+    .story-card {
+      background: rgba(15,15,25,0.55);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    .story-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .story-text {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+    }
+    .feature-grid-section .feature-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      height: 100%;
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .feature-index {
+      font-size: 0.75rem;
+      letter-spacing: 0.2rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .client-impact-section .impact-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(14,17,27,0.9), rgba(12,12,18,0.8));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .impact-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .impact-quote p {
+      margin-bottom: 0;
     }
 
     .related-card {
@@ -168,41 +288,89 @@
             <a id="live-site-link"></a>
           </div>
 
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6">
             <div class="mockup-wrapper fade-up">
-              <img id="project-mockup" src="" alt="Project mockup" class="img-fluid rounded-4 shadow-lg border border-dark-subtle">
+              <ul class="nav nav-pills mockup-tabs mb-3" id="mockupTabNav" role="tablist"></ul>
+              <div class="tab-content" id="mockupTabContent"></div>
+              <div class="mockup-detail">
+                <p id="mockup-description"></p>
+                <ul id="mockup-bullets" class="mb-3"></ul>
+                <div id="mockup-tech" class="d-flex flex-wrap gap-2"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-<!-- Key Highlights -->
-<section class="mb-5">
-  <h2 class="mb-4" data-aos="fade-up">Key Highlights</h2>
-  <ul id="key-highlights" class="list-unstyled ms-3"></ul>
-</section>
-
-<!-- Gallery -->
-<section class="mb-5">
-  <div class="row g-4 gallery" id="gallery"></div>
-</section>
-
-    <!-- Our Process -->
-    <section class="mb-5 py-5 border-top border-secondary border-opacity-25">
+    <!-- Detail Grid -->
+    <section class="case-detail mb-5">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold mb-3">Our Process</h2>
-          <p class="text-light opacity-75 lead">
-            Every project at 44 Studios follows a structured creative workflow — blending strategy, design, and development to deliver impactful results.
-          </p>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-4">
+            <div class="case-meta-panel h-100">
+              <div class="meta-row">
+                <p class="meta-label">Client</p>
+                <p class="meta-value" id="meta-client"></p>
+              </div>
+              <div class="meta-row">
+                <p class="meta-label">Industry</p>
+                <p class="meta-value" id="meta-field"></p>
+              </div>
+              <div class="meta-row">
+                <p class="meta-label">Location</p>
+                <p class="meta-value" id="meta-location"></p>
+              </div>
+              <div class="meta-row">
+                <p class="meta-label">Stack</p>
+                <div id="meta-tags" class="case-meta-tags d-flex flex-wrap gap-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="story-card h-100">
+                  <p class="story-label text-uppercase">Challenge</p>
+                  <p id="challenge-copy" class="story-text"></p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="story-card h-100">
+                  <p class="story-label text-uppercase">Approach</p>
+                  <p id="solution-copy" class="story-text"></p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="story-card h-100">
+                  <p class="story-label text-uppercase">Result</p>
+                  <p id="result-copy" class="story-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row g-4" id="process-steps"></div>
       </div>
     </section>
 
+    <!-- Experience Layers -->
+    <section class="feature-grid-section mb-5">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+          <h2 class="mb-0">Experience Layers</h2>
+          <p class="text-secondary mb-0">The UX, tech, and automation in this build</p>
+        </div>
+        <div class="row g-4" id="feature-grid"></div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mb-5">
+      <div class="row g-4 gallery" id="gallery"></div>
+    </section>
+
     <!-- Client Impact -->
-    <section id="client-impact" class="mb-5 p-4 rounded shadow-sm"></section>
+    <section class="client-impact-section mb-5" id="client-impact"></section>
 
 <!-- Related Projects -->
 <section class="related-projects py-5 bg-dark text-white">

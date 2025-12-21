@@ -16,7 +16,50 @@ fetch(jsonFile)
     // --- Basic Info ---
     document.getElementById("project-title").innerText = projectData.title;
     document.getElementById("project-tagline").innerText = projectData.tagline;
-    document.getElementById("project-mockup").src = projectData.mockup;
+    const mockupTabNav = document.getElementById("mockupTabNav");
+    const mockupTabContent = document.getElementById("mockupTabContent");
+    const fallbackHighlights = projectData.keyHighlights || [];
+    const fallbackTech = projectData.technologies || [];
+    const mockups = (projectData.mockups || (projectData.gallery || []).slice(0,3).map((img, i) => ({
+      src: img.src,
+      alt: img.alt || `View ${i+1}`,
+      label: img.label || `View ${i+1}`,
+      description: projectData.overview?.[i] || projectData.description || "",
+      highlights: fallbackHighlights.slice(i*3, i*3 + 3),
+      tools: fallbackTech
+    }))).map(m => ({
+      ...m,
+      highlights: m.highlights && m.highlights.length ? m.highlights : fallbackHighlights.slice(0,3),
+      tools: m.tools && m.tools.length ? m.tools : fallbackTech
+    }));
+    mockupTabNav.innerHTML = mockups.map((m, i) => `
+      <li class="nav-item" role="presentation">
+        <button class="nav-link ${i===0 ? "active" : ""}" id="mockup-tab-${i}" data-bs-toggle="pill" data-bs-target="#mockup-pane-${i}" type="button" role="tab" aria-controls="mockup-pane-${i}" aria-selected="${i===0}">
+          ${m.label}
+        </button>
+      </li>`).join("");
+    mockupTabContent.innerHTML = mockups.map((m, i) => `
+      <div class="tab-pane fade ${i===0 ? "show active" : ""} mockup-pane" id="mockup-pane-${i}" role="tabpanel" aria-labelledby="mockup-tab-${i}">
+        <img src="${m.src}" alt="${m.alt}">
+      </div>`).join("");
+    const mockupDescriptionEl = document.getElementById("mockup-description");
+    const mockupBulletsEl = document.getElementById("mockup-bullets");
+    const mockupTechEl = document.getElementById("mockup-tech");
+
+    const setMockupDetail = index => {
+      const detail = mockups[index] || mockups[0];
+      if(!detail) return;
+      mockupDescriptionEl.textContent = detail.description || projectData.description || "";
+      mockupBulletsEl.innerHTML = (detail.highlights || fallbackHighlights)
+        .map(item => `<li>${item}</li>`).join("") || "<li>No highlights provided.</li>";
+      mockupTechEl.innerHTML = (detail.tools || fallbackTech)
+        .map(tool => `<span class="badge">${tool}</span>`).join("");
+    };
+
+    document.querySelectorAll("#mockupTabNav .nav-link").forEach((btn, idx) => {
+      btn.addEventListener("shown.bs.tab", () => setMockupDetail(idx));
+    });
+    setMockupDetail(0);
     document.getElementById("project-description").innerText = projectData.description;
 
     document.getElementById("live-site-link").innerHTML = `
@@ -32,18 +75,34 @@ fetch(jsonFile)
           <span>${item}</span>
         </li>`).join("");
 
+    // --- Meta Data ---
+    document.getElementById("meta-client").innerText = projectData.clientName || "—";
+    document.getElementById("meta-field").innerText = projectData.businessField || "—";
+    document.getElementById("meta-location").innerText = projectData.location || "—";
+    document.getElementById("meta-tags").innerHTML = (projectData.technologies || [])
+      .map(tech => `<span class="badge">${tech}</span>`)
+      .join("");
+
+    const overviewCopy = projectData.overview || [];
+    document.getElementById("challenge-copy").innerText = overviewCopy[0] || projectData.description || "";
+    document.getElementById("solution-copy").innerText = overviewCopy[1] || overviewCopy[0] || "";
+    const impactText = projectData.clientImpact?.text || "";
+    document.getElementById("result-copy").innerText = impactText;
+
     // --- Technologies ---
     document.getElementById("technologies").innerHTML = projectData.technologies
       .map(tech => `<span class="badge bg-primary bg-opacity-75 text-light me-2 mb-2 px-3 py-2 shadow-sm">${tech}</span>`)
       .join("");
 
-    // --- Key Highlights ---
-    document.getElementById("key-highlights").innerHTML = projectData.keyHighlights
+    // --- Experience Layers ---
+    document.getElementById("feature-grid").innerHTML = (projectData.keyHighlights || [])
       .map((item, i) => `
-        <li class="d-flex align-items-start mb-2 fade-up" style="transition-delay:${i*100}ms">
-          <i class="bi bi-check-circle-fill text-primary me-2"></i>
-          <span>${item}</span>
-        </li>`).join("");
+        <div class="col-md-6 col-lg-4 fade-up" style="transition-delay:${i*80}ms">
+          <div class="feature-card h-100">
+            <span class="feature-index">${String(i + 1).padStart(2, "0")}</span>
+            <p class="mb-0 mt-2">${item}</p>
+          </div>
+        </div>`).join("");
 
     // --- Gallery ---
     document.getElementById("gallery").innerHTML = projectData.gallery
@@ -54,28 +113,20 @@ fetch(jsonFile)
           </a>
         </div>`).join("");
 
-    // --- Process Steps ---
-    document.getElementById("process-steps").innerHTML = projectData.process
-      .map((step, i) => `
-        <div class="col-md-6 col-lg-3 fade-up" style="transition-delay:${i*150}ms">
-          <div class="card text-white border-0 h-100 shadow-sm p-4 text-center" style="background: linear-gradient(145deg, #111, #1a1a1a);">
-            <div class="mb-3">
-              <div class="rounded-circle bg-primary bg-opacity-10 d-inline-flex align-items-center justify-content-center" style="width:70px; height:70px;">
-                <i class="bi ${step.icon} fs-3 text-${step.color}"></i>
-              </div>
-            </div>
-            <h5 class="fw-bold mb-2">${step.step}</h5>
-            <p class="small text-light opacity-75">${step.text}</p>
-          </div>
-        </div>`).join("");
-
     // --- Client Impact ---
+    const quote = projectData.clientImpact?.testimonial?.quote || "";
+    const author = projectData.clientImpact?.testimonial?.author || "";
     document.getElementById("client-impact").innerHTML = `
-      <p>${projectData.clientImpact.text}</p>
-      <blockquote class="blockquote mt-4">
-        <p class="mb-1">"${projectData.clientImpact.testimonial.quote}"</p>
-        <footer class="blockquote-footer mt-1 text-white-50">${projectData.clientImpact.testimonial.author}</footer>
-      </blockquote>`;
+      <div class="impact-card">
+        <div>
+          <p class="impact-label">Outcome</p>
+          <p class="mb-0">${impactText}</p>
+        </div>
+        <div class="impact-quote">
+          <p class="fst-italic mb-2">"${quote}"</p>
+          <p class="text-secondary">${author}</p>
+        </div>
+      </div>`;
 
     // --- Related Projects with direction-aware arrows ---
     document.getElementById("related-projects").innerHTML = projectData.relatedProjects

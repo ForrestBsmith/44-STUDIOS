@@ -46,13 +46,13 @@ select, label { font-size: 20px; margin: 8px 0; }
 }
 
 /* lists & sections */
-ul li {
-  font-size: 30px;
+.portfolio-list li {
+  font-size: 17px;
   margin-bottom: 30px;
   color: white !important;
 }
 
-ul { margin-top: 80px !important; }
+ul { margin-top: 0 !important; }
 
 .process {
   font-size: 50px;
