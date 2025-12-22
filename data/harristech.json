@@ -17,7 +17,12 @@
     "Optimized for SEO & page speed",
     "Custom CMS fields for client control"
   ],
-  "technologies": ["WordPress", "Tailwind", "JavaScript", "SEO Optimization"],
+  "technologies": [
+    "WordPress",
+    "Tailwind",
+    "JavaScript",
+    "SEO Optimization"
+  ],
   "keyHighlights": [
     "Mobile-first responsive design",
     "Integrated booking and lead capture system",
@@ -29,26 +34,126 @@
     "Email newsletter signup integration"
   ],
   "gallery": [
-    { "src": "robert/Tablet View.png", "alt": "Homepage Design" },
-    { "src": "robert/Laptop View.png", "alt": "Inner Page" },
-    { "src": "robert/Phone View.png", "alt": "Mobile View" }
+    {
+      "src": "robert/Tablet View.png",
+      "alt": "Homepage Design"
+    },
+    {
+      "src": "robert/Laptop View.png",
+      "alt": "Inner Page"
+    },
+    {
+      "src": "robert/Phone View.png",
+      "alt": "Mobile View"
+    }
   ],
   "process": [
-    { "step": "Discovery", "icon": "bi-search", "color": "primary", "text": "We start by understanding your goals, target audience, and competition — gathering insights that shape our entire creative approach." },
-    { "step": "Design", "icon": "bi-pencil-square", "color": "info", "text": "Our design team crafts a visual language that aligns with your brand identity, ensuring a user experience that feels intentional and intuitive." },
-    { "step": "Development", "icon": "bi-code-slash", "color": "warning", "text": "We translate designs into fast, responsive code using modern frameworks and clean practices that prioritize performance and accessibility." },
-    { "step": "Launch & Support", "icon": "bi-rocket-takeoff", "color": "success", "text": "After launch, we monitor performance, optimize SEO, and provide post-launch support to ensure your site continues to evolve with your goals." }
+    {
+      "step": "Discovery",
+      "icon": "bi-search",
+      "color": "primary",
+      "text": "We start by understanding your goals, target audience, and competition \u2014 gathering insights that shape our entire creative approach."
+    },
+    {
+      "step": "Design",
+      "icon": "bi-pencil-square",
+      "color": "info",
+      "text": "Our design team crafts a visual language that aligns with your brand identity, ensuring a user experience that feels intentional and intuitive."
+    },
+    {
+      "step": "Development",
+      "icon": "bi-code-slash",
+      "color": "warning",
+      "text": "We translate designs into fast, responsive code using modern frameworks and clean practices that prioritize performance and accessibility."
+    },
+    {
+      "step": "Launch & Support",
+      "icon": "bi-rocket-takeoff",
+      "color": "success",
+      "text": "After launch, we monitor performance, optimize SEO, and provide post-launch support to ensure your site continues to evolve with your goals."
+    }
   ],
-"clientImpact": {
-  "text": "Shortly after launch, the client noticed a significant improvement in how potential customers interacted with the site. The clearer service breakdowns and faster load speeds helped increase inquiry rates, while the new contact automation saved hours of manual follow-up work each week. The refreshed brand presentation also gave Harris Tech Solutions a more trustworthy, enterprise-ready look online.",
-  "testimonial": {
-    "quote": "44 Studios took my vision and turned it into a professional, high-performing site that truly represents my business. It’s made it easier for clients to find me and trust my services.",
-    "author": "Robert Harris, Founder of Harris Tech Solutions"
-  }
-}
-,
+  "clientImpact": {
+    "text": "Shortly after launch, the client noticed a significant improvement in how potential customers interacted with the site. The clearer service breakdowns and faster load speeds helped increase inquiry rates, while the new contact automation saved hours of manual follow-up work each week. The refreshed brand presentation also gave Harris Tech Solutions a more trustworthy, enterprise-ready look online.",
+    "testimonial": {
+      "quote": "44 Studios took my vision and turned it into a professional, high-performing site that truly represents my business. It\u2019s made it easier for clients to find me and trust my services.",
+      "author": "Robert Harris, Founder of Harris Tech Solutions"
+    }
+  },
   "relatedProjects": [
-    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "/case-study?project=jakeindermanrealty" },
-    { "title": "Matt Talks Mortgage", "summary": "Loan Officer", "image": "matt/mattlaptop.png", "url": "/case-study?project=matttalksmortgage" }
-  ]
+    {
+      "title": "Jake Inderman Homes",
+      "summary": "Real Estate",
+      "image": "jake/Jake Indermanrealty.png",
+      "url": "/case-study?project=jakeindermanrealty"
+    },
+    {
+      "title": "Matt Talks Mortgage",
+      "summary": "Loan Officer",
+      "image": "matt/mattlaptop.png",
+      "url": "/case-study?project=matttalksmortgage"
+    }
+  ],
+  "mockups": [
+    {
+      "label": "Home",
+      "src": "robert/Tablet View.png",
+      "alt": "Harris Tech home page",
+      "description": "Hero with rotating service callouts and simplified navigation.",
+      "highlights": [
+        "Hero toggles showcase each offer",
+        "Pinned CTA directs to audit form",
+        "Trust ribbon shows certifications"
+      ],
+      "tools": [
+        "WordPress",
+        "Tailwind"
+      ]
+    },
+    {
+      "label": "Services & Pricing",
+      "src": "robert/Laptop View.png",
+      "alt": "Harris Tech services page",
+      "description": "Modular service grid with flexible pricing notes and automation badges.",
+      "highlights": [
+        "Service cards map to buyer pains",
+        "Pricing modifiers clarify add-ons",
+        "Automation bar highlights EmailJS use"
+      ],
+      "tools": [
+        "JavaScript",
+        "EmailJS"
+      ]
+    },
+    {
+      "label": "Blog & Case Study",
+      "src": "robert/blog.png",
+      "alt": "Harris Tech blog view",
+      "description": "Content hub mixing case studies and how-to posts to boost SEO and authority.",
+      "highlights": [
+        "Category filters for fast browsing",
+        "Sticky subscribe component",
+        "Schema markup baked in"
+      ],
+      "tools": [
+        "WordPress",
+        "Yoast SEO"
+      ]
+    },
+    {
+      "label": "FAQ",
+      "src": "robert/faq.png",
+      "alt": "Harris Tech FAQ page",
+      "description": "Accordion-style FAQ with contextual contact hooks for quick answers.",
+      "highlights": [
+        "Grouped FAQs by use case",
+        "Contact CTA embedded after answers",
+        "Microcopy written for clarity"
+      ],
+      "tools": [
+        "WordPress"
+      ]
+    }
+  ],
+  "turnaround": "5 days"
 }

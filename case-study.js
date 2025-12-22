@@ -79,6 +79,7 @@ fetch(jsonFile)
     document.getElementById("meta-client").innerText = projectData.clientName || "—";
     document.getElementById("meta-field").innerText = projectData.businessField || "—";
     document.getElementById("meta-location").innerText = projectData.location || "—";
+    document.getElementById("meta-turnaround").innerText = projectData.turnaround || "—";
     document.getElementById("meta-tags").innerHTML = (projectData.technologies || [])
       .map(tech => `<span class="badge">${tech}</span>`)
       .join("");

@@ -17,7 +17,12 @@
     "Optimized for SEO & page speed",
     "Custom CMS fields for client control"
   ],
-  "technologies": ["WordPress", "Bootstrap 5", "JavaScript", "SEO Optimization"],
+  "technologies": [
+    "WordPress",
+    "Bootstrap 5",
+    "JavaScript",
+    "SEO Optimization"
+  ],
   "keyHighlights": [
     "Mobile-first responsive design",
     "Integrated booking and lead capture system",
@@ -28,26 +33,65 @@
     "Embed video content seamlessly"
   ],
   "gallery": [
-    { "src": "matt/mattlaptop.png", "alt": "Homepage Design" },
-    { "src": "matt/mattphone.png", "alt": "Inner Page" },
-    { "src": "matt/matttablet.png", "alt": "Mobile View" }
+    {
+      "src": "matt/mattlaptop.png",
+      "alt": "Homepage Design"
+    },
+    {
+      "src": "matt/mattphone.png",
+      "alt": "Inner Page"
+    },
+    {
+      "src": "matt/matttablet.png",
+      "alt": "Mobile View"
+    }
   ],
   "process": [
-    { "step": "Discovery", "icon": "bi-search", "color": "primary", "text": "We start by understanding your goals, target audience, and competition — gathering insights that shape our entire creative approach." },
-    { "step": "Design", "icon": "bi-pencil-square", "color": "info", "text": "Our design team crafts a visual language that aligns with your brand identity, ensuring a user experience that feels intentional and intuitive." },
-    { "step": "Development", "icon": "bi-code-slash", "color": "warning", "text": "We translate designs into fast, responsive code using modern frameworks and clean practices that prioritize performance and accessibility." },
-    { "step": "Launch & Support", "icon": "bi-rocket-takeoff", "color": "success", "text": "After launch, we monitor performance, optimize SEO, and provide post-launch support to ensure your site continues to evolve with your goals." }
+    {
+      "step": "Discovery",
+      "icon": "bi-search",
+      "color": "primary",
+      "text": "We start by understanding your goals, target audience, and competition \u2014 gathering insights that shape our entire creative approach."
+    },
+    {
+      "step": "Design",
+      "icon": "bi-pencil-square",
+      "color": "info",
+      "text": "Our design team crafts a visual language that aligns with your brand identity, ensuring a user experience that feels intentional and intuitive."
+    },
+    {
+      "step": "Development",
+      "icon": "bi-code-slash",
+      "color": "warning",
+      "text": "We translate designs into fast, responsive code using modern frameworks and clean practices that prioritize performance and accessibility."
+    },
+    {
+      "step": "Launch & Support",
+      "icon": "bi-rocket-takeoff",
+      "color": "success",
+      "text": "After launch, we monitor performance, optimize SEO, and provide post-launch support to ensure your site continues to evolve with your goals."
+    }
   ],
-"clientImpact": {
-  "text": "After launching the new site, Matt saw a noticeable increase in qualified leads and smoother communication with clients. The redesigned layout clearly explained loan options, while integrated contact forms and calculators made it easy for visitors to start pre-qualification requests. The site’s professional tone and clear branding helped build trust and positioned Matt as a reliable local lending expert.",
-  "testimonial": {
-    "quote": "44 Studios made the process effortless — my new website feels professional and approachable. Clients are reaching out more often, and many mention how easy it was to find the information they needed.",
-    "author": "Matt Ballamier, Loan Officer"
-  }
-}
-,
+  "clientImpact": {
+    "text": "After launching the new site, Matt saw a noticeable increase in qualified leads and smoother communication with clients. The redesigned layout clearly explained loan options, while integrated contact forms and calculators made it easy for visitors to start pre-qualification requests. The site\u2019s professional tone and clear branding helped build trust and positioned Matt as a reliable local lending expert.",
+    "testimonial": {
+      "quote": "44 Studios made the process effortless \u2014 my new website feels professional and approachable. Clients are reaching out more often, and many mention how easy it was to find the information they needed.",
+      "author": "Matt Ballamier, Loan Officer"
+    }
+  },
   "relatedProjects": [
-    { "title": "Jake Inderman Homes", "summary": "Real Estate", "image": "jake/Jake Indermanrealty.png", "url": "/case-study?project=jakeindermanrealty" },
-    { "title": "Harris Tech Solutions", "summary": "IT Professional", "image": "robert/Laptop View.png", "url": "/case-study?project=harristech" }
-  ]
+    {
+      "title": "Jake Inderman Homes",
+      "summary": "Real Estate",
+      "image": "jake/Jake Indermanrealty.png",
+      "url": "/case-study?project=jakeindermanrealty"
+    },
+    {
+      "title": "Harris Tech Solutions",
+      "summary": "IT Professional",
+      "image": "robert/Laptop View.png",
+      "url": "/case-study?project=harristech"
+    }
+  ],
+  "turnaround": "5 days"
 }

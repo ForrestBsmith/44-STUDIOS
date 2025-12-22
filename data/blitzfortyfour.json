@@ -8,25 +8,21 @@
   "liveSiteText": "Visit Live Site",
   "mockup": "Blitz/mobile-view.jpg",
   "description": "A modern lifestyle and apparel brand website designed with a premium aesthetic, seamless shopping experience, and scalable e-commerce foundations.",
-  
   "overview": [
     "This project highlights a full lifestyle brand website built to support both product discovery and smooth e-commerce functionality.",
     "The site brings together elevated visuals, a polished mobile experience, and a modular content structure that grows with the brand."
   ],
-
   "overviewHighlights": [
     "Full e-commerce integration",
     "Mobile-first product browsing",
     "Brand-driven design system"
   ],
-
   "technologies": [
     "WordPress",
     "Bootstrap 5",
     "JavaScript",
     "SEO Optimization"
   ],
-
   "keyHighlights": [
     "Mobile-first responsive design for effortless shopping",
     "SEO foundation for brand awareness and organic reach",
@@ -36,19 +32,26 @@
     "Client-managed products and content via custom CMS fields",
     "Integrated lifestyle photography across product and lookbook sections"
   ],
-
   "gallery": [
-    { "src": "Blitz/tablet-view.jpg", "alt": "Homepage Design" },
-    { "src": "Blitz/laptop-view.jpg", "alt": "Product Category Page" },
-    { "src": "Blitz/mobile-view.jpg", "alt": "Mobile Product View" }
+    {
+      "src": "Blitz/tablet-view.jpg",
+      "alt": "Homepage Design"
+    },
+    {
+      "src": "Blitz/laptop-view.jpg",
+      "alt": "Product Category Page"
+    },
+    {
+      "src": "Blitz/mobile-view.jpg",
+      "alt": "Mobile Product View"
+    }
   ],
-
   "process": [
     {
       "step": "Discovery",
       "icon": "bi-search",
       "color": "primary",
-      "text": "We begin by defining the brand style, target audience, and product direction — creating the foundation for an elevated lifestyle experience."
+      "text": "We begin by defining the brand style, target audience, and product direction \u2014 creating the foundation for an elevated lifestyle experience."
     },
     {
       "step": "Design",
@@ -66,18 +69,16 @@
       "step": "Launch & Support",
       "icon": "bi-rocket-takeoff",
       "color": "success",
-      "text": "After launch, we continue refining SEO, performance, and product flows — supporting the brand as it grows and scales."
+      "text": "After launch, we continue refining SEO, performance, and product flows \u2014 supporting the brand as it grows and scales."
     }
   ],
-
   "clientImpact": {
-    "text": "The new BLITZFORTYFOUR website elevated the brand’s online presence and provided a seamless e-commerce experience that reflects the quality and identity behind the products.",
+    "text": "The new BLITZFORTYFOUR website elevated the brand\u2019s online presence and provided a seamless e-commerce experience that reflects the quality and identity behind the products.",
     "testimonial": {
       "quote": "",
       "author": ""
     }
   },
-
   "relatedProjects": [
     {
       "title": "Harris Tech Solutions",
@@ -91,5 +92,6 @@
       "image": "matt/mattlaptop.png",
       "url": "/case-study?project=matttalksmortgage"
     }
-  ]
+  ],
+  "turnaround": "5 days"
 }

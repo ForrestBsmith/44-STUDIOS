@@ -17,12 +17,12 @@ color: rgb(33, 33, 33) !important;
   text-decoration: none !important;
 }
 
-.nav-link {
+.navbar .nav-link {
   text-decoration: none !important;
   font-size: 1.5rem !important;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
   text-decoration: none !important;
     text-decoration: underline !important;
 
@@ -83,7 +83,7 @@ a:hover {
 /* Shared responsive behavior */
 @media (max-width: 576px) {
   .header { font-size: 2.5rem !important; }
-  .nav-link { font-size: 1.5rem !important; text-align: center; }
+  .navbar .nav-link { font-size: 1.5rem !important; text-align: center; }
   h1 { font-size: 2rem !important; }
   h2 { font-size: 1.5rem !important; }
   h3 { font-size: 1.1rem !important; }
@@ -91,7 +91,7 @@ a:hover {
 
 @media (max-width: 900px) {
   .header { font-size: 3rem !important; }
-.nav-link { font-size: 1.75rem !important; text-align: center; }
+.navbar .nav-link { font-size: 1.75rem !important; text-align: center; }
   h1 { font-size: 2.5rem !important; }
   h2 { font-size: 1.75rem !important; }
   h3 { font-size: 1.2rem !important; }
@@ -131,8 +131,40 @@ a:hover {
 }
 
 .site-footer .container {
+  max-width: 1400px;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
+}
+
+.newsletter-panel {
+  padding: 2.5rem 2rem;
+}
+
+.newsletter-form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  max-width: 50%;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.newsletter-form input:focus {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.newsletter-form .btn {
+  border-radius: 12px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  max-width: 50%;
 }
 
 .site-footer h5,

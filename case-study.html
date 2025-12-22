@@ -69,14 +69,16 @@
 
     /* Project Overview Gradient + Animation */
     .project-overview-section {
-      background: linear-gradient(145deg, #1111119a, #1a1a1a38) !important;
       border-radius: 1rem;
-      box-shadow: 0 0 0px rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(12, 12, 16, 0.65);
       overflow: hidden;
-      transition: all 0.6s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
     }
     .project-overview-section:hover {
-      box-shadow: 0 0 30px rgba(13, 110, 253, 0.2);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.45);
     }
 
     .fade-up {
@@ -90,35 +92,35 @@
     }
 
     .mockup-wrapper {
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.6s ease;
-    }
-    .mockup-wrapper:hover {
-      transform: scale(1.01);
-      box-shadow: 0 8px 20px rgba(116, 128, 146, 0.2);
-    }
-
-    .mockup-wrapper {
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 1.5rem;
-      background: rgba(10,11,18,0.75);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+      background: rgba(12, 12, 16, 0.65);
+    }
+    .mockup-tabs {
+      gap: 0.6rem;
+      flex-wrap: wrap;
     }
     .mockup-tabs .nav-link {
-      font-size: 0.75rem;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      padding: 0.35rem 0.9rem;
       letter-spacing: 0.08rem;
       text-transform: uppercase;
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      color: rgba(255,255,255,0.65);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.02);
+      font-weight: 600;
     }
     .mockup-tabs .nav-link.active {
-      background: #fff;
-      color: #0b0b0f;
-      border-color: #fff;
+      background: #ffffff;
+      color: #050505;
+      border-color: rgba(255,255,255,0.8);
+    }
+    .mockup-tabs .nav-link:hover {
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.25);
     }
     .mockup-pane img {
       border-radius: 18px;
@@ -147,7 +149,7 @@
     }
 
     .case-detail .case-meta-panel {
-      background: rgba(15,15,25,0.7);
+      background: rgba(12, 12, 16, 0.65);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 1.25rem;
       padding: 1.75rem;
@@ -176,8 +178,8 @@
       letter-spacing: 0.1rem;
     }
     .story-card {
-      background: rgba(15,15,25,0.55);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(12, 12, 16, 0.65);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 1.25rem;
       padding: 1.5rem;
       height: 100%;
@@ -193,16 +195,18 @@
       margin-bottom: 0;
     }
     .feature-grid-section .feature-card {
-      background: rgba(255,255,255,0.02);
+      background: rgba(12, 12, 16, 0.65);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 1.25rem;
       padding: 1.5rem;
       height: 100%;
-      transition: transform 0.3s ease, border 0.3s ease;
+      transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
     .feature-card:hover {
       transform: translateY(-4px);
       border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
     .feature-index {
       font-size: 0.75rem;
@@ -212,7 +216,7 @@
     .client-impact-section .impact-card {
       border-radius: 1.5rem;
       padding: 2rem;
-      background: linear-gradient(135deg, rgba(14,17,27,0.9), rgba(12,12,18,0.8));
+      background: rgba(12, 12, 16, 0.65);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 20px 45px rgba(0,0,0,0.45);
       display: grid;
@@ -232,6 +236,9 @@
     .related-card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
+  background: rgba(12, 12, 16, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1rem;
 }
 .related-card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -322,6 +329,10 @@
                 <p class="meta-value" id="meta-location"></p>
               </div>
               <div class="meta-row">
+                <p class="meta-label">Turnaround</p>
+                <p class="meta-value" id="meta-turnaround"></p>
+              </div>
+              <div class="meta-row">
                 <p class="meta-label">Stack</p>
                 <div id="meta-tags" class="case-meta-tags d-flex flex-wrap gap-2"></div>
               </div>
@@ -391,5 +402,70 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.1/dist/simple-lightbox.min.js"></script>
   <script src="case-study.js"></script>
+
+
+<footer class="site-footer bg-dark text-white border-top border-secondary">
+  <div class="container py-5">
+    <div class="row gy-5 align-items-start">
+      <div class="col-12 col-lg-5">
+        <div class="newsletter-panel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12">
+              <h3 class="fw-semibold mb-2">Subscribe to the Media Ops Briefing</h3>
+              <p class="text-white-50 mb-0">Monthly playbooks, case study drops, and automation tips delivered straight to your inbox.</p>
+            </div>
+            <div class="col-12 text-lg-end">
+              <form class="newsletter-form d-flex flex-column gap-3 ms-lg-auto align-items-lg-end">
+                <input type="email" class="form-control" placeholder="Email address" required>
+                <button type="submit" class="btn btn-outline-light px-3 py-2">Join List</button>
+              </form>
+              <small class="text-secondary d-block mt-2 text-lg-end">No spam. Unsubscribe anytime.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="row gy-4">
+<div class="col-sm-4">
+  <h6 class="text-uppercase text-secondary footer-heading">Navigate</h6>
+  <ul class="list-unstyled mb-0">
+    <li><a class="text-white footer-link" href="/">Home</a></li>
+    <li><a class="text-white footer-link" href="/services">Services</a></li>
+    <li><a class="text-white footer-link" href="/portfolio">Portfolio</a></li>
+    <li><a class="text-white footer-link" href="/blog">Blog</a></li>
+    <li><a class="text-white footer-link" href="/contact">Contact</a></li>
+  </ul>
+</div>
+<div class="col-sm-4">
+  <h6 class="text-uppercase text-secondary footer-heading">Quick Links</h6>
+  <ul class="list-unstyled mb-0">
+    <li><a class="text-white footer-link" href="/web-survey">Website Package Survey</a></li>
+    <li><a class="text-white footer-link" href="/it-media-survey">IT & Media Needs Survey</a></li>
+    <li><a class="text-white footer-link" href="/services#calculator">Project Calculator</a></li>
+  </ul>
+</div>
+<div class="col-sm-4">
+  <h6 class="text-uppercase text-secondary footer-heading">Social</h6>
+  <ul class="list-unstyled mb-0">
+    <li><a class="text-white footer-link" href="https://www.facebook.com/profile.php?id=61580407507952" target="_blank" rel="noopener">Facebook</a></li>
+    <li><a class="text-white footer-link" href="https://www.linkedin.com/in/44StudiosDesign/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a class="text-white footer-link" href="https://twitter.com/44studiosdesign" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between align-items-center border-top border-secondary sub-footer">
+      <div>&copy; 2024 44 Studios. All rights reserved.</div>
+      <div class="d-flex gap-3">
+        <a class="text-white footer-link" href="https://www.facebook.com/profile.php?id=61580407507952" target="_blank" rel="noopener">Facebook</a>
+        <a class="text-white footer-link" href="https://www.linkedin.com/in/44StudiosDesign/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="text-white footer-link" href="https://twitter.com/44studiosdesign" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
 </body>
 </html>
