@@ -23,7 +23,6 @@ fetch("post.json")
               <img src="${post.image}" alt="${post.title}">
               <div class="blog-card-body">
                 <h5 class="blog-card-title">${post.title}</h5>
-                <p class="blog-card-text">${post.excerpt}</p>
                 <a href="/blog/post?id=${post.id}" class="read-btn border rounded" style="text-decoration:none;">Read More</a>
               </div>
             </div>
