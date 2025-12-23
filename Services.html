@@ -266,16 +266,12 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
-    padding-top: 0;
+    padding: 0;
   }
 
-  .content.open {
-    padding-top: 15px;
-  }
 
   /* Highlight selection for dropdowns */
   select {
-    padding: 10px 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
@@ -396,12 +392,14 @@
     <div class="tier-row">
       <div class="card">
         <h3><i class="fa-solid fa-rocket"></i> Quick Launch Shell</h3>
+        <p class="text-white-50 mb-2" style="font-size:0.9rem;">Pick the ready-made shell that best matches your timeline&mdash;each includes our base UX, launch checklist, and content wiring.</p>
         <label>Select Shell:</label>
         <select id="tier1"></select>
       </div>
 
       <div class="card">
         <h3><i class="fa-solid fa-cogs"></i> Premium Custom</h3>
+        <p class="text-white-50 mb-2" style="font-size:0.9rem;">Scope bespoke builds for e-commerce, applications, or full-stack UI/UX programs that need deeper collaboration.</p>
         <label>Select Service:</label>
         <select id="tier2"></select>
       </div>
@@ -410,13 +408,39 @@
     <!-- Add-Ons -->
     <div class="card">
       <div class="collapsible"><span><i class="fa-solid fa-plus"></i> Add-Ons</span><i class="fa-solid fa-chevron-down"></i></div>
-      <div class="content checkbox-group" id="addOns"></div>
+      <div class="content">
+        <p class="text-white-50 mb-3" style="font-size:0.9rem;">Layer extra creative, SEO, or performance upgrades on top of your base package.</p>
+        <div class="checkbox-group" id="addOns"></div>
+      </div>
     </div>
 
     <!-- API Integrations -->
     <div class="card">
       <div class="collapsible"><span><i class="fa-solid fa-plug"></i> API Integrations</span><i class="fa-solid fa-chevron-down"></i></div>
-      <div class="content checkbox-group" id="apiIntegrations"></div>
+      <div class="content">
+        <p class="text-white-50 mb-3" style="font-size:0.9rem;">Connect booking, marketing, analytics, or AI systems directly into your experience.</p>
+        <div class="checkbox-group" id="apiIntegrations"></div>
+      </div>
+    </div>
+
+    <!-- Media Automation Tools -->
+    <div class="card">
+      <div class="collapsible"><span><i class="fa-solid fa-bolt"></i> Media Automation Tools</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="content">
+        <p class="text-white-50 mb-3" style="font-size:0.9rem;">Bundle the same toolkits we deploy in Media Tool Suite builds&mdash;from omni-channel schedulers to AI-assisted clipping pipelines.</p>
+        <label class="d-block mb-2">Select Automation Stack:</label>
+        <select id="mediaAutomation"></select>
+      </div>
+    </div>
+
+    <!-- Custom CRM Capabilities -->
+    <div class="card">
+      <div class="collapsible"><span><i class="fa-solid fa-diagram-project"></i> Custom CRM Build</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="content">
+        <p class="text-white-50 mb-3" style="font-size:0.9rem;">Tap into our internal CRM frameworks for sales ops, service desks, or layered partner workflows.</p>
+        <label class="d-block mb-2">Select CRM Scope:</label>
+        <select id="crmBuild"></select>
+      </div>
     </div>
 
     <!-- Hosting Services -->

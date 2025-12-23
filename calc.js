@@ -40,6 +40,18 @@ const pricingData = {
     "AI & Content Tools": [200, 300, 400, 500],
     "Review & Reputation": [150, 200, 250, 300],
     "Security & Authentication": [200, 275, 350, 425]
+  },
+  mediaAutomation: {
+    "None": [0],
+    "Auto-Posting + Scheduling Suite": [950, 1200, 1500, 1900],
+    "Content Repurposing Pipeline": [1200, 1500, 2000, 2400],
+    "AI Media Ops Command": [1600, 2100, 2600, 3100]
+  },
+  crmBuild: {
+    "None": [0],
+    "Sales Pipeline CRM": [1800, 2300, 2800, 3400],
+    "Service Desk Workspace": [2200, 2800, 3400, 4000],
+    "Enterprise Partner OS": [3500, 4200, 5200, 6200]
   }
 };
 
@@ -168,6 +180,20 @@ function calculateTotal() {
     itemized.push(`${tier2Select.value} (Tier2) - $${price}`);
   }
 
+  const mediaAutomationSelect = document.getElementById("mediaAutomation");
+  if (mediaAutomationSelect && mediaAutomationSelect.value !== "None") {
+    const price = pricingData.mediaAutomation[mediaAutomationSelect.value][0];
+    total += price;
+    itemized.push(`${mediaAutomationSelect.value} (Media Automation) - $${price}`);
+  }
+
+  const crmSelect = document.getElementById("crmBuild");
+  if (crmSelect && crmSelect.value !== "None") {
+    const price = pricingData.crmBuild[crmSelect.value][0];
+    total += price;
+    itemized.push(`${crmSelect.value} (Custom CRM) - $${price}`);
+  }
+
   [
     { selector: "#addOns", data: pricingData.addOns, label: "Add-On" },
     { selector: "#apiIntegrations", data: pricingData.apiIntegrations, label: "API" },
@@ -193,6 +219,8 @@ function calculateTotal() {
 function initCalculator() {
   populateSelect(document.getElementById("tier1"), pricingData.tier1);
   populateSelect(document.getElementById("tier2"), pricingData.tier2);
+  populateSelect(document.getElementById("mediaAutomation"), pricingData.mediaAutomation);
+  populateSelect(document.getElementById("crmBuild"), pricingData.crmBuild);
   populateCheckboxGroup(document.getElementById("addOns"), pricingData.addOns);
   populateCheckboxGroup(document.getElementById("hostingServices"), pricingData.hostingServices, true);
   populateCheckboxGroup(document.getElementById("apiIntegrations"), pricingData.apiIntegrations);
@@ -200,6 +228,8 @@ function initCalculator() {
 
   document.getElementById("tier1").addEventListener("change", calculateTotal);
   document.getElementById("tier2").addEventListener("change", calculateTotal);
+  document.getElementById("mediaAutomation").addEventListener("change", calculateTotal);
+  document.getElementById("crmBuild").addEventListener("change", calculateTotal);
 
   calculateTotal();
 }
