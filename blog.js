@@ -1,7 +1,7 @@
 const POSTS_PER_PAGE = 4;
 let currentPage = 1;
 
-fetch("post.json")
+fetch("/post.json")
   .then(res => res.json())
   .then(data => {
     const posts = data.posts;

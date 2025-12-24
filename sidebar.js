@@ -1,4 +1,4 @@
-fetch("post.json")
+fetch("/post.json")
   .then(res => res.json())
   .then(data => {
     const recentContainer = document.getElementById("recent-posts");

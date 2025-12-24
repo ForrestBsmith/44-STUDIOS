@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const recentBlogContainer = document.getElementById("recent-blog-posts");
 
-  fetch("post.json")
+  fetch("/post.json")
     .then(response => response.json())
     .then(data => {
       const posts = data.posts; // ✅ Access the nested array

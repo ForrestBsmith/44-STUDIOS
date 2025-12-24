@@ -7,7 +7,7 @@ const params = new URLSearchParams(window.location.search);
 const postId = parseInt(params.get("id"));
 
 // Load posts
-fetch("post.json")
+fetch("/post.json")
   .then(res => res.json())
   .then(data => {
     const posts = data.posts;

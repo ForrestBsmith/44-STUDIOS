@@ -6,12 +6,12 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # Pretty URLs mapped to HTML files
-RewriteRule ^blog/?$ /Blog.html [L]
-RewriteRule ^services/?$ /Services.html [L]
-RewriteRule ^portfolio/?$ /Portfolio.html [L]
-RewriteRule ^contact/?$ /contact.html [L]
+RewriteRule ^blog/?$ /blog/index.html [L]
+RewriteRule ^services/?$ /services/index.html [L]
+RewriteRule ^portfolio/?$ /portfolio/index.html [L]
+RewriteRule ^contact/?$ /contact/index.html [L]
 RewriteRule ^web-survey/?$ /web-survey.html [L]
 RewriteRule ^it-media-survey/?$ /it-media-survey.html [L]
 RewriteRule ^case-study/?$ /case-study.html [L]
 # Blog post detail
-RewriteRule ^blog/post/?$ /single.html [QSA,L]
+RewriteRule ^blog/post/?$ /blog/post/index.html [QSA,L]
