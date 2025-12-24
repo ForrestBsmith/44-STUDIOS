@@ -6,8 +6,17 @@ const nextBtn = document.getElementById("next-post");
 const params = new URLSearchParams(window.location.search);
 const postId = parseInt(params.get("id"));
 
+function resolvePostJsonPath() {
+  const path = window.location.pathname;
+  const segments = path.split("/").filter(Boolean);
+  if (!path.endsWith("/")) segments.pop();
+  const depth = segments.length;
+  const prefix = depth ? "../".repeat(depth) : "./";
+  return `${prefix}post.json`;
+}
+
 // Load posts
-fetch("/post.json")
+fetch(resolvePostJsonPath())
   .then(res => res.json())
   .then(data => {
     const posts = data.posts;

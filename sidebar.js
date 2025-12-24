@@ -1,4 +1,13 @@
-fetch("/post.json")
+function resolvePostJsonPath() {
+  const path = window.location.pathname;
+  const segments = path.split("/").filter(Boolean);
+  if (!path.endsWith("/")) segments.pop();
+  const depth = segments.length;
+  const prefix = depth ? "../".repeat(depth) : "./";
+  return `${prefix}post.json`;
+}
+
+fetch(resolvePostJsonPath())
   .then(res => res.json())
   .then(data => {
     const recentContainer = document.getElementById("recent-posts");

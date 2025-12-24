@@ -1,7 +1,18 @@
 const POSTS_PER_PAGE = 4;
 let currentPage = 1;
 
-fetch("/post.json")
+function resolvePostJsonPath() {
+  const path = window.location.pathname;
+  const segments = path.split("/").filter(Boolean);
+  if (!path.endsWith("/")) segments.pop();
+  const depth = segments.length;
+  const prefix = depth ? "../".repeat(depth) : "./";
+  return `${prefix}post.json`;
+}
+
+const postJsonPath = resolvePostJsonPath();
+
+fetch(postJsonPath)
   .then(res => res.json())
   .then(data => {
     const posts = data.posts;
