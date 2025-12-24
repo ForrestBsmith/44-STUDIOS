@@ -9,7 +9,10 @@ const postId = parseInt(params.get("id"));
 function resolvePostJsonPath() {
   const path = window.location.pathname;
   const segments = path.split("/").filter(Boolean);
-  if (!path.endsWith("/")) segments.pop();
+  if (!path.endsWith("/")) {
+    const last = segments[segments.length - 1] || "";
+    if (last.includes(".")) segments.pop();
+  }
   const depth = segments.length;
   const prefix = depth ? "../".repeat(depth) : "./";
   return `${prefix}post.json`;
