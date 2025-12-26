@@ -1,32 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
-    <loc>https://44StudiosDesign.com/</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://44studiosdesign.com/</loc>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://44StudiosDesign.com/services/</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://44studiosdesign.com/services/</loc>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://44StudiosDesign.com/portfolio</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://44studiosdesign.com/portfolio/</loc>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://44StudiosDesign.com/contact</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://44studiosdesign.com/contact/</loc>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>https://44studiosdesign.com/blog/</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://44studiosdesign.com/blog/post/</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://44studiosdesign.com/case-study.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://44studiosdesign.com/client-upload.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://44studiosdesign.com/web-survey.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://44studiosdesign.com/it-media-survey.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
