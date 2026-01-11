@@ -147,7 +147,7 @@
   <section class="container my-5">
     <div class="row g-4 align-items-stretch">
       <!-- Contact Form -->
-      <div class="col-12 col-lg-7">
+      <div class="col-12 col-xl-5 order-1">
         <form id="contactForm" class="p-4 p-lg-5 rounded-4 h-100 contact-panel">
           <h2 class="mb-3">Work With 44 Studios</h2>
           <p class="text-white-50 mb-4">Share your contact information and project details so we can craft something brilliant together.</p>
@@ -187,8 +187,22 @@
         </form>
       </div>
 
+      <!-- Calendly Widget -->
+      <div class="col-12 col-xl-4 order-2">
+        <div class="rounded-4 p-4 p-lg-5 contact-panel h-100 d-flex flex-column">
+          <div class="mb-3">
+            <p class="text-uppercase text-secondary mb-1 small">Book a Call</p>
+            <h3 class="mb-2">Schedule a 30-Minute Strategy Session</h3>
+            <p class="text-white-50 mb-0">Pick a slot that works for you and we’ll walk through goals, scope, and next steps together.</p>
+          </div>
+          <div class="flex-grow-1">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/44studiosdesign/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width: 280px; height: 600px;"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Contact Details -->
-      <div class="col-12 col-lg-5">
+      <div class="col-12 col-xl-3 order-3">
         <div class="h-100 rounded-4 p-4 p-lg-5 contact-panel d-flex flex-column justify-content-between gap-4">
           <div>
             <p class="text-uppercase text-secondary mb-1 small">Talk To Us</p>
@@ -215,7 +229,6 @@
       </div>
     </div>
   </section>
-
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
@@ -328,5 +341,6 @@
 
   <!-- Bootstrap JS Bundle -->    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
