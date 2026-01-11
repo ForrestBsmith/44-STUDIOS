@@ -1,7 +1,18 @@
-// Get project name from URL query parameter
+// Known projects so the base /case-study/ URL renders a full experience
+const KNOWN_PROJECTS = [
+  "harristech",
+  "jakeindermanrealty",
+  "matttalksmortgage",
+  "realtyfortyfour",
+  "blitzfortyfour",
+];
+const FALLBACK_PROJECT = "harristech";
+
 function getProjectName() {
   const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get("project") || "default";
+  const requested = urlParams.get("project");
+  if (requested && KNOWN_PROJECTS.includes(requested)) return requested;
+  return FALLBACK_PROJECT;
 }
 
 const projectName = getProjectName();
@@ -184,5 +195,5 @@ fetch(jsonFile)
   .catch(err => {
     console.error("Error loading project data:", err);
     document.querySelector(".container").innerHTML =
-      "<p class='text-center text-danger'>Project not found.</p>";
+      "<p class='text-center text-danger'>We couldn't load that case study. Please explore our <a class='text-white text-decoration-underline' href='/portfolio'>full portfolio</a> instead.</p>";
   });
