@@ -1,1 +1,4 @@
-Sitemap: https://44StudiosDesign.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://44studiosdesign.com/sitemap.xml

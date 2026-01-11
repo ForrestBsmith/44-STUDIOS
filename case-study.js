@@ -5,7 +5,7 @@ function getProjectName() {
 }
 
 const projectName = getProjectName();
-const jsonFile = `data/${projectName}.json`;
+const jsonFile = `/data/${projectName}.json`;
 
 fetch(jsonFile)
   .then(response => {
