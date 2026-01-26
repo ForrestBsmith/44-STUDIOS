@@ -95,6 +95,12 @@ ul { margin-top: 0 !important; }
   transform: translateY(-2px);
 }
 
+.founder-photo.img-fluid {
+  max-width: 420px !important;
+  width: 100%;
+  filter: grayscale(100%);
+}
+
 /* form button */
 #contactForm button[type="submit"] {
   background-color: #ffffff;

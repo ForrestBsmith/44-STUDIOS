@@ -29,7 +29,6 @@ fetch(resolvePostJsonPath())
     blogContainer.innerHTML = `
       <img src="${post.image}" alt="${post.title}" class="img-fluid mb-3" />
       <h1 class="blog-card-title mb-3">${post.title}</h1>
-      <p class="blog-card-text text-secondary mb-3">${post.excerpt}</p>
       <div class="blog-card-content">${post.content}</div>
     `;
 

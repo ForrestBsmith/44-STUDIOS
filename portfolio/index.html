@@ -510,42 +510,47 @@
                       <h3>Social Asset Creation</h3>
                       <p>Libraries of carousels, shorts, and promo tiles generated from your core shoots or long-form content.</p>
                       <div class="text-white-50 mb-3">
-                        <p class="text-uppercase small text-secondary mb-1">Photo Asset Tool</p>
-                        <p class="mb-3">Turns photosets into multi-slide carousels (IG/FB) with custom overlays, brand colors, and CTA frames.</p>
-                        <div class="asset-preview-grid mb-4">
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-regular fa-images"></i></div>
-                            <span>IG Carousel Mock</span>
-                          </div>
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-solid fa-layer-group"></i></div>
-                            <span>Template Overlay</span>
-                          </div>
-                        </div>
                         <p class="text-uppercase small text-secondary mb-1">Video Asset Tool</p>
                         <p class="mb-3">Creates vertical or square video carousels with branded lower thirds, captions, and motion backgrounds.</p>
                         <div class="asset-preview-grid mb-4">
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                            <span>Vertical Reel</span>
+                          <div class="asset-preview-card video-card">
+                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                              <source src="/baylor-5251b04a.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                            <span>Baylor Promo Loop</span>
                           </div>
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-solid fa-video"></i></div>
-                            <span>Carousel Video</span>
+                          <div class="asset-preview-card video-card">
+                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                              <source src="/Downtown-1-9f4f2315%20(1).mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                            <span>Downtown Tour Reel</span>
+                          </div>
+                          <div class="asset-preview-card video-card">
+                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                              <source src="/6625-sanger-avenue-tiktok.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                            <span>6625 Sanger TikTok</span>
+                          </div>
+                          <div class="asset-preview-card video-card">
+                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                              <source src="/acres.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                            <span>Acres Highlight</span>
+                          </div>
+                          <div class="asset-preview-card video-card">
+                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                              <source src="/slide1-1a-1b-1c_full.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                            <span>Slide 1 Reel</span>
                           </div>
                         </div>
-                        <p class="text-uppercase small text-secondary mb-1">Long-form Clip Tool</p>
-                        <p>Clips podcasts or webinars into TikTok/Shorts with auto chapters, waveform overlays, and CTA end cards.</p>
-                        <div class="asset-preview-grid">
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-solid fa-podcast"></i></div>
-                            <span>Podcast Clip</span>
-                          </div>
-                          <div class="asset-preview-card">
-                            <div class="asset-icon"><i class="fa-solid fa-wave-square"></i></div>
-                            <span>Waveform Overlay</span>
-                          </div>
-                        </div>
+                        <p class="text-uppercase small text-secondary mb-1">Google Sheets Briefing</p>
+                        <p>Producers log asset needs into a shared Google Sheet (shot links, copy notes, aspect ratio), triggering Apps Script + Make automations that grab footage, layer templates, and kick back ready-to-post files with status columns updating automatically.</p>
                       </div>
                       <ul class="text-white-50 case-study-points mb-3">
                         <li>AI-assisted cutdowns for TikTok, IG, LinkedIn, or YouTube formats.</li>
@@ -586,6 +591,15 @@
                         <div class="brand-icon-card">
                           <div class="brand-icon"><i class="fa-solid fa-file-signature"></i></div>
                           <span>Partner Packs</span>
+                        </div>
+                      </div>
+                      <div class="text-white-50 mt-4">
+                        <p class="text-uppercase small text-secondary mb-1">Brand Guide Example</p>
+                        <div class="asset-preview-grid">
+                          <a class="asset-preview-card asset-link" href="/6625-sanger-avenue-brochure.pdf" target="_blank" rel="noopener">
+                            <div class="asset-icon"><i class="fa-regular fa-file-lines"></i></div>
+                            <span>Brand PDF</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -930,13 +944,31 @@
       }
 
       .asset-preview-card {
-        flex: 1 1 140px;
-        min-width: 140px;
+        flex: 0 1 calc(50% - 0.5rem);
+        min-width: 200px;
+        max-width: calc(50% - 0.5rem);
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 14px;
         padding: 0.75rem;
         text-align: center;
+      }
+
+      .asset-preview-card.asset-link {
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      }
+
+      .asset-preview-card.asset-link:hover,
+      .asset-preview-card.asset-link:focus {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateY(-2px);
+      }
+
+      .asset-preview-card.video-card {
+        padding: 0.5rem;
       }
 
       .asset-icon {
@@ -963,6 +995,21 @@
         color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
         display: block;
+      }
+
+      .asset-preview-card.video-card span {
+        margin-top: 0.45rem;
+      }
+
+      .asset-preview-video {
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: block;
+        background: #000;
+        object-fit: contain;
+        padding: 0.15rem;
       }
 
       .brand-icon-grid {
