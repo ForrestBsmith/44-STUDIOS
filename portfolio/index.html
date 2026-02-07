@@ -441,7 +441,7 @@
                 <button class="nav-link" id="automation-media-tab" data-bs-toggle="pill" data-bs-target="#automation-media" type="button" role="tab" aria-controls="automation-media" aria-selected="false">Social Asset Creation</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="automation-alerts-tab" data-bs-toggle="pill" data-bs-target="#automation-alerts" type="button" role="tab" aria-controls="automation-alerts" aria-selected="false">Brand Design</button>
+                <button class="nav-link" id="automation-alerts-tab" data-bs-toggle="pill" data-bs-target="#automation-alerts" type="button" role="tab" aria-controls="automation-alerts" aria-selected="false">Email Automations</button>
               </li>
             </ul>
 
@@ -512,56 +512,89 @@
                       <div class="text-white-50 mb-3">
                         <p class="text-uppercase small text-secondary mb-1">Video Asset Tool</p>
                         <p class="mb-3">Creates vertical or square video carousels with branded lower thirds, captions, and motion backgrounds.</p>
-                        <div class="asset-preview-grid mb-4">
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/baylor-5251b04a.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Baylor Promo Loop</span>
+                        <div id="socialAssetCarousel" class="carousel slide asset-carousel mb-4" data-bs-ride="carousel" data-bs-interval="8000" data-bs-pause="false">
+                          <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Baylor Promo Loop"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="1" aria-label="Downtown Tour Reel"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="2" aria-label="Acres Highlight"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="3" aria-label="Luxury Construction Service"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="4" aria-label="Jewelry Story Showcase"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="5" aria-label="Jewelry Post Showcase"></button>
+                            <button type="button" data-bs-target="#socialAssetCarousel" data-bs-slide-to="6" aria-label="Slide 1 Reel"></button>
                           </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/Downtown-1-9f4f2315%20(1).mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Downtown Tour Reel</span>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/baylor-5251b04a.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Baylor Promo Loop</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/Downtown-1-9f4f2315%20(1).mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Downtown Tour Reel</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/acres.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Acres Highlight</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/luxury-construction-service-01-post.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Luxury Construction Service</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/jewelry-story-showcase-01_overlay.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Jewelry Story Showcase</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/jewelry-post-showcase-01_overlay.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Jewelry Post Showcase</span>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="asset-preview-card video-card carousel-asset-card">
+                                <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
+                                  <source src="/slide1-1a-1b-1c_full.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <span>Slide 1 Reel</span>
+                              </div>
+                            </div>
                           </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/acres.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Acres Highlight</span>
-                          </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/luxury-construction-service-01-post.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Luxury Construction Service</span>
-                          </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/jewelry-story-showcase-01_overlay.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Jewelry Story Showcase</span>
-                          </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/jewelry-post-showcase-01_overlay.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Jewelry Post Showcase</span>
-                          </div>
-                          <div class="asset-preview-card video-card">
-                            <video class="asset-preview-video" autoplay loop muted playsinline controls preload="metadata">
-                              <source src="/slide1-1a-1b-1c_full.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <span>Slide 1 Reel</span>
-                          </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#socialAssetCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#socialAssetCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
                         </div>
                         <p class="text-uppercase small text-secondary mb-1">Google Sheets Briefing</p>
                         <p>Producers log asset needs into a shared Google Sheet (shot links, copy notes, aspect ratio), triggering Apps Script + Make automations that grab footage, layer templates, and kick back ready-to-post files with status columns updating automatically.</p>
@@ -586,42 +619,37 @@
                 <div class="media-suite-card">
                   <div class="d-flex flex-column flex-lg-row gap-4">
                     <div class="flex-grow-1">
-                      <h3>Brand Design Systems</h3>
-                      <p>Foundational brand kits with typography, color systems, and use-ready components for campaigns and social.</p>
+                      <h3>Email Automations & Templates</h3>
+                      <p>Lifecycle email systems that nurture leads, re-engage past clients, and keep your brand consistent across every send.</p>
                       <ul class="text-white-50 case-study-points mb-3">
-                        <li>Living design libraries in Figma with social templates.</li>
-                        <li>Campaign-specific variations for seasonal pushes.</li>
-                        <li>Export-ready brand asset packages for partners and affiliates.</li>
+                        <li>Welcome, nurture, and reactivation flows mapped to your pipeline.</li>
+                        <li>Template library with branded layouts for promos, updates, and newsletters.</li>
+                        <li>Behavior triggers based on form fills, bookings, or page views.</li>
                       </ul>
                       <div class="brand-icon-grid">
                         <div class="brand-icon-card">
-                          <div class="brand-icon"><i class="fa-solid fa-code"></i></div>
-                          <span>HTML Templates</span>
+                          <div class="brand-icon"><i class="fa-regular fa-envelope"></i></div>
+                          <span>Template Packs</span>
                         </div>
                         <div class="brand-icon-card">
-                          <div class="brand-icon"><i class="fa-solid fa-swatchbook"></i></div>
-                          <span>Color Systems</span>
+                          <div class="brand-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                          <span>Flow Mapping</span>
                         </div>
                         <div class="brand-icon-card">
-                          <div class="brand-icon"><i class="fa-solid fa-file-signature"></i></div>
-                          <span>Partner Packs</span>
+                          <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+                          <span>Trigger Logic</span>
                         </div>
                       </div>
                       <div class="text-white-50 mt-4">
-                        <p class="text-uppercase small text-secondary mb-1">Brand Guide Example</p>
-                        <div class="asset-preview-grid">
-                          <a class="asset-preview-card asset-link" href="/6625-sanger-avenue-brochure.pdf" target="_blank" rel="noopener">
-                            <div class="asset-icon"><i class="fa-regular fa-file-lines"></i></div>
-                            <span>Brand PDF</span>
-                          </a>
-                        </div>
+                        <p class="text-uppercase small text-secondary mb-1">Automation Snapshot</p>
+                        <p>We pair concise copy blocks with on-brand visual sections, then wire the sequence into your CRM so every step feels intentional.</p>
                       </div>
                     </div>
                     <div class="d-flex flex-column gap-2 align-self-start align-self-lg-center">
-                      <span class="tech-badge">Google Data Studio</span>
-                      <span class="tech-badge">Looker</span>
-                      <span class="tech-badge">Twilio SMS</span>
-                      <span class="tech-badge">Meta API</span>
+                      <span class="tech-badge">Klaviyo</span>
+                      <span class="tech-badge">Mailchimp</span>
+                      <span class="tech-badge">HubSpot</span>
+                      <span class="tech-badge">Zapier</span>
                     </div>
                   </div>
                 </div>
@@ -952,15 +980,44 @@
       }
 
       .asset-preview-grid {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 1rem;
       }
 
+      .asset-carousel {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .asset-carousel .carousel-indicators {
+        bottom: -2.2rem;
+      }
+
+      .asset-carousel .carousel-item {
+        padding: 0 3.25rem;
+      }
+
+      .asset-carousel .carousel-control-prev-icon,
+      .asset-carousel .carousel-control-next-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+
+      .asset-carousel .carousel-control-prev {
+        left: -1.25rem;
+      }
+
+      .asset-carousel .carousel-control-next {
+        right: -1.25rem;
+      }
+
+      .carousel-asset-card {
+        margin: 0 auto;
+      }
+
       .asset-preview-card {
-        flex: 0 1 calc(50% - 0.5rem);
-        min-width: 200px;
-        max-width: calc(50% - 0.5rem);
+        width: 100%;
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 14px;
@@ -1161,5 +1218,69 @@
 
   <!-- Bootstrap JS Bundle -->    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselEl = document.getElementById('socialAssetCarousel');
+      if (!carouselEl || !window.bootstrap) return;
+
+      const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+
+      const pauseAllVideos = () => {
+        carouselEl.querySelectorAll('video').forEach((video) => {
+          video.pause();
+          delete video.dataset.userPlayed;
+        });
+      };
+
+      const playActiveVideo = () => {
+        const activeVideo = carouselEl.querySelector('.carousel-item.active video');
+        if (activeVideo) {
+          activeVideo.play().catch(() => {});
+        }
+      };
+
+      let pausedForFullscreen = false;
+
+      carouselEl.querySelectorAll('video').forEach((video) => {
+        video.addEventListener('pointerdown', () => {
+          video.dataset.userPlayed = 'true';
+        });
+
+        video.addEventListener('play', () => {
+          if (video.dataset.userPlayed === 'true') {
+            carousel.pause();
+          }
+        });
+      });
+
+      const handleFullscreenChange = () => {
+        const fullscreenEl = document.fullscreenElement || document.webkitFullscreenElement;
+        if (fullscreenEl && fullscreenEl.tagName === 'VIDEO') {
+          fullscreenEl.dataset.userPlayed = 'true';
+          carousel.pause();
+          pausedForFullscreen = true;
+          return;
+        }
+
+        if (!fullscreenEl && pausedForFullscreen) {
+          pausedForFullscreen = false;
+          carousel.cycle();
+        }
+      };
+
+      document.addEventListener('fullscreenchange', handleFullscreenChange);
+      document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+      carouselEl.addEventListener('slide.bs.carousel', () => {
+        pauseAllVideos();
+      });
+
+      carouselEl.addEventListener('slid.bs.carousel', () => {
+        playActiveVideo();
+      });
+
+      playActiveVideo();
+    });
+  </script>
 </body>
 </html>
