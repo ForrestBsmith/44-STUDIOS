@@ -6,7 +6,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://harristechsolutions.com/",
   "liveSiteText": "Visit Live Site",
-  "mockup": "robert/Phone View.png",
+  "mockup": "/assets/portfolio/robert/Phone View.png",
   "description": "A comprehensive website redesign for Harris Tech Solutions, focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
@@ -35,15 +35,15 @@
   ],
   "gallery": [
     {
-      "src": "robert/Tablet View.png",
+      "src": "/assets/portfolio/robert/Tablet View.png",
       "alt": "Homepage Design"
     },
     {
-      "src": "robert/Laptop View.png",
+      "src": "/assets/portfolio/robert/Laptop View.png",
       "alt": "Inner Page"
     },
     {
-      "src": "robert/Phone View.png",
+      "src": "/assets/portfolio/robert/Phone View.png",
       "alt": "Mobile View"
     }
   ],
@@ -84,20 +84,20 @@
     {
       "title": "Jake Inderman Homes",
       "summary": "Real Estate",
-      "image": "jake/Jake Indermanrealty.png",
+      "image": "/assets/portfolio/jake/Jake Indermanrealty.png",
       "url": "/case-study?project=jakeindermanrealty"
     },
     {
       "title": "Matt Talks Mortgage",
       "summary": "Loan Officer",
-      "image": "matt/mattlaptop.png",
+      "image": "/assets/portfolio/matt/mattlaptop.png",
       "url": "/case-study?project=matttalksmortgage"
     }
   ],
   "mockups": [
     {
       "label": "Home",
-      "src": "robert/Tablet View.png",
+      "src": "/assets/portfolio/robert/Tablet View.png",
       "alt": "Harris Tech home page",
       "description": "Hero with rotating service callouts and simplified navigation.",
       "highlights": [
@@ -112,7 +112,7 @@
     },
     {
       "label": "Services & Pricing",
-      "src": "robert/Laptop View.png",
+      "src": "/assets/portfolio/robert/Laptop View.png",
       "alt": "Harris Tech services page",
       "description": "Modular service grid with flexible pricing notes and automation badges.",
       "highlights": [
@@ -123,35 +123,6 @@
       "tools": [
         "JavaScript",
         "EmailJS"
-      ]
-    },
-    {
-      "label": "Blog & Case Study",
-      "src": "robert/blog.png",
-      "alt": "Harris Tech blog view",
-      "description": "Content hub mixing case studies and how-to posts to boost SEO and authority.",
-      "highlights": [
-        "Category filters for fast browsing",
-        "Sticky subscribe component",
-        "Schema markup baked in"
-      ],
-      "tools": [
-        "WordPress",
-        "Yoast SEO"
-      ]
-    },
-    {
-      "label": "FAQ",
-      "src": "robert/faq.png",
-      "alt": "Harris Tech FAQ page",
-      "description": "Accordion-style FAQ with contextual contact hooks for quick answers.",
-      "highlights": [
-        "Grouped FAQs by use case",
-        "Contact CTA embedded after answers",
-        "Microcopy written for clarity"
-      ],
-      "tools": [
-        "WordPress"
       ]
     }
   ],

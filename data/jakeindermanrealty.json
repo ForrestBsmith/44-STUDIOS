@@ -6,7 +6,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://jakeindermanhomes.com/",
   "liveSiteText": "Visit Live Site",
-  "mockup": "jake/jakelaptop.png",
+  "mockup": "/assets/portfolio/jake/jakelaptop.png",
   "description": "A comprehensive website redesign for Jake Inderman Homes, focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
@@ -35,15 +35,15 @@
   ],
   "gallery": [
     {
-      "src": "jake/jakelaptop.png",
+      "src": "/assets/portfolio/jake/jakelaptop.png",
       "alt": "Homepage Design"
     },
     {
-      "src": "jake/jakemobile.png",
+      "src": "/assets/portfolio/jake/jakemobile.png",
       "alt": "Inner Page"
     },
     {
-      "src": "jake/jaketablet.png",
+      "src": "/assets/portfolio/jake/jaketablet.png",
       "alt": "Mobile View"
     }
   ],
@@ -84,13 +84,13 @@
     {
       "title": "Harris Tech Solutions",
       "summary": "IT Professional",
-      "image": "robert/Laptop View.png",
+      "image": "/assets/portfolio/robert/Laptop View.png",
       "url": "/case-study?project=harristech"
     },
     {
       "title": "Matt Talks Mortgage",
       "summary": "Loan Officer",
-      "image": "matt/mattlaptop.png",
+      "image": "/assets/portfolio/matt/mattlaptop.png",
       "url": "/case-study?project=matttalksmortgage"
     }
   ],

@@ -6,7 +6,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://forrestbsmith.github.io/Kerry-Williams-Realty/",
   "liveSiteText": "Visit Live Site",
-  "mockup": "44realty/tablet-realty.png",
+  "mockup": "/assets/portfolio/44realty/tablet-realty.png",
   "description": "A comprehensive website for 44 Realty Group (mock group), focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
@@ -35,15 +35,15 @@
   ],
   "gallery": [
     {
-      "src": "44realty/laptop-realty.png",
+      "src": "/assets/portfolio/44realty/laptop-realty.png",
       "alt": "Homepage Design"
     },
     {
-      "src": "44realty/tablet-realty.png",
+      "src": "/assets/portfolio/44realty/tablet-realty.png",
       "alt": "Inner Page"
     },
     {
-      "src": "44realty/mobile-realty.png",
+      "src": "/assets/portfolio/44realty/mobile-realty.png",
       "alt": "Mobile View"
     }
   ],
@@ -84,13 +84,13 @@
     {
       "title": "Harris Tech Solutions",
       "summary": "IT Professional",
-      "image": "robert/Laptop View.png",
+      "image": "/assets/portfolio/robert/Laptop View.png",
       "url": "/case-study?project=harristech"
     },
     {
       "title": "Matt Talks Mortgage",
       "summary": "Loan Officer",
-      "image": "matt/mattlaptop.png",
+      "image": "/assets/portfolio/matt/mattlaptop.png",
       "url": "/case-study?project=matttalksmortgage"
     }
   ],

@@ -26,9 +26,10 @@ fetch(resolvePostJsonPath())
     });
 
     socialContainer.innerHTML = `
-      <a href="${socials.instagram}" target="_blank">Facebook</a>
-      <a href="${socials.linkedin}" target="_blank">LinkedIn (Forrest @ Fortyfour Studios)</a>
-      <a href="${socials.twitter}" target="_blank">X (Twitter)</a>
+      <a href="${socials.facebook || socials.instagram}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+      <a href="${socials.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+      <a href="${socials.twitter}" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i><span>X</span></a>
+      <a href="${socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
     `;
 
     // Highlight current post if on blog detail page

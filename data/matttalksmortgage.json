@@ -6,7 +6,7 @@
   "location": "Dallas, TX",
   "liveSiteURL": "https://matttalksmortgage.com/",
   "liveSiteText": "Visit Live Site",
-  "mockup": "matt/mattlaptop.png",
+  "mockup": "/assets/portfolio/matt/mattlaptop.png",
   "description": "A comprehensive website redesign for Matt Talks Mortgage, focusing on user experience, mobile responsiveness, and lead generation.",
   "overview": [
     "This project showcases a complete website redesign focused on performance, usability, and brand consistency.",
@@ -34,15 +34,15 @@
   ],
   "gallery": [
     {
-      "src": "matt/mattlaptop.png",
+      "src": "/assets/portfolio/matt/mattlaptop.png",
       "alt": "Homepage Design"
     },
     {
-      "src": "matt/mattphone.png",
+      "src": "/assets/portfolio/matt/mattphone.png",
       "alt": "Inner Page"
     },
     {
-      "src": "matt/matttablet.png",
+      "src": "/assets/portfolio/matt/matttablet.png",
       "alt": "Mobile View"
     }
   ],
@@ -83,13 +83,13 @@
     {
       "title": "Jake Inderman Homes",
       "summary": "Real Estate",
-      "image": "jake/Jake Indermanrealty.png",
+      "image": "/assets/portfolio/jake/Jake Indermanrealty.png",
       "url": "/case-study?project=jakeindermanrealty"
     },
     {
       "title": "Harris Tech Solutions",
       "summary": "IT Professional",
-      "image": "robert/Laptop View.png",
+      "image": "/assets/portfolio/robert/Laptop View.png",
       "url": "/case-study?project=harristech"
     }
   ],

@@ -4,88 +4,89 @@
 const pricingData = {
   tier1: {
     "None": [0],
-    "Landing Page": [650, 733, 967, 1200],
-    "Starter Website": [800, 1000, 1100, 1300],
-    "Basic WordPress / Shopify Setup": [1500, 1300, 1300, 1500],
-    "Small E-commerce Setup": [2500, 1500, 1800, 2100]
+    "Landing Page System": [900, 1200, 1500, 1900],
+    "Core Business Website": [1800, 2400, 3200, 4200],
+    "Conversion Website": [3200, 4200, 5400, 6800],
+    "Content-Managed Website": [4200, 5600, 7200, 9000]
   },
   tier2: {
     "None": [0],
-    "Custom-coded Website": [3500, 5000, 6500, 8000],
-    "E-commerce Store": [6000, 8500, 11000, 13500],
-    "Web Application": [7000, 10000, 13000, 16000],
-    "Branding & UI/UX": [800, 1200, 1600, 2000]
+    "Custom UI/UX System": [1800, 2600, 3600, 4800],
+    "E-commerce Build": [5500, 8000, 11000, 15000],
+    "Client Portal or Dashboard": [6500, 9500, 13000, 18000],
+    "Custom Web Application": [8500, 12500, 17000, 24000]
   },
   addOns: {
-    "Custom Animation": [200, 300, 400, 500],
-    "SEO Optimization": [150, 250, 350, 450],
-    "Blog / CMS Setup": [250, 350, 450, 550],
-    "Advanced Forms": [100, 150, 200, 250],
-    "Responsive Testing & Fixes": [75, 125, 175, 225],
-    "Performance Optimization": [150, 250, 350, 450],
-    "Custom API Integration": [300, 400, 500, 600]
+    "Brand Direction Refresh": [600, 900, 1300, 1800],
+    "SEO Architecture": [500, 850, 1200, 1800],
+    "CMS Content Workflow": [650, 950, 1400, 2100],
+    "Advanced Intake Forms": [350, 600, 950, 1400],
+    "Responsive QA Pass": [300, 500, 800, 1200],
+    "Performance Optimization": [450, 750, 1100, 1600],
+    "Launch Copywriting": [700, 1100, 1600, 2400]
   },
   hostingServices: {
-    "Managed Hosting (Standard)": [45, 65, 95, 125],
-    "Managed Hosting (Premium SLA)": [85, 125, 165, 225],
-    "Enterprise Cloud Stack": [150, 225, 325, 425]
+    "Managed Hosting": [65, 95, 145, 225],
+    "Care Plan + Backups": [125, 185, 275, 425],
+    "VPS / Cloud Operations": [225, 350, 525, 800]
   },
   apiIntegrations: {
-    "Booking & Appointments": [200, 300, 400, 500],
-    "Social Media Integration": [150, 225, 300, 375],
-    "Maps & Location": [125, 175, 225, 275],
-    "Email Marketing": [200, 275, 350, 425],
-    "Chat & Customer Support": [250, 325, 400, 475],
-    "Analytics & Tracking": [150, 200, 250, 300],
-    "AI & Content Tools": [200, 300, 400, 500],
-    "Review & Reputation": [150, 200, 250, 300],
-    "Security & Authentication": [200, 275, 350, 425]
+    "Booking / Calendar Routing": [450, 700, 1000, 1500],
+    "CRM Pipeline Connection": [700, 1100, 1600, 2400],
+    "Email Marketing Automation": [550, 850, 1300, 1900],
+    "Analytics & Conversion Tracking": [450, 700, 950, 1400],
+    "Chat / Support Desk": [550, 850, 1250, 1800],
+    "AI Content or Intake Tool": [800, 1300, 1900, 2800],
+    "Security & Authentication": [700, 1100, 1700, 2500],
+    "Payments / Subscriptions": [900, 1400, 2100, 3200]
   },
   mediaAutomation: {
     "None": [0],
-    "Auto-Posting + Scheduling Suite": [950, 1200, 1500, 1900],
-    "Content Repurposing Pipeline": [1200, 1500, 2000, 2400],
-    "AI Media Ops Command": [1600, 2100, 2600, 3100]
+    "Publishing Calendar Automation": [1200, 1700, 2300, 3200],
+    "Content Repurposing Pipeline": [1800, 2500, 3400, 4600],
+    "Media Ops Command Center": [2800, 3900, 5400, 7200]
   },
   crmBuild: {
     "None": [0],
-    "Sales Pipeline CRM": [1800, 2300, 2800, 3400],
-    "Service Desk Workspace": [2200, 2800, 3400, 4000],
-    "Enterprise Partner OS": [3500, 4200, 5200, 6200]
+    "Lead Intake Workspace": [2200, 3200, 4500, 6200],
+    "Sales Pipeline CRM": [3200, 4600, 6500, 9000],
+    "Service Desk Workspace": [4200, 6000, 8200, 11200],
+    "Partner / Operations OS": [6500, 9000, 12500, 17000]
   }
 };
 
 const recurringServices = {
-  "SEO & Analytics Monitoring": [150, 250, 350, 450],
-  "Maintenance & Support": [200, 300, 400, 550],
-  "Email Marketing Campaigns": [100, 175, 250, 325],
+  "SEO & Analytics Reporting": [250, 450, 750, 1200],
+  "Website Care Retainer": [300, 500, 850, 1400],
+  "Content + Email Campaigns": [450, 750, 1200, 1800],
+  "Automation Monitoring": [350, 650, 1000, 1600],
 };
 
 // Preset packages for quick-fill from homepage
 const packagePresets = {
   starter: {
-    tier1: "Landing Page",
+    tier1: "Landing Page System",
     tier2: "None",
-    addOns: ["Responsive Testing & Fixes", "Performance Optimization"],
-    api: ["Email Marketing"],
+    addOns: ["Responsive QA Pass", "Performance Optimization"],
+    api: ["Email Marketing Automation"],
     hosting: [],
     recurring: []
   },
   standard: {
-    tier1: "Basic WordPress / Shopify Setup",
+    tier1: "Conversion Website",
     tier2: "None",
-    addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
+    addOns: ["SEO Architecture", "CMS Content Workflow", "Responsive QA Pass", "Performance Optimization"],
     api: [],
     hosting: [],
     recurring: []
   },
   ecommerce: {
-    tier1: "Small E-commerce Setup",
-    tier2: "None",
-    addOns: ["SEO Optimization", "Blog / CMS Setup", "Responsive Testing & Fixes", "Performance Optimization"],
-    api: ["Email Marketing", "Chat & Customer Support"],
-    hosting: ["Managed Hosting (Standard)"],
-    recurring: ["Maintenance & Support", "Email Marketing Campaigns"]
+    tier1: "Content-Managed Website",
+    tier2: "E-commerce Build",
+    addOns: ["SEO Architecture", "CMS Content Workflow", "Responsive QA Pass", "Performance Optimization"],
+    api: ["Email Marketing Automation", "Chat / Support Desk", "Payments / Subscriptions"],
+    hosting: ["Managed Hosting"],
+    recurring: ["Website Care Retainer", "Content + Email Campaigns"]
   }
 };
 
@@ -172,12 +173,12 @@ function calculateTotal() {
   if (tier1Select.value !== "None") {
     const price = pricingData.tier1[tier1Select.value][0];
     total += price;
-    itemized.push(`${tier1Select.value} (Tier1) - $${price}`);
+    itemized.push(`${tier1Select.value} (Website Build) - $${price}`);
   }
   if (tier2Select.value !== "None") {
     const price = pricingData.tier2[tier2Select.value][0];
     total += price;
-    itemized.push(`${tier2Select.value} (Tier2) - $${price}`);
+    itemized.push(`${tier2Select.value} (Systems Build) - $${price}`);
   }
 
   const mediaAutomationSelect = document.getElementById("mediaAutomation");
@@ -382,8 +383,6 @@ function bootstrapCalculator() {
   const presetApplied = preset ? applyPackagePreset(preset) : false;
   if (presetApplied) {
     localStorage.removeItem("prefillPackage");
-  } else {
-    prefillFromSurvey(); // prefill based on survey if no preset
   }
 }
 // expose for safety re-calls
