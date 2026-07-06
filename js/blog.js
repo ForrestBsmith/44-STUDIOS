@@ -10,7 +10,42 @@ function resolvePostJsonPath() {
   }
   const depth = segments.length;
   const prefix = depth ? "../".repeat(depth) : "./";
-  return `${prefix}post.json`;
+  return `${prefix}post.json?v=20260706b`;
+}
+
+function escapeHtml(value = "") {
+  return value
+    .toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function stripHtml(value = "") {
+  const temp = document.createElement("div");
+  temp.innerHTML = value;
+  return temp.textContent || temp.innerText || "";
+}
+
+function formatDate(value) {
+  if (!value) return "";
+  const date = new Date(`${value}T12:00:00`);
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
+
+function renderTags(tags = []) {
+  if (!tags.length) return "";
+  return `
+    <div class="blog-card-tags">
+      ${tags.slice(0, 3).map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}
+    </div>
+  `;
 }
 
 const postJsonPath = resolvePostJsonPath();
@@ -30,16 +65,30 @@ fetch(postJsonPath)
       const end = start + POSTS_PER_PAGE;
       const pagePosts = posts.slice(start, end);
 
-      pagePosts.forEach(post => {
+      pagePosts.forEach((post, index) => {
+        const summary = post.summary || stripHtml(post.excerpt).slice(0, 170);
+        const isFeatured = page === 1 && index === 0;
+
         blogContainer.innerHTML += `
-          <div class="col">
-            <div class="blog-card">
-              <img src="${post.image}" alt="${post.title}">
+          <div class="col ${isFeatured ? "blog-featured-col" : ""}">
+            <article class="blog-card ${isFeatured ? "blog-card-featured" : ""}">
+              <a href="/blog/post?id=${post.id}" class="blog-card-media" aria-label="Read ${escapeHtml(post.title)}">
+                <img src="${post.image}" alt="${escapeHtml(post.title)}" loading="lazy">
+              </a>
               <div class="blog-card-body">
-                <h5 class="blog-card-title">${post.title}</h5>
-                <a href="/blog/post?id=${post.id}" class="read-btn border rounded" style="text-decoration:none;">Read More</a>
+                <div class="blog-card-meta">
+                  <span>${escapeHtml(post.category || "Build Notes")}</span>
+                  <span>${escapeHtml(post.readTime || "")}</span>
+                </div>
+                <h2 class="blog-card-title">${escapeHtml(post.title)}</h2>
+                <p class="blog-card-summary">${escapeHtml(summary)}</p>
+                ${renderTags(post.tags)}
+                <div class="blog-card-footer">
+                  <span>${formatDate(post.date)}</span>
+                  <a href="/blog/post?id=${post.id}" class="read-btn">Read Brief</a>
+                </div>
               </div>
-            </div>
+            </article>
           </div>
         `;
       });
@@ -49,7 +98,7 @@ fetch(postJsonPath)
 
     function renderPagination(totalPages) {
       paginationContainer.innerHTML = `
-        <nav>
+        <nav aria-label="Blog pagination">
           <ul class="pagination justify-content-center mb-0">
             <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
               <a class="page-link" href="#" id="prev">Previous</a>
@@ -69,7 +118,7 @@ fetch(postJsonPath)
       document.querySelectorAll(".page-link").forEach(link => {
         link.addEventListener("click", e => {
           e.preventDefault();
-          if (e.target.dataset.page) currentPage = parseInt(e.target.dataset.page);
+          if (e.target.dataset.page) currentPage = parseInt(e.target.dataset.page, 10);
           else if (e.target.id === "prev" && currentPage > 1) currentPage--;
           else if (e.target.id === "next" && currentPage < totalPages) currentPage++;
           renderPosts(currentPage);

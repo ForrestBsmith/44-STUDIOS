@@ -30,8 +30,8 @@
   <!-- Stylesheets -->  
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../css/global.css?v=20260703m">
-  <link rel="stylesheet" href="../css/index.css?v=20260703m">
+  <link rel="stylesheet" href="../css/global.css?v=20260706a">
+  <link rel="stylesheet" href="../css/index.css?v=20260704a">
 
  <script type="application/ld+json">
 {
@@ -239,7 +239,7 @@
                     <span>Matt Talks Mortgage</span>
                     <small>Content hub with calculators and captures.</small>
                   </a>
-                  <a href="/case-study?project=realtyfortyfour" class="portfolio-link-card">
+                  <a href="https://forrestbsmith.github.io/Kerry-Williams-Realty/" class="portfolio-link-card" target="_blank" rel="noopener">
                     <span>44 Realty Group</span>
                     <small>Brokerage microsite system and listing flow.</small>
                   </a>
@@ -293,14 +293,34 @@
                   <p>Dashboards collect publishing status, link clicks, form fills, and conversion movement.</p>
                 </div>
               </div>
-              <div class="portfolio-visual-panel">
-                <video class="portfolio-example-media" autoplay loop muted playsinline preload="metadata">
-                  <source src="/assets/videos/jewelry-post-showcase-01_overlay.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <div class="visual-caption">
-                  <strong>Example Output</strong>
-                  <span>Short-form campaign asset prepared for scheduling and reporting.</span>
+              <div class="portfolio-visual-panel property-template-panel">
+                <div id="propertyTemplateCarousel" class="carousel slide property-template-carousel" data-bs-ride="carousel" data-bs-interval="4300" data-bs-pause="hover" aria-label="Property media automation template examples">
+                  <div class="carousel-indicators property-template-indicators">
+                    <button type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="For sale template"></button>
+                    <button type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide-to="1" aria-label="New agent template"></button>
+                    <button type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide-to="2" aria-label="Open house template"></button>
+                    <button type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide-to="3" aria-label="Market pulse template"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="/assets/portfolio/video-ads-for-sale-template.jpg?v=20260704b" class="property-template-img" alt="For sale property automation template">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/assets/portfolio/video-ads-new-agent-template.jpg?v=20260704b" class="property-template-img" alt="New agent property automation template">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/assets/portfolio/video-ads-open-house-template.jpg?v=20260704b" class="property-template-img" alt="Open house property automation template">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/assets/portfolio/video-ads-market-pulse-template.jpg?v=20260704b" class="property-template-img" alt="Market pulse property automation template">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev property-template-control" type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide="prev" aria-label="Previous property template">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                  <button class="carousel-control-next property-template-control" type="button" data-bs-target="#propertyTemplateCarousel" data-bs-slide="next" aria-label="Next property template">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -326,77 +346,54 @@
         </section>
 
         <section class="portfolio-track-section" id="crm-panel">
-          <div class="portfolio-feature-card compact-card real-estate-dashboard-card">
-            <div class="support-visual-row">
-              <div class="support-card-stack dashboard-options-grid">
-                <div class="dashboard-option">
-                  <div class="crm-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                  <h3>Listing Command Center</h3>
-                  <p>Track active listings, media status, showings, seller updates, launch dates, and offer movement from one workspace.</p>
-                  <span class="text-white-50">Best for agents and listing teams.</span>
+          <div class="portfolio-feature-card compact-card product-os-card">
+            <div class="portfolio-section-heading in-card text-start mx-0">
+              <p class="text-uppercase text-secondary small letter-spacing-lg mb-2">Production System Snapshot</p>
+              <h2>Operations Pages Built For Real Team Work</h2>
+              <p class="text-white-50 mb-0">A promo-safe carousel sourced from a live operations OS project, re-themed and rebranded for public portfolio use.</p>
+            </div>
+            <div class="promo-os-carousel-card">
+              <div id="promoOsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5200" data-bs-pause="hover">
+                <div class="carousel-indicators promo-os-indicators">
+                  <button type="button" data-bs-target="#promoOsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Dashboard"></button>
+                  <button type="button" data-bs-target="#promoOsCarousel" data-bs-slide-to="1" aria-label="Admin Review"></button>
+                  <button type="button" data-bs-target="#promoOsCarousel" data-bs-slide-to="2" aria-label="Asset Creator"></button>
+                  <button type="button" data-bs-target="#promoOsCarousel" data-bs-slide-to="3" aria-label="Documents"></button>
                 </div>
-                <div class="dashboard-option">
-                  <div class="crm-icon"><i class="fa-solid fa-route"></i></div>
-                  <h3>Buyer Pipeline</h3>
-                  <p>Organize buyer criteria, saved homes, tour notes, lender status, offer tasks, and next follow-up reminders.</p>
-                  <span class="text-white-50">Best for buyer agents and teams.</span>
-                </div>
-                <div class="dashboard-option">
-                  <div class="crm-icon"><i class="fa-solid fa-camera-retro"></i></div>
-                  <h3>Media & Launch Ops</h3>
-                  <p>Schedule listing shoots, collect property assets, prepare social drops, and keep launch campaigns moving.</p>
-                  <span class="text-white-50">Best for marketing coordinators.</span>
-                </div>
-                <div class="dashboard-option">
-                  <div class="crm-icon"><i class="fa-solid fa-people-roof"></i></div>
-                  <h3>Client & Vendor Portal</h3>
-                  <p>Give sellers, buyers, photographers, lenders, and transaction partners clean status views and upload points.</p>
-                  <span class="text-white-50">Best for brokerages and ops teams.</span>
-                </div>
-              </div>
-              <div class="portfolio-visual-panel dashboard-mockup">
-                <div class="dashboard-window">
-                  <div class="dashboard-window-bar">
-                    <span></span><span></span><span></span>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/assets/portfolio/onward-os-dashboard-promo.jpg?v=20260704c" class="promo-os-snapshot-img" alt="Rebranded operations dashboard snapshot">
                   </div>
-                  <div class="dashboard-stat-grid">
-                    <div><strong>24</strong><span>Active Listings</span></div>
-                    <div><strong>61</strong><span>Buyer Leads</span></div>
-                    <div><strong>14</strong><span>Showings This Week</span></div>
-                    <div><strong>8</strong><span>Offers In Motion</span></div>
+                  <div class="carousel-item">
+                    <img src="/assets/portfolio/onward-os-admin-review-promo.jpg?v=20260704c" class="promo-os-snapshot-img" alt="Rebranded admin review pipeline snapshot">
                   </div>
-                  <div class="dashboard-chart-row">
-                    <span style="height: 42%"></span>
-                    <span style="height: 68%"></span>
-                    <span style="height: 54%"></span>
-                    <span style="height: 82%"></span>
-                    <span style="height: 73%"></span>
-                    <span style="height: 92%"></span>
+                  <div class="carousel-item">
+                    <img src="/assets/portfolio/onward-os-asset-creator-promo.jpg?v=20260704c" class="promo-os-snapshot-img" alt="Rebranded asset creator workspace snapshot">
                   </div>
-                  <div class="dashboard-list">
-                    <span>New seller lead assigned to listing agent</span>
-                    <span>Photography checklist pending for 6625 Sanger</span>
-                    <span>Friday open house campaign scheduled</span>
+                  <div class="carousel-item">
+                    <img src="/assets/portfolio/onward-os-documents-promo.jpg?v=20260704c" class="promo-os-snapshot-img" alt="Rebranded document library snapshot">
                   </div>
                 </div>
-                <div class="visual-caption">
-                  <strong>Example Dashboard</strong>
-                  <span>Real estate operating view for listings, buyers, campaigns, and transaction tasks.</span>
-                </div>
+                <button class="carousel-control-prev promo-os-control" type="button" data-bs-target="#promoOsCarousel" data-bs-slide="prev" aria-label="Previous snapshot">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next promo-os-control" type="button" data-bs-target="#promoOsCarousel" data-bs-slide="next" aria-label="Next snapshot">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
               </div>
             </div>
             <div class="scope-grid mt-4">
               <div>
-                <strong>Real Estate Data Sources</strong>
-                <span>Listing intake forms, Google Sheets, Airtable, CRM records, media folders, calendar events, and transaction checklists.</span>
+                <strong>Heavy Production Views</strong>
+                <span>Admin review, asset creation, executive dashboarding, document control, QA states, and approval trails.</span>
               </div>
               <div>
-                <strong>Automation Options</strong>
-                <span>Seller lead routing, showing reminders, listing launch tasks, open house alerts, client updates, and weekly brokerage reports.</span>
+                <strong>Workflow Value</strong>
+                <span>Teams can see what is blocked, what is approved, which assets are ready, and where launch work stands.</span>
               </div>
               <div>
-                <strong>Dashboard Scope</strong>
-                <span>Workflow mapping, dashboard design, permission logic, real estate pipeline stages, automations, testing, and team handoff.</span>
+                <strong>Promo-Safe Branding</strong>
+                <span>The screenshots are re-themed and rebranded so the original client system brand stays protected.</span>
               </div>
             </div>
           </div>
@@ -732,28 +729,103 @@
         min-height: 420px;
       }
 
-      .visual-caption {
-        position: absolute;
-        left: 1rem;
-        right: 1rem;
-        bottom: 1rem;
+      .property-template-panel {
         padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: rgba(10, 12, 14, 0.78);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
       }
 
-      .visual-caption strong,
-      .visual-caption span {
+      .property-template-carousel {
+        height: 100%;
+        min-height: 420px;
+      }
+
+      .property-template-carousel .carousel-inner,
+      .property-template-carousel .carousel-item {
+        height: 100%;
+      }
+
+      .property-template-carousel .carousel-item {
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .property-template-img {
+        width: 100%;
+        height: clamp(420px, 45vw, 820px);
+        object-fit: cover;
+        object-position: top center;
         display: block;
       }
 
-      .visual-caption span {
-        color: rgba(255, 255, 255, 0.68);
-        font-size: 0.9rem;
-        margin-top: 0.25rem;
+      .property-template-control {
+        width: 3.25rem;
+        opacity: 0.82;
+      }
+
+      .property-template-indicators {
+        right: auto;
+        left: 0.85rem;
+        bottom: auto;
+        top: 0.85rem;
+        margin: 0;
+        justify-content: flex-start;
+      }
+
+      .property-template-indicators [data-bs-target] {
+        width: 2rem;
+        height: 0.23rem;
+        border: 0;
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.48);
+      }
+
+      .promo-os-carousel-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      .promo-os-carousel-card .carousel,
+      .promo-os-carousel-card .carousel-inner,
+      .promo-os-carousel-card .carousel-item {
+        min-height: clamp(360px, 56vw, 780px);
+      }
+
+      .promo-os-carousel-card .carousel-item {
+        background: #090b0d;
+      }
+
+      .promo-os-snapshot-img {
+        width: 100%;
+        min-height: clamp(360px, 56vw, 780px);
+        aspect-ratio: 160 / 98;
+        object-fit: cover;
+        object-position: top left;
+        display: block;
+      }
+
+      .promo-os-control {
+        width: 4rem;
+        opacity: 0.86;
+      }
+
+      .promo-os-indicators {
+        right: auto;
+        left: 1rem;
+        bottom: auto;
+        top: 1rem;
+        margin: 0;
+        justify-content: flex-start;
+      }
+
+      .promo-os-indicators [data-bs-target] {
+        width: 2.4rem;
+        height: 0.25rem;
+        border: 0;
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.44);
       }
 
       .flow-step {
@@ -873,6 +945,10 @@
         .portfolio-visual-panel,
         .portfolio-example-media {
           min-height: 420px;
+        }
+
+        .property-template-img {
+          height: 520px;
         }
       }
 
@@ -1241,7 +1317,7 @@
       </div>
       <div class="col-12 col-lg-7">
         <div class="row gy-4">
-<div class="col-sm-4">
+<div class="col-sm-6">
   <h6 class="text-uppercase text-secondary footer-heading">Navigate</h6>
   <ul class="list-unstyled mb-0">
     <li><a class="text-white footer-link" href="/">Home</a></li>
@@ -1251,13 +1327,7 @@
     <li><a class="text-white footer-link" href="/contact">Contact</a></li>
   </ul>
 </div>
-<div class="col-sm-4">
-  <h6 class="text-uppercase text-secondary footer-heading">Quick Links</h6>
-  <ul class="list-unstyled mb-0">
-    <li><a class="text-white footer-link" href="/services#build-request">Build Request</a></li>
-  </ul>
-</div>
-<div class="col-sm-4">
+<div class="col-sm-6">
   <h6 class="text-uppercase text-secondary footer-heading">Social</h6>
   <ul class="list-unstyled mb-0">
     <li><a class="text-white footer-link" href="https://www.facebook.com/profile.php?id=61580407507952" target="_blank" rel="noopener">Facebook</a></li>
@@ -1287,7 +1357,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const revealItems = Array.from(document.querySelectorAll(
-        ".portfolio-track-section, .portfolio-feature-card, .portfolio-link-card, .flow-step, .dashboard-option, .scope-grid > div, .example-grid > div, .portfolio-visual-panel, .cta-panel, .journey-step"
+        ".portfolio-track-section, .portfolio-feature-card, .portfolio-link-card, .flow-step, .dashboard-option, .property-template-carousel, .promo-os-carousel-card, .scope-grid > div, .example-grid > div, .portfolio-visual-panel, .cta-panel, .journey-step"
       ));
 
       revealItems.forEach((item, index) => {

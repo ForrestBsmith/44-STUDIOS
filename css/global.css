@@ -67,6 +67,13 @@ color: #151719 !important;
   color: #ffffff !important;
   letter-spacing: 0;
 }
+
+.navbar-brand.header {
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
 .header:hover{
   text-decoration: none !important;
 }
@@ -254,11 +261,30 @@ a:hover {
 }
 
 .newsletter-panel {
-  padding: 2.5rem 2rem;
+  padding: 1.15rem;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.026));
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+}
+
+.newsletter-panel h3 {
+  font-size: 1.08rem !important;
+  line-height: 1.25;
+  margin-bottom: 0.35rem !important;
+}
+
+.newsletter-panel p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.newsletter-form {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  width: 100%;
+  margin-top: 0.9rem;
 }
 
 .newsletter-form input {
@@ -266,9 +292,11 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-  font-size: 0.95rem;
-  max-width: 50%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  max-width: none;
+  min-width: 0;
+  flex: 1 1 180px;
 }
 
 .newsletter-form input::placeholder {
@@ -283,9 +311,11 @@ a:hover {
 
 .newsletter-form .btn {
   border-radius: 8px;
-  padding: 0.6rem 1.4rem;
+  padding: 0.5rem 0.9rem;
   font-size: 0.9rem;
-  max-width: 50%;
+  max-width: none;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .site-footer h5,
@@ -327,4 +357,16 @@ a:hover {
 .site-footer .sub-footer {
   padding-top: 1rem !important;
   margin-top: 1.5rem !important;
+}
+
+@media (max-width: 576px) {
+  .newsletter-form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .newsletter-form input,
+  .newsletter-form .btn {
+    width: 100%;
+  }
 }

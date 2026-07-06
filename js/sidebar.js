@@ -7,7 +7,7 @@ function resolvePostJsonPath() {
   }
   const depth = segments.length;
   const prefix = depth ? "../".repeat(depth) : "./";
-  return `${prefix}post.json`;
+  return `${prefix}post.json?v=20260706b`;
 }
 
 fetch(resolvePostJsonPath())
