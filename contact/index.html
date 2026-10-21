@@ -58,6 +58,60 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 22px 60px rgba(0, 0, 0, 0.24);
     }
 
+    .direct-contact-panel {
+      border: 0;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .contact-sidebar-section + .contact-sidebar-section {
+      margin-top: 1.35rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-sidebar-meta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+      margin: 0;
+    }
+
+    .contact-sidebar-location {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    @media (min-width: 1200px) {
+      .direct-contact-panel {
+        position: sticky;
+        top: 1.5rem;
+      }
+    }
+
+    .calendly-frame {
+      min-height: 760px;
+      overflow: hidden;
+    }
+
+    .calendly-frame .calendly-inline-widget {
+      width: 100%;
+      height: 760px !important;
+      overflow: hidden !important;
+    }
+
+    .calendly-frame .calendly-inline-widget iframe {
+      height: 100% !important;
+      overflow: hidden !important;
+    }
+
+    @media (max-width: 767.98px) {
+      .calendly-frame,
+      .calendly-frame .calendly-inline-widget {
+        min-height: 900px;
+        height: 900px !important;
+      }
+    }
+
     .contact-message-modal .modal-content {
       background: #141719;
       color: #ffffff;
@@ -68,6 +122,43 @@
     .contact-message-modal .modal-header,
     .contact-message-modal .modal-footer {
       border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-action-list {
+      display: grid;
+      gap: 0.6rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-action-link {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0;
+      color: #ffffff;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: left;
+      text-decoration: none;
+      text-underline-offset: 0.28rem;
+      cursor: pointer;
+    }
+
+    .contact-action-link:hover,
+    .contact-action-link:focus-visible {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .contact-action-link:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.65);
+      outline-offset: 0.25rem;
     }
   </style>
 
@@ -168,37 +259,49 @@
             <h3 class="mb-2">Schedule a 30-Minute Strategy Session</h3>
             <p class="text-white-50 mb-0">Pick a slot that works for you and we’ll walk through goals, scope, and next steps together.</p>
           </div>
-          <div class="flex-grow-1">
-            <div class="calendly-inline-widget" data-url="https://calendly.com/44studiosdesign/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width: 280px; height: 600px;"></div>
+          <div class="flex-grow-1 calendly-frame">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/44studiosdesign/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
           </div>
         </div>
       </div>
 
       <!-- Contact Details -->
       <div class="col-12 col-xl-4 order-2">
-        <div class="h-100 rounded-4 p-4 p-lg-5 contact-panel d-flex flex-column justify-content-between gap-4">
-          <div>
+        <aside class="rounded-4 p-4 p-lg-5 contact-panel direct-contact-panel" aria-labelledby="direct-contact-heading">
+          <div class="contact-sidebar-section">
             <p class="text-uppercase text-secondary mb-1 small">Talk To Us</p>
-            <h3 class="mb-3">Direct Contact</h3>
-            <p class="text-white-50 mb-4">Book a strategy call or send a message with the details we should review before following up.</p>
-            <ul class="list-unstyled text-white-50">
-              <li class="mb-4">
-                <span class="contact-detail-label">Email</span>
-                <span class="contact-detail-value">44studiosdesign@gmail.com</span>
-              </li>
-              <li class="mb-0">
-                <span class="contact-detail-label">Hours</span>
-                <span class="contact-detail-value">Monday – Friday, 8am – 6pm CST</span>
-              </li>
+            <h3 class="mb-3" id="direct-contact-heading">Direct Contact</h3>
+            <p class="text-white-50 mb-0">Choose the right brief, book a call, or reach us directly.</p>
+          </div>
+
+          <div class="contact-sidebar-section">
+            <p class="contact-detail-label mb-2">Start a project</p>
+            <ul class="contact-action-list">
+              <li><a class="contact-action-link" href="https://crm.44studiosdesign.com/website-intake">Website intake &amp; upload</a></li>
+              <li><a class="contact-action-link" href="/it-media-survey.html">IT &amp; media survey</a></li>
+              <li><button type="button" class="contact-action-link" data-bs-toggle="modal" data-bs-target="#contactMessageModal">Send a general message</button></li>
             </ul>
           </div>
-          <div>
-            <p class="text-uppercase text-secondary mb-1 small">Headquarters</p>
-            <h4 class="mb-2">Waco, Texas</h4>
-            <p class="text-white-50 mb-3">We partner with clients remotely across the US so your business can move fast, no matter the location.</p>
-            <button type="button" class="btn btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#contactMessageModal">Send Message</button>
+
+          <div class="contact-sidebar-section">
+            <dl class="contact-sidebar-meta">
+              <div>
+                <span class="contact-detail-label">Email</span>
+                <a class="contact-action-link" href="mailto:44studiosdesign@gmail.com">44studiosdesign@gmail.com</a>
+              </div>
+              <div>
+                <span class="contact-detail-label">Hours</span>
+                <span class="contact-detail-value">Monday – Friday, 8am – 6pm CST</span>
+              </div>
+            </dl>
           </div>
-        </div>
+
+          <div class="contact-sidebar-section contact-sidebar-location">
+            <p class="contact-detail-label mb-0">Studio</p>
+            <h4 class="mb-0">Waco, Texas</h4>
+            <p class="text-white-50 mb-0">Working with clients remotely across the US.</p>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

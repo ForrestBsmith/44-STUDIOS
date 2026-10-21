@@ -103,6 +103,49 @@
       border-radius: 50px;
       padding: 12px 32px;
     }
+
+    .selected-scope-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .selected-scope-banner.is-visible {
+      display: flex;
+    }
+
+    .selected-scope-banner span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12rem;
+      text-transform: uppercase;
+    }
+
+    .selected-scope-banner strong {
+      display: block;
+      margin-top: 0.15rem;
+      color: #fff;
+    }
+
+    .selected-scope-banner a {
+      flex: 0 0 auto;
+      color: rgba(255, 255, 255, 0.76);
+      text-underline-offset: 0.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .selected-scope-banner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body class="bg-dark text-white">
@@ -151,6 +194,11 @@
         Tell us how your business operates, where support is missing, and the type of media presence you want to build.
         We’ll map your answers to a curated mix of managed IT, cybersecurity, automation, production, and marketing retainers.
       </p>
+    </div>
+
+    <div class="selected-scope-banner" id="selectedScopeBanner">
+      <div><span>Build direction carried into this survey</span><strong id="selectedScopeTitle"></strong></div>
+      <a href="/services/#build-request">Change scope</a>
     </div>
 
     <div class="section-card">
@@ -218,7 +266,7 @@
       </select>
     </div>
 
-    <div class="section-card">
+    <div class="section-card" id="itNeedsSection">
       <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-network-wired me-2"></i> Managed IT & Infrastructure</h2>
       <p class="text-secondary mb-3">Select the automation layers that would speed up your workflows.</p>
       <div class="checkbox-grid">
@@ -235,7 +283,7 @@
       </div>
     </div>
 
-    <div class="section-card">
+    <div class="section-card" id="mediaNeedsSection">
       <h2 class="h4 text-uppercase text-secondary mb-3"><i class="fa-solid fa-video me-2"></i> Media & Communications</h2>
       <p class="text-secondary mb-3">Show us how you want to show up online — choose the media deliverables that matter.</p>
       <div class="checkbox-grid">
@@ -288,8 +336,19 @@
 
   <script>
     const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwBenfiAiZkMSkEf5fV3BT5uCedITSAvKc32yH05Yuq20dBYM9BO0Bkv8tPOv3IrIko/exec";
-    const itSelector = '.section-card:nth-of-type(2) input[type="checkbox"]';
-    const mediaSelector = '.section-card:nth-of-type(3) input[type="checkbox"]';
+    const itSelector = '#itNeedsSection input[type="checkbox"]';
+    const mediaSelector = '#mediaNeedsSection input[type="checkbox"]';
+    const scopeParams = new URLSearchParams(window.location.search);
+    const selectedScope = {
+      key: (scopeParams.get('scopeKey') || '').slice(0, 80),
+      path: (scopeParams.get('scopePath') || '').slice(0, 120),
+      title: (scopeParams.get('scopeTitle') || '').slice(0, 160)
+    };
+
+    if (selectedScope.title) {
+      document.getElementById('selectedScopeTitle').textContent = `${selectedScope.title}${selectedScope.path ? ` · ${selectedScope.path}` : ''}`;
+      document.getElementById('selectedScopeBanner').classList.add('is-visible');
+    }
 
     function gatherSelections(selector) {
       return Array.from(document.querySelectorAll(selector))
@@ -343,6 +402,7 @@
       results.classList.remove('d-none');
       results.innerHTML = `
         <h3 class="mb-3">Recommended IT/Media Suite</h3>
+        ${selectedScope.title ? `<p class="mb-3"><strong>Build direction:</strong> ${escapeSurveyText(selectedScope.title)}</p>` : ''}
         <div class="mb-3">${focusTags.join(' ')}</div>
         <p class="mb-2">For <strong>${company}</strong> (${industry}, ${size} employees) currently operating with <em>${currentSupport}</em>.</p>
         <p class="mb-3">Primary objective: <strong>${mainGoal}</strong> · Ideal start: <strong>${timeline}</strong></p>
@@ -370,8 +430,15 @@
         notes,
         itNeeds,
         mediaNeeds,
-        suites
+        suites,
+        buildDirectionKey: selectedScope.key,
+        buildDirectionPath: selectedScope.path,
+        buildDirection: selectedScope.title
       }));
+    }
+
+    function escapeSurveyText(value) {
+      return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character]));
     }
 
     function buildRecommendations(itNeeds, mediaNeeds) {
